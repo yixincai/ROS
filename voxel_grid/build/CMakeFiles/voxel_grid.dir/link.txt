@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -O3 -DNDEBUG  -pthread   -shared -Wl,-soname,libvoxel_grid.so -o ../lib/libvoxel_grid.so CMakeFiles/voxel_grid.dir/src/voxel_grid.o -L/opt/ros/fuerte/lib -lrosconsole -Wl,-rpath,/opt/ros/fuerte/lib 

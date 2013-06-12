@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/config
+END
+fake_localization.launch
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/config/fake_localization.launch
+END

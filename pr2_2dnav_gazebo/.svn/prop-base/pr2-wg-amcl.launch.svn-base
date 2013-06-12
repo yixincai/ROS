@@ -1,0 +1,7 @@
+K 13
+svn:mergeinfo
+V 415
+/branches/arm_planning_branch/stacks/wg_robots_gazebo/pr2_2dnav_gazebo/pr2-wg-amcl.launch:27259-27893
+/pkg/branches/gazebo-branch-merge/demos/2dnav_gazebo/2dnav-gazebo-wg-amcl.launch:15683-15684,15739-15794,15797-15820,15822-15839,15852-15870,15983-16008,16010-16016,16129-16141,16145-16169,16245-16262,16274-16334
+/tags/controller_manager_rename/stacks/pr2_simulator/pr2_2dnav_gazebo/pr2-wg-amcl.launch:25336-25352
+END

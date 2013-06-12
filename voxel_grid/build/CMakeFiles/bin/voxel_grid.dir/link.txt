@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG     -pthread CMakeFiles/bin/voxel_grid.dir/src/voxel_grid_main.o  -o ../bin/voxel_grid -rdynamic -L/opt/ros/fuerte/lib -L/home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/lib -lrosconsole ../lib/libvoxel_grid.so -lrosconsole -Wl,-rpath,/opt/ros/fuerte/lib:/home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/lib 

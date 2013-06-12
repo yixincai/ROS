@@ -1,0 +1,16 @@
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/clean-test-results.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/rosbuild_precompile.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/rospack_genmsg.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/rospack_genmsg_libexe.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/rospack_gensrv.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/simple_navigation_goals.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/test.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/test-future.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/test-results.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/test-results-run.dir
+/home/yixin/fuerte_workspace/sandbox/simple_navigation_goals/build/CMakeFiles/tests.dir

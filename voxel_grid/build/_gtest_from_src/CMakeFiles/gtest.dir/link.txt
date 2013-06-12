@@ -1,0 +1,2 @@
+/usr/bin/ar cr /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/lib/libgtest.a  CMakeFiles/gtest.dir/src/gtest-all.cc.o
+/usr/bin/ranlib /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/lib/libgtest.a
