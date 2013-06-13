@@ -16,8 +16,10 @@ CMakeFiles/bin/teleop_pr2_keyboard.dir/src/teleop_pr2_keyboard.o
  /opt/ros/fuerte/include/geometry_msgs/Transform.h
  /opt/ros/fuerte/include/geometry_msgs/TransformStamped.h
  /opt/ros/fuerte/include/geometry_msgs/Twist.h
+ /opt/ros/fuerte/include/geometry_msgs/TwistWithCovariance.h
  /opt/ros/fuerte/include/geometry_msgs/Vector3.h
  /opt/ros/fuerte/include/geometry_msgs/Vector3Stamped.h
+ /opt/ros/fuerte/include/nav_msgs/Odometry.h
  /opt/ros/fuerte/include/ros/advertise_options.h
  /opt/ros/fuerte/include/ros/advertise_service_options.h
  /opt/ros/fuerte/include/ros/assert.h

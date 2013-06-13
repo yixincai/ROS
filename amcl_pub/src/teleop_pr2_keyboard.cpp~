@@ -40,6 +40,7 @@
 #include <ros/ros.h>
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
+#include <nav_msgs/Odometry.h>
 #include <gazebo/ModelStates.h>
 #include <gazebo_msgs/ModelState.h>
 #include <tf/transform_datatypes.h>
@@ -50,6 +51,8 @@
 #define KEYCODE_W 0x77 
 #define KEYCODE_Q 0x71
 #define KEYCODE_E 0x65
+#define KEYCODE_G 0x67
+#define KEYCODE_R 0x72
 
 #define KEYCODE_A_CAP 0x41
 #define KEYCODE_D_CAP 0x44
@@ -57,39 +60,40 @@
 #define KEYCODE_W_CAP 0x57
 #define KEYCODE_Q_CAP 0x51
 #define KEYCODE_E_CAP 0x45
-#define ROTATE 0
-#define MOVING 1 
+
 using namespace std;
 
 double x_val = 0;
 double y_val = 0;
-double z_val = 0;
 double yaw_val = 0;
-double linear_margin = 0.5;
-double yaw_margin = 0.01;
-double x_destination = 5;
-double y_destination = 5;
-int state_ = ROTATE;
-bool flag = false;
-bool update = false;
+double x_map = 0;
+double y_map = 0;
 
 void model_statesCallBack(const gazebo::ModelStates::ConstPtr& msg){
-	printf("foo\n");
-	update = true;
+	printf("Got world\n");
 	unsigned int i=0;
 	for (;i<msg->name.size();i++){
 		if (strcmp(msg->name[i].c_str(),"pr2")==0)
 			break;
 	}
 	tf::Quaternion q;
-        double roll, pitch, yaw;
-        tf::quaternionMsgToTF(msg->pose[i].orientation, q);
-        tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
+  double roll, pitch, yaw;
+  tf::quaternionMsgToTF(msg->pose[i].orientation, q);
+  tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
 	yaw_val = yaw;
 
 	x_val = msg->pose[i].position.x;
 	y_val = msg->pose[i].position.y;
-	z_val = msg->pose[i].position.z;
+	printf("The x in the world is %d \n", (int) x_val);
+	printf("The y in the world is %d \n", (int) y_val);
+}
+
+void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg){
+	printf("Got map\n");
+  x_map = msg->pose.pose.position.x;
+  y_map = msg->pose.pose.position.y;
+  printf("The x in the map is %d \n", (int) x_map);
+  printf("The x in the map is %d \n", (int) y_map);
 }
 
 class TeleopPR2Keyboard
@@ -102,6 +106,7 @@ class TeleopPR2Keyboard
   ros::Publisher gazebo_pose_pub_;
   ros::NodeHandle n_;
   ros::Publisher amcl_pose_pub_;
+  ros::Subscriber map_pose_sub_;
   ros::Subscriber sub_;
   public:
   void init()
@@ -109,6 +114,7 @@ class TeleopPR2Keyboard
     gazebo_pose_pub_ = n_.advertise<gazebo_msgs::ModelState>("/gazebo/set_model_state", 1);
     amcl_pose_pub_ = n_.advertise<geometry_msgs::PoseWithCovarianceStamped>("initialpose", 1);
     sub_ = n_.subscribe("/gazebo/model_states", 1, model_statesCallBack);
+    map_pose_sub_ = n_.subscribe("amcl_pose", 1, map_statesCallBack);
     ros::NodeHandle n_private("~");
     n_private.param("walk_vel", walk_vel, 0.5);
     n_private.param("run_vel", run_vel, 1.0);
@@ -163,9 +169,9 @@ void TeleopPR2Keyboard::keyboardLoop()
 
   while(ros::ok())
   {
-	ros::spinOnce();
+	  ros::spinOnce();
     // get the next event from the keyboard
-   if(read(kfd, &c, 1) < 0)
+    if(read(kfd, &c, 1) < 0)
     {
       perror("read():");
       exit(-1);
@@ -201,6 +207,6 @@ void TeleopPR2Keyboard::keyboardLoop()
         pose.pose.covariance[6*5+5] = M_PI/12.0 * M_PI/12.0;
         amcl_pose_pub_.publish(pose);
         break;
-  }
+    }
   }
 }
