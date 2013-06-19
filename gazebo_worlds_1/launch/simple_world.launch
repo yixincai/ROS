@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- start gazebo with an simple world -->
+  <param name="/use_sim_time" value="true" />
+
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/simple.world" respawn="false" output="screen"/>
+
+</launch>

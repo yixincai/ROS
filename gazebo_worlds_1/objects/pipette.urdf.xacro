@@ -1,0 +1,141 @@
+<robot name="pipette"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+       xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+       xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:xacro="http://ros.org/wiki/xacro"
+       xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics">
+
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+
+  <xacro:property name="pipette_handle_size_x" value="0.03" />
+  <xacro:property name="pipette_handle_size_y" value="0.03" />
+  <xacro:property name="pipette_handle_size_z" value="0.10" />
+  
+  <xacro:property name="pipette_base_size_x" value="0.01" />
+  <xacro:property name="pipette_base_size_y" value="0.10" />
+  <xacro:property name="pipette_base_size_z" value="0.10" />
+  
+  <xacro:property name="pipette_tip_x" value="0.00" />
+  <xacro:property name="pipette_tip_y" value="0.00" />
+  <xacro:property name="pipette_tip_z" value="-0.05" />
+
+  <xacro:property name="pipette_tip_size_x" value="0.003" />
+  <xacro:property name="pipette_tip_size_y" value="0.003" />
+  <xacro:property name="pipette_tip_size_z" value="0.050" />
+
+  <link name="pipette_handle_link">
+    <inertial>
+      <origin xyz="0 0 0.0" /> 
+      <mass value="0.2" />
+      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="${pipette_handle_size_x} ${pipette_handle_size_y} ${pipette_handle_size_z}" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="${pipette_handle_size_x} ${pipette_handle_size_y} ${pipette_handle_size_z}" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="pipette_handle_link">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>true</turnGravityOff>
+    <genTexCoord>true</genTexCoord>
+  </gazebo>
+
+  <joint name="pipette_base_joint" type="fixed" >
+    <parent link="pipette_handle_link" />
+    <origin xyz="0 0 ${-(pipette_handle_size_z+pipette_base_size_z)/2}" rpy="0 0 0" />
+    <child link="pipette_base_link" />
+  </joint>
+
+  <link name="pipette_base_link">
+    <inertial>
+      <origin xyz="0 0 0.0" /> 
+      <mass value="0.2" />
+      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="${pipette_base_size_x} ${pipette_base_size_y} ${pipette_base_size_z}" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="${pipette_base_size_x} ${pipette_base_size_y} ${pipette_base_size_z}" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="pipette_base_link">
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>true</turnGravityOff>
+    <genTexCoord>true</genTexCoord>
+  </gazebo>
+
+
+  <xacro:macro name="tips" params="n offset_x offset_y offset_z base_radius length parent"> 
+    <joint name="tip_${n}_joint" type="fixed" >
+      <parent link="${parent}" />
+      <origin xyz="${offset_x} ${offset_y} ${offset_z}" rpy="0 ${M_PI} 0" />
+      <child link="pipette_tip_${n}_link" />
+    </joint>
+    <link name="pipette_tip_${n}_link">
+      <inertial>
+        <origin xyz="0 0 0.0" /> 
+        <mass value="0.2" />
+        <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://gazebo_worlds/Media/models/trimesh_cone.stl"
+                scale="${pipette_tip_size_x} ${pipette_tip_size_y} ${pipette_tip_size_z}"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://gazebo_worlds/Media/models/trimesh_cone.stl"
+                scale="${pipette_tip_size_x} ${pipette_tip_size_y} ${pipette_tip_size_z}"/>
+        </geometry>
+      </collision>
+    </link>
+    <gazebo reference="pipette_tip_${n}_link">
+      <material>Gazebo/White</material>
+      <turnGravityOff>true</turnGravityOff>
+      <genTexCoord>true</genTexCoord>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:property name="pipette_tip_spacing_y" value="0.008" />
+  <xacro:tips n="01" offset_x="0" offset_y="${-5.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="02" offset_x="0" offset_y="${-4.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="03" offset_x="0" offset_y="${-3.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="04" offset_x="0" offset_y="${-2.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="05" offset_x="0" offset_y="${-1.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="06" offset_x="0" offset_y="${-0.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="07" offset_x="0" offset_y="${+0.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="08" offset_x="0" offset_y="${+1.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="09" offset_x="0" offset_y="${+2.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="10" offset_x="0" offset_y="${+3.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="11" offset_x="0" offset_y="${+4.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+  <xacro:tips n="12" offset_x="0" offset_y="${+5.5*pipette_tip_spacing_y}" offset_z="${-pipette_base_size_z/2}" base_radius="0.002" length="0.05" parent="pipette_base_link"/>
+
+</robot>
+
+

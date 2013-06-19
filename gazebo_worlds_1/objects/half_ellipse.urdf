@@ -1,0 +1,74 @@
+<robot name="half_ellipse">
+  <link name="half_ellipse">
+    <inertial>
+      <origin xyz="0 0 -0.07" /> 
+      <mass value="1.0" />
+      <inertia  ixx="0.1" ixy="0.0"  ixz="0.0"  iyy="0.2"  iyz="0.0"  izz="0.2" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gazebo_worlds/Media/models/half_ellipse.stl" scale="0.1 0.1 0.1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://gazebo_worlds/Media/models/half_ellipse.stl" scale="0.1 0.1 0.1" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="half_ellipse">
+    <material value="Gazebo/Red"/>
+  </gazebo>
+<!-- use additional masses to create inertia offsets -->
+  <link name="mass1">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="0.3" />
+      <inertia  ixx="0.01" ixy="0.0"  ixz="0.0"  iyy="0.01"  iyz="0.0"  izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mass1_joint" type="continuous">
+    <parent link="half_ellipse" />
+    <child link="mass1" />
+    <origin xyz="0.3 0.05 0.01" rpy="0 0 0" />
+  </joint>
+  <link name="mass2">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="0.3" />
+      <inertia  ixx="0.01" ixy="0.0"  ixz="0.0"  iyy="0.01"  iyz="0.0"  izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mass2_joint" type="continuous">
+    <parent link="half_ellipse" />
+    <child link="mass2" />
+    <origin xyz="-0.3 -0.05 0.01" rpy="0 0 0" />
+  </joint>
+</robot>
+

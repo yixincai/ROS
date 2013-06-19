@@ -1,0 +1,446 @@
+<?xml version="1.0" ?>
+<model:physical name="stair_model">
+  <xyz>   0.0    0.0    0.0</xyz>
+  <rpy>   0.0    0.0    0.0</rpy>
+  <static>true</static>
+  <body:box name="wall_0_body">
+    <xyz>0 0 0</xyz>
+    <turnGravityOff>true</turnGravityOff> 
+    <massMatrix>true</massMatrix> 
+    <mass>0.3</mass>
+    <ixx>0.001</ixx>
+    <ixy>0.0</ixy>
+    <ixz>0.0</ixz>
+    <iyy>0.001</iyy>
+    <iyz>0.0</iyz>
+    <izz>0.001</izz>
+    <cx>0.0</cx>
+    <cy>0.0</cy>
+    <cz>0.05</cz>
+    <geom:box name="wall_0_geom">
+      <xyz>-5 -1.5 6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>50 0.2 12</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>50 0.2 12</size>
+        <material>Gazebo/White</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="wall_1_geom">
+      <xyz>0 15 6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>60 0.2 12</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>60 0.2 12</size>
+        <material>Gazebo/White</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="wall_1a_geom">
+      <xyz>0 -15 6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>60 0.2 12</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>60 0.2 12</size>
+        <material>Gazebo/White</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="wall_2_geom">
+      <xyz>-30 0 6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>0.2 30 12</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>0.2 30 12</size>
+        <material>Gazebo/White</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="wall_3_geom">
+      <xyz>30 0 6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>0.2 30 12</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>0.2 30 12</size>
+        <material>Gazebo/White</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+  </body:box>
+  <body:box name="floor_0_body">
+    <xyz>0 0 0</xyz>
+    <turnGravityOff>true</turnGravityOff> 
+    <massMatrix>true</massMatrix> 
+    <mass>0.3</mass>
+    <ixx>0.001</ixx>
+    <ixy>0.0</ixy>
+    <ixz>0.0</ixz>
+    <iyy>0.001</iyy>
+    <iyz>0.0</iyz>
+    <izz>0.001</izz>
+    <cx>0.0</cx>
+    <cy>0.0</cy>
+    <cz>0.05</cz>
+    <geom:box name="floor_0a_geom">
+      <xyz>0 0 0</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>60 30 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>60 30 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="floor_0_geom">
+      <xyz>3.35 -8.25 3.8</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>5 13.5 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>5 13.5 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="floor_1_geom">
+      <xyz>3.35 8.25 3.8</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>5 13.5 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>5 13.5 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="floor_2_geom">
+      <xyz>17.925 0.0 3.8</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>24.15 30 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>24.15 30 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="floor_3_geom">
+      <xyz>-14.575 0.0 3.8</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>30.85 30 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>30.85 30 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+  </body:box>
+
+
+  <body:box name="stair_1_body">
+    <turnGravityOff>true</turnGravityOff> 
+    <massMatrix>true</massMatrix> 
+    <mass>0.3</mass>
+    <ixx>0.001</ixx>
+    <ixy>0.0</ixy>
+    <ixz>0.0</ixz>
+    <iyy>0.001</iyy>
+    <iyz>0.0</iyz>
+    <izz>0.001</izz>
+    <cx>0.0</cx>
+    <cy>0.0</cy>
+    <cz>0.05</cz>
+
+    <geom:box name="stair_1_geom">
+      <xyz>0 0 0</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_2_geom">
+      <xyz>.3 0 .2</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_3_geom">
+      <xyz>.6 0 .4</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_4_geom">
+      <xyz>.9 0 .6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_5_geom">
+      <xyz>1.2 0 0.8</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_6_geom">
+      <xyz>1.5 0 1.0</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_7_geom">
+      <xyz>1.8 0 1.2</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_8_geom">
+      <xyz>2.1 0 1.4</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_9_geom">
+      <xyz>2.4 0 1.6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_10_geom">
+      <xyz>2.7 0 1.8</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_11_geom">
+      <xyz>3.0 0 2.0</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_12_geom">
+      <xyz>3.3 0 2.2</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_13_geom">
+      <xyz>3.6 0 2.4</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_14_geom">
+      <xyz>3.9 0 2.6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_15_geom">
+      <xyz>4.2 0 2.8</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_16_geom">
+      <xyz>4.5 0 3.0</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_17_geom">
+      <xyz>4.8 0 3.2</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_18_geom">
+      <xyz>5.1 0 3.4</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_19_geom">
+      <xyz>5.4 0 3.6</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+    <geom:box name="stair_20_geom">
+      <xyz>5.7 0 3.8</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <size>.3 3 .2</size>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <size>.3 3 .2</size>
+        <material>Gazebo/Wood</material>
+        <mesh>unit_box</mesh>
+      </visual>
+    </geom:box>
+  </body:box>
+</model:physical>
+
+
+

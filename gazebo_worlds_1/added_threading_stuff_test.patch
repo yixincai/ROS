@@ -1,0 +1,18 @@
+Index: worlds/empty.world
+===================================================================
+--- worlds/empty.world	(revision 29925)
++++ worlds/empty.world	(working copy)
+@@ -34,7 +34,12 @@
+     <quickStepW>1.3</quickStepW>
+     <contactMaxCorrectingVel>100.0</contactMaxCorrectingVel>
+     <contactSurfaceLayer>0.001</contactSurfaceLayer>
+-  </physics:ode>
++    <islandThreads>1</islandThreads>
++    <quickstepThreads>4</quickstepThreads>
++    <quickstepChunks>4</quickstepChunks>
++    <quickstepOverlap>0</quickstepOverlap>
++    <quickstepTolerance>1e-2</quickstepTolerance>
++   </physics:ode>
+ 
+   <geo:origin>
+     <lat>37.4270909558</lat><lon>-122.077919338</lon>

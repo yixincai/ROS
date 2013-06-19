@@ -1,0 +1,19 @@
+<launch>
+
+  <!-- start gazebo with an empty plane -->
+  <param name="/use_sim_time" value="true" />
+  <arg name="gui" default="true"/>
+
+  <!-- start empty world -->
+  <node name="gazebo" pkg="gazebo" type="debug" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+
+  <!-- start gui -->
+  <group if="$(arg gui)">
+    <node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen"/>
+  </group>
+
+  <!-- add heightmap version wg walls-->
+  <param name="wg_walls"      textfile="$(find gazebo_worlds)/objects/wg_walls.model" />
+  <node name="xml2factor_wg_walls" pkg="gazebo" type="spawn_model" args="-gazebo -param wg_walls -x -25.65 -y -25.65 -model wg_walls" respawn="false" output="screen" />
+
+</launch>

@@ -1,0 +1,28 @@
+material b21_base_dark
+{
+	receive_shadows on
+	technique
+	{
+		pass
+		{
+			ambient 0.210000 0.210000 0.210000 1.000000
+			diffuse 0.336000 0.336000 0.336000 1.000000
+			specular 0.500000 0.500000 0.500000 1.000000 12.500000
+			emissive 0.000000 0.000000 0.000000 1.000000
+		}
+	}
+}
+material b21_base_blue
+{
+	receive_shadows on
+	technique
+	{
+		pass
+		{
+			ambient 0.085160 0.254700 0.450310 1.000000
+			diffuse 0.136256 0.407519 0.720496 1.000000
+			specular 0.500000 0.500000 0.500000 1.000000 12.500000
+			emissive 0.000000 0.000000 0.000000 1.000000
+		}
+	}
+}

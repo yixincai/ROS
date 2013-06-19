@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- start gazebo with an balcony world -->
+  <param name="/use_sim_time" value="true" />
+
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/balcony.world" respawn="false" output="screen"/>
+
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+  <!-- start gazebo with an empty plane -->
+  <param name="/use_sim_time" value="true" />
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+  <!-- send urdf of a half ellipse to param server -->
+  <param name="half_ellipse" textfile="$(find gazebo_worlds)/objects/half_ellipse.urdf" />
+  <node name="spawn_half_ellipse" pkg="gazebo" type="spawn_model" args="-z 0.3 -urdf -param half_ellipse -model half_ellipse_model" respawn="false" output="screen" />
+</launch>
+

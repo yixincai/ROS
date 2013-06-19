@@ -1,0 +1,6 @@
+<launch>
+  <!-- send urdf of a simple cylinder to param server -->
+  <param name="simple_cylinder" textfile="$(find gazebo_worlds)/objects/simple_cylinder.urdf" />
+  <node name="spawn_simple_cylinder" pkg="gazebo" type="spawn_model" args="-urdf -param simple_cylinder -model simple_cylinder_model" respawn="false" output="screen" />
+</launch>
+

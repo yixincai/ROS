@@ -1,0 +1,15 @@
+<launch>
+
+  <param name="/use_sim_time" value="true" />
+
+  <!-- start gazebo with an empty plane -->
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+
+  <!-- send xml to param server -->
+  <param name="checkerboard"      textfile="$(find gazebo_worlds)/objects/checkerboard.model" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_checkerboard" pkg="gazebo" type="spawn_model" args="-gazebo -param checkerboard -x 1.0 -z 1.5 -model checkerboard_model" respawn="false" output="screen" />
+  
+</launch>
+

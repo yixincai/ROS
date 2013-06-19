@@ -1,0 +1,40 @@
+<?xml version="1.0"?> 
+<gazebo version="1.0">
+  <world name="default">
+    <scene>
+      <ambient rgba="1 1 1 1"/>
+      <background rgba="0.5 0.5 0.5 1"/>
+      <shadows enabled="false"/>
+    </scene>
+    <physics type='ode' update_rate='0.000000'>
+      <gravity xyz='0.000000 0.000000 -9.800000'/>
+      <ode>
+        <solver type='quick' dt='0.001000' iters='50' precon_iters='0' sor='1.300000'/>
+        <constraints cfm='0.000000' erp='0.100000' contact_max_correcting_vel='100.000000' contact_surface_layer='0.001000'/>
+      </ode>
+    </physics>
+
+    <!-- Ground Plane -->
+    <model name="office_map" static="true">
+      <link name="link">
+        <origin pose="0.0 0.0 0.0 0.0 0.0 0.0"/>	
+        <visual name="visual">
+          <material>
+            <shader type = "pixel">
+              <normal_map>/home/yixin/fuerte_workspace/sandbox/gazebo_worlds_1/Media/materials/textures/mymap.png</normal_map>
+            </shader>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <light type="directional" name="my_light" cast_shadows="false">
+      <origin pose="0 0 30 0 0 0"/>
+      <diffuse rgba=".9 .9 .9 1"/>
+      <specular rgba=".1 .1 .1 1"/>
+      <attenuation range="20"/>
+      <direction xyz="0 0 -1"/>
+    </light>
+    <plugin name="joint_trajectory_plugin" filename="libgazebo_ros_joint_trajectory.so"/>
+  </world>
+</gazebo>

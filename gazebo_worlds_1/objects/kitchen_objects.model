@@ -1,0 +1,7668 @@
+<?xml version="1.0" ?>
+<model:physical name="F360-Containers-revised-walls">
+    <xyz>
+        0.000000 0.000000 -0.150000
+    </xyz>
+    <rpy>
+        0.000000 -0.000000 0.000000
+    </rpy>
+    <body:box name="counter0">
+        <xyz>
+            0.330000 2.800000 1.090000
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="counter0_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.600000 2.200000 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.600000 2.200000 0.030000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="table0">
+        <xyz>
+            2.800000 2.500000 0.365000
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 90.000000
+        </rpy>
+        <geom:box name="table0_geom_0">
+            <xyz>
+                0.000000 0.000000 0.355000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.220000 0.800000 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.220000 0.800000 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Gazebo/Wood
+                </material>
+            </visual>
+        </geom:box>
+        
+         <geom:box name="cereal">
+            <xyz>
+                -0.200000 0.000000 0.455000
+            </xyz>
+            <rpy>
+                0.000000 0.000000 0.000000
+            </rpy>
+            <size>
+                0.1 0.100000 0.20000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                  0.1 0.100000 0.20000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                  Gazebo/Green
+                </material>
+            </visual>
+        </geom:box>
+        <geom:cylinder name="jug0001">
+          <xyz>
+            0.200000 0.000000 0.455000
+          </xyz>
+          <rpy>
+            0.000000 0.000000 0.000000
+          </rpy>
+          <size>
+            0.05 0.2
+          </size>
+          <mass>
+            1.0
+          </mass>
+          <visual>
+            <size>
+              0.1 0.1 0.2
+            </size>
+            <mesh>
+              unit_cylinder
+            </mesh>
+            <material>
+              Gazebo/Red
+            </material>
+          </visual>
+        </geom:cylinder>
+        <geom:trimesh name="cup1_geom">
+         <!--<laserRetro>2000.0</laserRetro>
+          <kp>1000000000.0</kp>
+          <kd>1.0</kd>-->
+          <scale> 0.002 0.002 0.002</scale>
+          <mesh>mug.mesh</mesh>
+          <xyz>
+            0.400000 0.000000 0.355000
+          </xyz>
+          <rpy>
+            90.000000 0.000000 0.000000
+          </rpy>
+            <visual>
+              <scale> 0.002 0.002 0.002</scale>
+              <material>Gazebo/Blue</material>
+              <mesh>mug.mesh</mesh>
+            </visual>
+        </geom:trimesh>
+        <geom:trimesh name="cup2_geom">
+          <laserRetro>2000.0</laserRetro>
+          <kp>100000000.0</kp>
+          <kd>1.0</kd>
+          <scale>0.1 0.1 0.1</scale>
+          <mesh>cup.mesh</mesh>
+          <xyz>
+            0.000000 0.000000 0.355000
+          </xyz>
+          <rpy>
+            90.000000 0.000000 0.000000
+          </rpy>
+          <visual>
+            <scale>0.1 0.1 0.1</scale>
+            <material>Gazebo/PioneerBody</material>
+            <mesh>cup.mesh</mesh>
+          </visual>
+        </geom:trimesh>
+        <geom:box name="table0_geom_1">
+            <xyz>
+                0.570000 0.360000 -0.010000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.040000 0.040000 0.710000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.040000 0.040000 0.710000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Gazebo/Wood
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="table0_geom_2">
+            <xyz>
+                -0.570000 0.360000 -0.010000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.040000 0.040000 0.710000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.040000 0.040000 0.710000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Gazebo/Wood
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="table0_geom_3">
+            <xyz>
+                0.570000 -0.360000 -0.010000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.040000 0.040000 0.710000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.040000 0.040000 0.710000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Gazebo/Wood
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="table0_geom_4">
+            <xyz>
+                -0.570000 -0.360000 -0.010000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.040000 0.040000 0.710000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.040000 0.040000 0.710000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Gazebo/Wood
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="closet0">
+        <xyz>
+            5.713965 4.695775 1.297272
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="closet0_geom_0">
+            <xyz>
+                -0.280295 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 1.046430 2.164775
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 1.046430 2.164775
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="closet0_geom_1">
+            <xyz>
+                0.000000 -0.513215 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.580590 0.020000 2.164775
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.580590 0.020000 2.164775
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="closet0_geom_2">
+            <xyz>
+                0.000000 0.513215 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.580590 0.020000 2.164775
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.580590 0.020000 2.164775
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="closet0_geom_3">
+            <xyz>
+                0.000000 0.000000 -1.072388
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.580590 1.046430 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.580590 1.046430 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="closet0_geom_4">
+            <xyz>
+                0.000000 0.000000 1.072388
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.580590 1.046430 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.580590 1.046430 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door0">
+        <xyz>
+            5.452357 4.405480 1.297272
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="door0_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.523215 2.164775
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.523215 2.164775
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <joint:hinge name="door0_hinge_joint">
+        <body1>
+            door0
+        </body1>
+        <body2>
+            closet0
+        </body2>
+        <anchor>
+            door0
+        </anchor>
+        <anchorOffset>
+            -0.261607 0.000000 -1.082387
+        </anchorOffset>
+        <axis>
+            -0.000000 0.000000 -1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="door1">
+        <xyz>
+            5.975573 4.405480 1.297272
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="door1_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.523215 2.164775
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.523215 2.164775
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="knob18000">
+        <xyz>
+            6.000573 4.394085 1.303755
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:cylinder name="knob18000_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 90.000000 0.000000
+            </rpy>
+            <size>
+                0.032307 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.032307 0.032307 0.030000
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Red
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="knob18000_fixed_joint">
+        <body1>
+            knob18000
+        </body1>
+        <body2>
+            door1
+        </body2>
+        <anchor>
+            knob18000
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door1_hinge_joint">
+        <body1>
+            door1
+        </body1>
+        <body2>
+            closet0
+        </body2>
+        <anchor>
+            door1
+        </anchor>
+        <anchorOffset>
+            0.000000 0.261607 1.082388
+        </anchorOffset>
+        <axis>
+            -0.000000 -0.000000 1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard0">
+        <xyz>
+            0.195678 3.648405 2.303545
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard0_geom_0">
+            <xyz>
+                -0.144799 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.502930 0.868710
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.502930 0.868710
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard0_geom_1">
+            <xyz>
+                0.000000 -0.241465 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.309598 0.020000 0.868710
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.309598 0.020000 0.868710
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard0_geom_2">
+            <xyz>
+                0.000000 0.241465 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.309598 0.020000 0.868710
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.309598 0.020000 0.868710
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard0_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.424355
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.309598 0.502930 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.309598 0.502930 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard0_geom_4">
+            <xyz>
+                0.000000 0.000000 0.424355
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.309598 0.502930 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.309598 0.502930 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door2">
+        <xyz>
+            0.350477 3.648405 2.303545
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door2_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.502930 0.868710
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.502930 0.868710
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17000">
+        <xyz>
+            0.384807 3.507448 1.925126
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17000_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.133733
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.133733
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17000_fixed_joint">
+        <body1>
+            handle17000
+        </body1>
+        <body2>
+            door2
+        </body2>
+        <anchor>
+            handle17000
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door2_hinge_joint">
+        <body1>
+            door2
+        </body1>
+        <body2>
+            cupboard0
+        </body2>
+        <anchor>
+            door2
+        </anchor>
+        <anchorOffset>
+            0.000000 0.251465 -0.434355
+        </anchorOffset>
+        <axis>
+            0.000000 -0.000000 1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard1">
+        <xyz>
+            0.196359 3.107985 2.317605
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard1_geom_0">
+            <xyz>
+                -0.145481 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.615870 0.876090
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.615870 0.876090
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard1_geom_1">
+            <xyz>
+                0.000000 -0.297935 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.310961 0.020000 0.876090
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.310961 0.020000 0.876090
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard1_geom_2">
+            <xyz>
+                0.000000 0.297935 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.310961 0.020000 0.876090
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.310961 0.020000 0.876090
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard1_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.428045
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.310961 0.615870 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.310961 0.615870 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard1_geom_4">
+            <xyz>
+                0.000000 0.000000 0.428045
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.310961 0.615870 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.310961 0.615870 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door3">
+        <xyz>
+            0.351840 3.107985 2.317605
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door3_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.615870 0.876090
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.615870 0.876090
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17001">
+        <xyz>
+            0.392522 3.280553 1.926827
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17001_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.129304
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.129304
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17001_fixed_joint">
+        <body1>
+            handle17001
+        </body1>
+        <body2>
+            door3
+        </body2>
+        <anchor>
+            handle17001
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door3_hinge_joint">
+        <body1>
+            door3
+        </body1>
+        <body2>
+            cupboard1
+        </body2>
+        <anchor>
+            door3
+        </anchor>
+        <anchorOffset>
+            0.000000 -0.307935 -0.438045
+        </anchorOffset>
+        <axis>
+            0.000000 0.000000 -1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard2">
+        <xyz>
+            0.199603 2.554245 2.318520
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard2_geom_0">
+            <xyz>
+                -0.148724 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.516610 0.873800
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.516610 0.873800
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard2_geom_1">
+            <xyz>
+                0.000000 -0.248305 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.317448 0.020000 0.873800
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.317448 0.020000 0.873800
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard2_geom_2">
+            <xyz>
+                0.000000 0.248305 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.317448 0.020000 0.873800
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.317448 0.020000 0.873800
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard2_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.426900
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.317448 0.516610 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.317448 0.516610 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard2_geom_4">
+            <xyz>
+                0.000000 0.000000 0.426900
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.317448 0.516610 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.317448 0.516610 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door4">
+        <xyz>
+            0.358327 2.554245 2.318520
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door4_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.516610 0.873800
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.516610 0.873800
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17002">
+        <xyz>
+            0.397867 2.675619 1.930719
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17002_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.014385 0.140248
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.014385 0.014385 0.140248
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17002_fixed_joint">
+        <body1>
+            handle17002
+        </body1>
+        <body2>
+            door4
+        </body2>
+        <anchor>
+            handle17002
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door4_hinge_joint">
+        <body1>
+            door4
+        </body1>
+        <body2>
+            cupboard2
+        </body2>
+        <anchor>
+            door4
+        </anchor>
+        <anchorOffset>
+            0.000000 -0.258305 -0.436900
+        </anchorOffset>
+        <axis>
+            -0.000000 0.000000 -1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard3">
+        <xyz>
+            0.203769 1.988880 2.467985
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard3_geom_0">
+            <xyz>
+                -0.152891 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.617140 0.586910
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.617140 0.586910
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard3_geom_1">
+            <xyz>
+                0.000000 -0.298570 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.325781 0.020000 0.586910
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.325781 0.020000 0.586910
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard3_geom_2">
+            <xyz>
+                0.000000 0.298570 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.325781 0.020000 0.586910
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.325781 0.020000 0.586910
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard3_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.283455
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.325781 0.617140 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.325781 0.617140 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard3_geom_4">
+            <xyz>
+                0.000000 0.000000 0.283455
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.325781 0.617140 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.325781 0.617140 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door5">
+        <xyz>
+            0.366660 1.988880 2.467985
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door5_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.617140 0.586910
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.617140 0.586910
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17003">
+        <xyz>
+            0.413264 2.171783 2.227749
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17003_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.129330
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.129330
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17003_fixed_joint">
+        <body1>
+            handle17003
+        </body1>
+        <body2>
+            door5
+        </body2>
+        <anchor>
+            handle17003
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door5_hinge_joint">
+        <body1>
+            door5
+        </body1>
+        <body2>
+            cupboard3
+        </body2>
+        <anchor>
+            door5
+        </anchor>
+        <anchorOffset>
+            0.000000 -0.308570 -0.293455
+        </anchorOffset>
+        <axis>
+            0.000000 -0.000000 -1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard4">
+        <xyz>
+            0.325862 1.377730 0.913045
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard4_geom_0">
+            <xyz>
+                -0.274983 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.603840 1.174730
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.603840 1.174730
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard4_geom_1">
+            <xyz>
+                0.000000 -0.291920 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.020000 1.174730
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.020000 1.174730
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard4_geom_2">
+            <xyz>
+                0.000000 0.291920 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.020000 1.174730
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.020000 1.174730
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard4_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.577365
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.603840 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.603840 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard4_geom_4">
+            <xyz>
+                0.000000 0.000000 0.577365
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.603840 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.603840 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door6">
+        <xyz>
+            0.610845 1.377730 0.913045
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door6_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.603840 1.174730
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.603840 1.174730
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17006">
+        <xyz>
+            0.656193 1.568956 0.996140
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17006_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.143493
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.143493
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17006_fixed_joint">
+        <body1>
+            handle17006
+        </body1>
+        <body2>
+            door6
+        </body2>
+        <anchor>
+            handle17006
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door6_hinge_joint">
+        <body1>
+            door6
+        </body1>
+        <body2>
+            cupboard4
+        </body2>
+        <anchor>
+            door6
+        </anchor>
+        <anchorOffset>
+            0.000000 -0.301920 -0.587365
+        </anchorOffset>
+        <axis>
+            0.000000 -0.000000 -1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard5">
+        <xyz>
+            0.325862 1.377730 1.722500
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard5_geom_0">
+            <xyz>
+                -0.274983 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.603840 0.444180
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.603840 0.444180
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard5_geom_1">
+            <xyz>
+                0.000000 -0.291920 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.020000 0.444180
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.020000 0.444180
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard5_geom_2">
+            <xyz>
+                0.000000 0.291920 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.020000 0.444180
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.020000 0.444180
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard5_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.212090
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.603840 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.603840 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard5_geom_4">
+            <xyz>
+                0.000000 0.000000 0.212090
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.603840 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.603840 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door7">
+        <xyz>
+            0.610845 1.377730 1.722500
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door7_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.603840 0.444180
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.603840 0.444180
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17005">
+        <xyz>
+            0.649654 1.572646 1.558293
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17005_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.136508
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.136508
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17005_fixed_joint">
+        <body1>
+            handle17005
+        </body1>
+        <body2>
+            door7
+        </body2>
+        <anchor>
+            handle17005
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door7_hinge_joint">
+        <body1>
+            door7
+        </body1>
+        <body2>
+            cupboard5
+        </body2>
+        <anchor>
+            door7
+        </anchor>
+        <anchorOffset>
+            0.000000 -0.301920 -0.222090
+        </anchorOffset>
+        <axis>
+            0.000000 -0.000000 -1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard6">
+        <xyz>
+            0.325862 1.377730 2.087040
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard6_geom_0">
+            <xyz>
+                -0.274983 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.603840 0.284900
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.603840 0.284900
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard6_geom_1">
+            <xyz>
+                0.000000 -0.291920 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.020000 0.284900
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.020000 0.284900
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard6_geom_2">
+            <xyz>
+                0.000000 0.291920 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.020000 0.284900
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.020000 0.284900
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard6_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.132450
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.603840 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.603840 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard6_geom_4">
+            <xyz>
+                0.000000 0.000000 0.132450
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.569966 0.603840 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.569966 0.603840 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door8">
+        <xyz>
+            0.610845 1.377730 2.087040
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door8_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.603840 0.284900
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.603840 0.284900
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17004">
+        <xyz>
+            0.650482 1.385086 1.985998
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17004_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.134470
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.134470
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17004_fixed_joint">
+        <body1>
+            handle17004
+        </body1>
+        <body2>
+            door8
+        </body2>
+        <anchor>
+            handle17004
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door8_hinge_joint">
+        <body1>
+            door8
+        </body1>
+        <body2>
+            cupboard6
+        </body2>
+        <anchor>
+            door8
+        </anchor>
+        <anchorOffset>
+            0.000000 0.301920 0.142450
+        </anchorOffset>
+        <axis>
+            0.000000 -1.000000 -0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard7">
+        <xyz>
+            0.318645 3.634480 0.688794
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard7_geom_0">
+            <xyz>
+                -0.267766 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.520680 0.737592
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.520680 0.737592
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard7_geom_1">
+            <xyz>
+                0.000000 -0.250340 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.555532 0.020000 0.737592
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.555532 0.020000 0.737592
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard7_geom_2">
+            <xyz>
+                0.000000 0.250340 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.555532 0.020000 0.737592
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.555532 0.020000 0.737592
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard7_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.358796
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.555532 0.520680 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.555532 0.520680 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard7_geom_4">
+            <xyz>
+                0.000000 0.000000 0.358796
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.555532 0.520680 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.555532 0.520680 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door10">
+        <xyz>
+            0.596411 3.634480 0.688794
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door10_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.520680 0.737592
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.520680 0.737592
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17011">
+        <xyz>
+            0.630039 3.484957 0.841594
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17011_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.006163 0.137719
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.006163 0.006163 0.137719
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17011_fixed_joint">
+        <body1>
+            handle17011
+        </body1>
+        <body2>
+            door10
+        </body2>
+        <anchor>
+            handle17011
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door10_hinge_joint">
+        <body1>
+            door10
+        </body1>
+        <body2>
+            cupboard7
+        </body2>
+        <anchor>
+            door10
+        </anchor>
+        <anchorOffset>
+            0.000000 0.260340 -0.368796
+        </anchorOffset>
+        <axis>
+            0.000000 0.000000 1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard8">
+        <xyz>
+            0.322965 2.530835 0.611803
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="cupboard8_geom_0">
+            <xyz>
+                -0.272086 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.519370 0.570601
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.519370 0.570601
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard8_geom_1">
+            <xyz>
+                0.000000 -0.249685 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.564172 0.020000 0.570601
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.564172 0.020000 0.570601
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard8_geom_2">
+            <xyz>
+                0.000000 0.249685 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.564172 0.020000 0.570601
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.564172 0.020000 0.570601
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard8_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.275301
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.564172 0.519370 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.564172 0.519370 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard8_geom_4">
+            <xyz>
+                0.000000 0.000000 0.275301
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.564172 0.519370 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.564172 0.519370 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door12">
+        <xyz>
+            0.605051 2.530835 0.611803
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door12_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.519370 0.570601
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.519370 0.570601
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17013">
+        <xyz>
+            0.644556 2.660908 0.848012
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17013_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.136843
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.136843
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17013_fixed_joint">
+        <body1>
+            handle17013
+        </body1>
+        <body2>
+            door12
+        </body2>
+        <anchor>
+            handle17013
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door12_hinge_joint">
+        <body1>
+            door12
+        </body1>
+        <body2>
+            cupboard8
+        </body2>
+        <anchor>
+            door12
+        </anchor>
+        <anchorOffset>
+            0.000000 -0.259685 -0.285300
+        </anchorOffset>
+        <axis>
+            0.000000 -0.000000 -1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="cupboard9">
+        <xyz>
+            2.995925 0.652458 0.592289
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="cupboard9_geom_0">
+            <xyz>
+                -0.541832 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.427770 0.359891
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.427770 0.359891
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard9_geom_1">
+            <xyz>
+                0.000000 -0.203885 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.103664 0.020000 0.359891
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.103664 0.020000 0.359891
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard9_geom_2">
+            <xyz>
+                0.000000 0.203885 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.103664 0.020000 0.359891
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.103664 0.020000 0.359891
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard9_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.169945
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.103664 0.427770 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.103664 0.427770 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="cupboard9_geom_4">
+            <xyz>
+                0.000000 0.000000 0.169945
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.103664 0.427770 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.103664 0.427770 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door21">
+        <xyz>
+            2.995925 1.204290 0.592289
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="door21_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.427770 0.359891
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.427770 0.359891
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17018">
+        <xyz>
+            2.996391 1.236096 0.574790
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:cylinder name="handle17018_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.008692 0.006261
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.008692 0.008692 0.006261
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17018_fixed_joint">
+        <body1>
+            handle17018
+        </body1>
+        <body2>
+            door21
+        </body2>
+        <anchor>
+            handle17018
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door21_hinge_joint">
+        <body1>
+            door21
+        </body1>
+        <body2>
+            cupboard9
+        </body2>
+        <anchor>
+            door21
+        </anchor>
+        <anchorOffset>
+            0.000000 0.213885 -0.179945
+        </anchorOffset>
+        <axis>
+            -0.000000 0.000000 1.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="dishwasher0">
+        <xyz>
+            0.319757 3.079585 0.693498
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="dishwasher0_geom_0">
+            <xyz>
+                -0.268878 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.612250 0.742383
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.612250 0.742383
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="dishwasher0_geom_1">
+            <xyz>
+                0.000000 -0.296125 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.557756 0.020000 0.742383
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.557756 0.020000 0.742383
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="dishwasher0_geom_2">
+            <xyz>
+                0.000000 0.296125 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.557756 0.020000 0.742383
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.557756 0.020000 0.742383
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="dishwasher0_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.361191
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.557756 0.612250 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.557756 0.612250 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="dishwasher0_geom_4">
+            <xyz>
+                0.000000 0.000000 0.361191
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.557756 0.612250 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.557756 0.612250 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door11">
+        <xyz>
+            0.598635 3.079585 0.693498
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door11_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.612250 0.742383
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.612250 0.742383
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="knob18001">
+        <xyz>
+            0.623635 2.879967 0.966022
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="knob18001_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 90.000000 0.000000
+            </rpy>
+            <size>
+                0.023928 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.023928 0.023928 0.030000
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Red
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="knob18001_fixed_joint">
+        <body1>
+            knob18001
+        </body1>
+        <body2>
+            door11
+        </body2>
+        <anchor>
+            knob18001
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door11_hinge_joint">
+        <body1>
+            door11
+        </body1>
+        <body2>
+            dishwasher0
+        </body2>
+        <anchor>
+            door11
+        </anchor>
+        <anchorOffset>
+            0.000000 -0.306125 -0.371191
+        </anchorOffset>
+        <axis>
+            0.000000 1.000000 -0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <body:box name="drawer0_drawer">
+        <xyz>
+            0.322965 2.530835 0.983752
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="drawer0_drawer_geom_0">
+            <xyz>
+                -0.252086 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.479370 0.133296
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.479370 0.133296
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer0_drawer_geom_1">
+            <xyz>
+                0.272086 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.479370 0.133296
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.479370 0.133296
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer0_drawer_geom_2">
+            <xyz>
+                0.000000 0.000000 -0.056648
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.524172 0.479370 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.524172 0.479370 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer0_drawer_geom_3">
+            <xyz>
+                0.000000 -0.229685 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.524172 0.020000 0.133296
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.524172 0.020000 0.133296
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer0_drawer_geom_4">
+            <xyz>
+                0.000000 0.229685 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.524172 0.020000 0.133296
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.524172 0.020000 0.133296
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="drawer0">
+        <xyz>
+            0.322965 2.530835 0.983752
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="drawer0_geom_0">
+            <xyz>
+                -0.272086 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.519370 0.173296
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.519370 0.173296
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer0_geom_1">
+            <xyz>
+                0.000000 -0.249685 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.564172 0.020000 0.173296
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.564172 0.020000 0.173296
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer0_geom_2">
+            <xyz>
+                0.000000 0.249685 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.564172 0.020000 0.173296
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.564172 0.020000 0.173296
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer0_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.076648
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.564172 0.519370 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.564172 0.519370 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer0_geom_4">
+            <xyz>
+                0.000000 0.000000 0.076648
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.564172 0.519370 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.564172 0.519370 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door13">
+        <xyz>
+            0.605051 2.530835 0.983752
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="door13_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.519370 0.173296
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.519370 0.173296
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17012">
+        <xyz>
+            0.650903 2.524708 0.995340
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17012_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.136705
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.136705
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17012_fixed_joint">
+        <body1>
+            handle17012
+        </body1>
+        <body2>
+            door13
+        </body2>
+        <anchor>
+            handle17012
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door13_fixed_joint">
+        <body1>
+            door13
+        </body1>
+        <body2>
+            drawer0_drawer
+        </body2>
+        <anchor>
+            door13
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:slider name="drawer0_drawer_slider_joint">
+        <body1>
+            drawer0_drawer
+        </body1>
+        <body2>
+            drawer0
+        </body2>
+        <anchor>
+            drawer0_drawer
+        </anchor>
+        <axis>
+            1.000000 0.000000 0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0.45133768
+        </highStop>
+    </joint:slider>
+    <body:box name="drawer1_drawer">
+        <xyz>
+            3.880370 4.508890 0.248776
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="drawer1_drawer_geom_0">
+            <xyz>
+                -0.447180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.397540 0.067164
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.397540 0.067164
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer1_drawer_geom_1">
+            <xyz>
+                0.467180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.397540 0.067164
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.397540 0.067164
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer1_drawer_geom_2">
+            <xyz>
+                0.000000 0.000000 -0.023582
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.397540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.397540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer1_drawer_geom_3">
+            <xyz>
+                0.000000 -0.188770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.020000 0.067164
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.020000 0.067164
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer1_drawer_geom_4">
+            <xyz>
+                0.000000 0.188770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.020000 0.067164
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.020000 0.067164
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="drawer1">
+        <xyz>
+            3.880370 4.508890 0.248776
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="drawer1_geom_0">
+            <xyz>
+                -0.467180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.437540 0.107164
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.437540 0.107164
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer1_geom_1">
+            <xyz>
+                0.000000 -0.208770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.020000 0.107164
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.020000 0.107164
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer1_geom_2">
+            <xyz>
+                0.000000 0.208770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.020000 0.107164
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.020000 0.107164
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer1_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.043582
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.437540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.437540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer1_geom_4">
+            <xyz>
+                0.000000 0.000000 0.043582
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.437540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.437540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door14">
+        <xyz>
+            3.880370 4.031710 0.248776
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="door14_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.437540 0.107164
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.437540 0.107164
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17010">
+        <xyz>
+            3.871381 4.037507 0.306888
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:cylinder name="handle17010_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.002568
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.002568
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17010_fixed_joint">
+        <body1>
+            handle17010
+        </body1>
+        <body2>
+            door14
+        </body2>
+        <anchor>
+            handle17010
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door14_fixed_joint">
+        <body1>
+            door14
+        </body1>
+        <body2>
+            drawer1_drawer
+        </body2>
+        <anchor>
+            door14
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:slider name="drawer1_drawer_slider_joint">
+        <body1>
+            drawer1_drawer
+        </body1>
+        <body2>
+            drawer1
+        </body2>
+        <anchor>
+            drawer1_drawer
+        </anchor>
+        <axis>
+            0.000000 -1.000000 0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0.763488
+        </highStop>
+    </joint:slider>
+    <body:box name="drawer2_drawer">
+        <xyz>
+            3.880370 4.508890 0.382986
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="drawer2_drawer_geom_0">
+            <xyz>
+                -0.447180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.397540 0.121256
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.397540 0.121256
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer2_drawer_geom_1">
+            <xyz>
+                0.467180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.397540 0.121256
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.397540 0.121256
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer2_drawer_geom_2">
+            <xyz>
+                0.000000 0.000000 -0.050628
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.397540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.397540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer2_drawer_geom_3">
+            <xyz>
+                0.000000 -0.188770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.020000 0.121256
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.020000 0.121256
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer2_drawer_geom_4">
+            <xyz>
+                0.000000 0.188770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.020000 0.121256
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.020000 0.121256
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="drawer2">
+        <xyz>
+            3.880370 4.508890 0.382986
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="drawer2_geom_0">
+            <xyz>
+                -0.467180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.437540 0.161256
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.437540 0.161256
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer2_geom_1">
+            <xyz>
+                0.000000 -0.208770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.020000 0.161256
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.020000 0.161256
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer2_geom_2">
+            <xyz>
+                0.000000 0.208770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.020000 0.161256
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.020000 0.161256
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer2_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.070628
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.437540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.437540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer2_geom_4">
+            <xyz>
+                0.000000 0.000000 0.070628
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.437540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.437540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door15">
+        <xyz>
+            3.880370 4.031710 0.382986
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="door15_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.437540 0.161256
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.437540 0.161256
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17009">
+        <xyz>
+            3.866661 4.035887 0.455285
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:cylinder name="handle17009_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005724 0.001228
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005724 0.005724 0.001228
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17009_fixed_joint">
+        <body1>
+            handle17009
+        </body1>
+        <body2>
+            door15
+        </body2>
+        <anchor>
+            handle17009
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door15_fixed_joint">
+        <body1>
+            door15
+        </body1>
+        <body2>
+            drawer2_drawer
+        </body2>
+        <anchor>
+            door15
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:slider name="drawer2_drawer_slider_joint">
+        <body1>
+            drawer2_drawer
+        </body1>
+        <body2>
+            drawer2
+        </body2>
+        <anchor>
+            drawer2_drawer
+        </anchor>
+        <axis>
+            0.000000 -1.000000 0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0.763488
+        </highStop>
+    </joint:slider>
+    <body:box name="drawer3_drawer">
+        <xyz>
+            3.880370 4.508890 0.540632
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="drawer3_drawer_geom_0">
+            <xyz>
+                -0.447180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.397540 0.114037
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.397540 0.114037
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer3_drawer_geom_1">
+            <xyz>
+                0.467180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.397540 0.114037
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.397540 0.114037
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer3_drawer_geom_2">
+            <xyz>
+                0.000000 0.000000 -0.047019
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.397540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.397540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer3_drawer_geom_3">
+            <xyz>
+                0.000000 -0.188770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.020000 0.114037
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.020000 0.114037
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer3_drawer_geom_4">
+            <xyz>
+                0.000000 0.188770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.914360 0.020000 0.114037
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.914360 0.020000 0.114037
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="drawer3">
+        <xyz>
+            3.880370 4.508890 0.540632
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="drawer3_geom_0">
+            <xyz>
+                -0.467180 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.437540 0.154037
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.437540 0.154037
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer3_geom_1">
+            <xyz>
+                0.000000 -0.208770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.020000 0.154037
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.020000 0.154037
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer3_geom_2">
+            <xyz>
+                0.000000 0.208770 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.020000 0.154037
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.020000 0.154037
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer3_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.067019
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.437540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.437540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer3_geom_4">
+            <xyz>
+                0.000000 0.000000 0.067019
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.954360 0.437540 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.954360 0.437540 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door16">
+        <xyz>
+            3.880370 4.031710 0.540632
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="door16_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.437540 0.154037
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.437540 0.154037
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17008">
+        <xyz>
+            3.871421 4.048087 0.553089
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:cylinder name="handle17008_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.001774
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.001774
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17008_fixed_joint">
+        <body1>
+            handle17008
+        </body1>
+        <body2>
+            door16
+        </body2>
+        <anchor>
+            handle17008
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door16_fixed_joint">
+        <body1>
+            door16
+        </body1>
+        <body2>
+            drawer3_drawer
+        </body2>
+        <anchor>
+            door16
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:slider name="drawer3_drawer_slider_joint">
+        <body1>
+            drawer3_drawer
+        </body1>
+        <body2>
+            drawer3
+        </body2>
+        <anchor>
+            drawer3_drawer
+        </anchor>
+        <axis>
+            0.000000 -1.000000 0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0.763488
+        </highStop>
+    </joint:slider>
+    <body:box name="drawer4_drawer">
+        <xyz>
+            4.095035 0.637468 0.371527
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="drawer4_drawer_geom_0">
+            <xyz>
+                -0.506842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.410890 0.103560
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.410890 0.103560
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer4_drawer_geom_1">
+            <xyz>
+                0.526842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.410890 0.103560
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.410890 0.103560
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer4_drawer_geom_2">
+            <xyz>
+                0.000000 0.000000 -0.041780
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.410890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.410890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer4_drawer_geom_3">
+            <xyz>
+                0.000000 -0.195445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.020000 0.103560
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.020000 0.103560
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer4_drawer_geom_4">
+            <xyz>
+                0.000000 0.195445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.020000 0.103560
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.020000 0.103560
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="drawer4">
+        <xyz>
+            4.095035 0.637468 0.371527
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="drawer4_geom_0">
+            <xyz>
+                -0.526842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.450890 0.143560
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.450890 0.143560
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer4_geom_1">
+            <xyz>
+                0.000000 -0.215445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.020000 0.143560
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.020000 0.143560
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer4_geom_2">
+            <xyz>
+                0.000000 0.215445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.020000 0.143560
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.020000 0.143560
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer4_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.061780
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.450890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.450890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer4_geom_4">
+            <xyz>
+                0.000000 0.000000 0.061780
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.450890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.450890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door17">
+        <xyz>
+            4.095035 1.174310 0.371527
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="door17_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.450890 0.143560
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.450890 0.143560
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17017">
+        <xyz>
+            4.108970 1.216209 0.445810
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:cylinder name="handle17017_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.000672
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.000672
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17017_fixed_joint">
+        <body1>
+            handle17017
+        </body1>
+        <body2>
+            door17
+        </body2>
+        <anchor>
+            handle17017
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door17_fixed_joint">
+        <body1>
+            door17
+        </body1>
+        <body2>
+            drawer4_drawer
+        </body2>
+        <anchor>
+            door17
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:slider name="drawer4_drawer_slider_joint">
+        <body1>
+            drawer4_drawer
+        </body1>
+        <body2>
+            drawer4
+        </body2>
+        <anchor>
+            drawer4_drawer
+        </anchor>
+        <axis>
+            0.000000 1.000000 0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0.8589472
+        </highStop>
+    </joint:slider>
+    <body:box name="drawer5_drawer">
+        <xyz>
+            4.095035 0.637468 0.515426
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="drawer5_drawer_geom_0">
+            <xyz>
+                -0.506842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.410890 0.104238
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.410890 0.104238
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer5_drawer_geom_1">
+            <xyz>
+                0.526842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.410890 0.104238
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.410890 0.104238
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer5_drawer_geom_2">
+            <xyz>
+                0.000000 0.000000 -0.042119
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.410890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.410890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer5_drawer_geom_3">
+            <xyz>
+                0.000000 -0.195445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.020000 0.104238
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.020000 0.104238
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer5_drawer_geom_4">
+            <xyz>
+                0.000000 0.195445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.020000 0.104238
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.020000 0.104238
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="drawer5">
+        <xyz>
+            4.095035 0.637468 0.515426
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="drawer5_geom_0">
+            <xyz>
+                -0.526842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.450890 0.144238
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.450890 0.144238
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer5_geom_1">
+            <xyz>
+                0.000000 -0.215445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.020000 0.144238
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.020000 0.144238
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer5_geom_2">
+            <xyz>
+                0.000000 0.215445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.020000 0.144238
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.020000 0.144238
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer5_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.062119
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.450890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.450890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer5_geom_4">
+            <xyz>
+                0.000000 0.000000 0.062119
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.450890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.450890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door18">
+        <xyz>
+            4.095035 1.174310 0.515426
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="door18_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.450890 0.144238
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.450890 0.144238
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17016">
+        <xyz>
+            4.102310 1.219639 0.589255
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:cylinder name="handle17016_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.007706 0.002993
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.007706 0.007706 0.002993
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17016_fixed_joint">
+        <body1>
+            handle17016
+        </body1>
+        <body2>
+            door18
+        </body2>
+        <anchor>
+            handle17016
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door18_fixed_joint">
+        <body1>
+            door18
+        </body1>
+        <body2>
+            drawer5_drawer
+        </body2>
+        <anchor>
+            door18
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:slider name="drawer5_drawer_slider_joint">
+        <body1>
+            drawer5_drawer
+        </body1>
+        <body2>
+            drawer5
+        </body2>
+        <anchor>
+            drawer5_drawer
+        </anchor>
+        <axis>
+            0.000000 1.000000 0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0.8589472
+        </highStop>
+    </joint:slider>
+    <body:box name="drawer6_drawer">
+        <xyz>
+            4.095035 0.637468 0.688536
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="drawer6_drawer_geom_0">
+            <xyz>
+                -0.506842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.410890 0.161982
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.410890 0.161982
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer6_drawer_geom_1">
+            <xyz>
+                0.526842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.410890 0.161982
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.410890 0.161982
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer6_drawer_geom_2">
+            <xyz>
+                0.000000 0.000000 -0.070991
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.410890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.410890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer6_drawer_geom_3">
+            <xyz>
+                0.000000 -0.195445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.020000 0.161982
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.020000 0.161982
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer6_drawer_geom_4">
+            <xyz>
+                0.000000 0.195445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.033684 0.020000 0.161982
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.033684 0.020000 0.161982
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="drawer6">
+        <xyz>
+            4.095035 0.637468 0.688536
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="drawer6_geom_0">
+            <xyz>
+                -0.526842 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.450890 0.201982
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.450890 0.201982
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer6_geom_1">
+            <xyz>
+                0.000000 -0.215445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.020000 0.201982
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.020000 0.201982
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer6_geom_2">
+            <xyz>
+                0.000000 0.215445 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.020000 0.201982
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.020000 0.201982
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer6_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.090991
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.450890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.450890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer6_geom_4">
+            <xyz>
+                0.000000 0.000000 0.090991
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.073684 0.450890 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.073684 0.450890 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door19">
+        <xyz>
+            4.095035 1.174310 0.688536
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="door19_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.450890 0.201982
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.450890 0.201982
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17015">
+        <xyz>
+            4.099100 1.221209 0.739724
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:cylinder name="handle17015_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.009809 0.006257
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.009809 0.009809 0.006257
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17015_fixed_joint">
+        <body1>
+            handle17015
+        </body1>
+        <body2>
+            door19
+        </body2>
+        <anchor>
+            handle17015
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door19_fixed_joint">
+        <body1>
+            door19
+        </body1>
+        <body2>
+            drawer6_drawer
+        </body2>
+        <anchor>
+            door19
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:slider name="drawer6_drawer_slider_joint">
+        <body1>
+            drawer6_drawer
+        </body1>
+        <body2>
+            drawer6
+        </body2>
+        <anchor>
+            drawer6_drawer
+        </anchor>
+        <axis>
+            0.000000 1.000000 0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0.8589472
+        </highStop>
+    </joint:slider>
+    <body:box name="drawer7_drawer">
+        <xyz>
+            2.995925 0.652458 0.349741
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="drawer7_drawer_geom_0">
+            <xyz>
+                -0.521832 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.387770 0.085206
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.387770 0.085206
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer7_drawer_geom_1">
+            <xyz>
+                0.541832 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.387770 0.085206
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.387770 0.085206
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer7_drawer_geom_2">
+            <xyz>
+                0.000000 0.000000 -0.032603
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.063664 0.387770 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.063664 0.387770 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer7_drawer_geom_3">
+            <xyz>
+                0.000000 -0.183885 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.063664 0.020000 0.085206
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.063664 0.020000 0.085206
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer7_drawer_geom_4">
+            <xyz>
+                0.000000 0.183885 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.063664 0.020000 0.085206
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.063664 0.020000 0.085206
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="drawer7">
+        <xyz>
+            2.995925 0.652458 0.349741
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="drawer7_geom_0">
+            <xyz>
+                -0.541832 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.427770 0.125206
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.427770 0.125206
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer7_geom_1">
+            <xyz>
+                0.000000 -0.203885 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.103664 0.020000 0.125206
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.103664 0.020000 0.125206
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer7_geom_2">
+            <xyz>
+                0.000000 0.203885 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.103664 0.020000 0.125206
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.103664 0.020000 0.125206
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer7_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.052603
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.103664 0.427770 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.103664 0.427770 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="drawer7_geom_4">
+            <xyz>
+                0.000000 0.000000 0.052603
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                1.103664 0.427770 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    1.103664 0.427770 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door20">
+        <xyz>
+            2.995925 1.204290 0.349741
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="door20_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.427770 0.125206
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.427770 0.125206
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17019">
+        <xyz>
+            2.998351 1.231066 0.419090
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:cylinder name="handle17019_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.006754 0.004416
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.006754 0.006754 0.004416
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17019_fixed_joint">
+        <body1>
+            handle17019
+        </body1>
+        <body2>
+            door20
+        </body2>
+        <anchor>
+            handle17019
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door20_fixed_joint">
+        <body1>
+            door20
+        </body1>
+        <body2>
+            drawer7_drawer
+        </body2>
+        <anchor>
+            door20
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:slider name="drawer7_drawer_slider_joint">
+        <body1>
+            drawer7_drawer
+        </body1>
+        <body2>
+            drawer7
+        </body2>
+        <anchor>
+            drawer7_drawer
+        </anchor>
+        <axis>
+            0.000000 1.000000 0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0.8829312
+        </highStop>
+    </joint:slider>
+    <body:box name="max_X_0">
+        <xyz>
+            7.362900 2.543348 1.826539
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 180.000000
+        </rpy>
+        <geom:box name="max_X_0_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 4.885444 3.316395
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 4.885444 3.316395
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="max_Y_0">
+        <xyz>
+            3.701890 4.986070 1.826539
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 -90.000000
+        </rpy>
+        <geom:box name="max_Y_0_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 7.322021 3.316395
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 7.322021 3.316395
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="min_X_0">
+        <xyz>
+            0.040879 2.543348 1.826539
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="min_X_0_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 4.885444 3.316395
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 4.885444 3.316395
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="min_Y_0">
+        <xyz>
+            3.701890 0.100626 1.826539
+        </xyz>
+        <rpy>
+            0.000000 0.000000 90.000000
+        </rpy>
+        <geom:box name="min_Y_0_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 7.322021 3.316395
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 7.322021 3.316395
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="oven0">
+        <xyz>
+            0.329182 1.983585 0.754455
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:box name="oven0_geom_0">
+            <xyz>
+                -0.278303 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.611930 0.624389
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.611930 0.624389
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="oven0_geom_1">
+            <xyz>
+                0.000000 -0.295965 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.576606 0.020000 0.624389
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.576606 0.020000 0.624389
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="oven0_geom_2">
+            <xyz>
+                0.000000 0.295965 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.576606 0.020000 0.624389
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.576606 0.020000 0.624389
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="oven0_geom_3">
+            <xyz>
+                0.000000 0.000000 -0.302194
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.576606 0.611930 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.576606 0.611930 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+        <geom:box name="oven0_geom_4">
+            <xyz>
+                0.000000 0.000000 0.302194
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.576606 0.611930 0.020000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.576606 0.611930 0.020000
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/KitchenBoard
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="door9">
+        <xyz>
+            0.617485 1.983585 0.754455
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+
+        <dampingFactor>0.1</dampingFactor> 
+        <massMatrix>true</massMatrix> 
+        <mass>1.0</mass>
+        <ixx>0.1</ixx>
+        <ixy>0.0</ixy>
+        <ixz>0.0</ixz>
+        <iyy>1.0</iyy>
+        <iyz>0.0</iyz>
+        <izz>0.1</izz>
+        <cx>0.0</cx>
+        <cy>0.0</cy>
+        <cz>0.0</cz>
+
+        <geom:box name="door9_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.020000 0.611930 0.624389
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.020000 0.611930 0.624389
+                </size>
+                <mesh>
+                    unit_box
+                </mesh>
+                <material>
+                    Ias/Wall
+                </material>
+            </visual>
+        </geom:box>
+    </body:box>
+    <body:box name="handle17014">
+        <xyz>
+            0.662018 1.969315 0.884966
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="handle17014_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                90.000000 -0.000000 0.000000
+            </rpy>
+            <size>
+                0.005000 0.399060
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.005000 0.005000 0.399060
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Green
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="handle17014_fixed_joint">
+        <body1>
+            handle17014
+        </body1>
+        <body2>
+            door9
+        </body2>
+        <anchor>
+            handle17014
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <body:box name="knob18002">
+        <xyz>
+            0.642485 2.188725 0.971488
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="knob18002_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 90.000000 0.000000
+            </rpy>
+            <size>
+                0.031671 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.031671 0.031671 0.030000
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Red
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="knob18002_fixed_joint">
+        <body1>
+            knob18002
+        </body1>
+        <body2>
+            door9
+        </body2>
+        <anchor>
+            knob18002
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <body:box name="knob18003">
+        <xyz>
+            0.642485 2.125125 0.972444
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="knob18003_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 90.000000 0.000000
+            </rpy>
+            <size>
+                0.026393 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.026393 0.026393 0.030000
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Red
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="knob18003_fixed_joint">
+        <body1>
+            knob18003
+        </body1>
+        <body2>
+            door9
+        </body2>
+        <anchor>
+            knob18003
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <body:box name="knob18004">
+        <xyz>
+            0.642485 2.063935 0.975585
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="knob18004_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 90.000000 0.000000
+            </rpy>
+            <size>
+                0.022148 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.022148 0.022148 0.030000
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Red
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="knob18004_fixed_joint">
+        <body1>
+            knob18004
+        </body1>
+        <body2>
+            door9
+        </body2>
+        <anchor>
+            knob18004
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <body:box name="knob18005">
+        <xyz>
+            0.642485 2.008475 0.968492
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="knob18005_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 90.000000 0.000000
+            </rpy>
+            <size>
+                0.031664 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.031664 0.031664 0.030000
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Red
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="knob18005_fixed_joint">
+        <body1>
+            knob18005
+        </body1>
+        <body2>
+            door9
+        </body2>
+        <anchor>
+            knob18005
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <body:box name="knob18006">
+        <xyz>
+            0.642485 1.898495 0.965650
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="knob18006_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 90.000000 0.000000
+            </rpy>
+            <size>
+                0.029488 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.029488 0.029488 0.030000
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Red
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="knob18006_fixed_joint">
+        <body1>
+            knob18006
+        </body1>
+        <body2>
+            door9
+        </body2>
+        <anchor>
+            knob18006
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <body:box name="knob18007">
+        <xyz>
+            0.642485 1.783285 0.970554
+        </xyz>
+        <rpy>
+            0.000000 -0.000000 0.000000
+        </rpy>
+        <geom:cylinder name="knob18007_geom">
+            <xyz>
+                0.000000 0.000000 0.000000
+            </xyz>
+            <rpy>
+                0.000000 90.000000 0.000000
+            </rpy>
+            <size>
+                0.033302 0.030000
+            </size>
+            <mass>
+                1.0
+            </mass>
+            <visual>
+                <size>
+                    0.033302 0.033302 0.030000
+                </size>
+                <mesh>
+                    unit_cylinder
+                </mesh>
+                <material>
+                    Gazebo/Red
+                </material>
+            </visual>
+        </geom:cylinder>
+    </body:box>
+    <joint:hinge name="knob18007_fixed_joint">
+        <body1>
+            knob18007
+        </body1>
+        <body2>
+            door9
+        </body2>
+        <anchor>
+            knob18007
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="door9_hinge_joint">
+        <body1>
+            door9
+        </body1>
+        <body2>
+            oven0
+        </body2>
+        <anchor>
+            door9
+        </anchor>
+        <anchorOffset>
+            0.000000 -0.305965 -0.312194
+        </anchorOffset>
+        <axis>
+            0.000000 1.000000 -0.000000
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            120
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="counter0_fixed_joint">
+        <body1>
+            counter0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            counter0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="table0_fixed_joint">
+        <body1>
+            table0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            table0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="closet0_fixed_joint">
+        <body1>
+            closet0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            closet0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard0_fixed_joint">
+        <body1>
+            cupboard0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard1_fixed_joint">
+        <body1>
+            cupboard1
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard1
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard2_fixed_joint">
+        <body1>
+            cupboard2
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard2
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard3_fixed_joint">
+        <body1>
+            cupboard3
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard3
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard4_fixed_joint">
+        <body1>
+            cupboard4
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard4
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard5_fixed_joint">
+        <body1>
+            cupboard5
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard5
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard6_fixed_joint">
+        <body1>
+            cupboard6
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard6
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard7_fixed_joint">
+        <body1>
+            cupboard7
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard7
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard8_fixed_joint">
+        <body1>
+            cupboard8
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard8
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="cupboard9_fixed_joint">
+        <body1>
+            cupboard9
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            cupboard9
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="dishwasher0_fixed_joint">
+        <body1>
+            dishwasher0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            dishwasher0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="drawer0_fixed_joint">
+        <body1>
+            drawer0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            drawer0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="drawer1_fixed_joint">
+        <body1>
+            drawer1
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            drawer1
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="drawer2_fixed_joint">
+        <body1>
+            drawer2
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            drawer2
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="drawer3_fixed_joint">
+        <body1>
+            drawer3
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            drawer3
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="drawer4_fixed_joint">
+        <body1>
+            drawer4
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            drawer4
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="drawer5_fixed_joint">
+        <body1>
+            drawer5
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            drawer5
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="drawer6_fixed_joint">
+        <body1>
+            drawer6
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            drawer6
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="drawer7_fixed_joint">
+        <body1>
+            drawer7
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            drawer7
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="max_X_0_fixed_joint">
+        <body1>
+            max_X_0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            max_X_0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="max_Y_0_fixed_joint">
+        <body1>
+            max_Y_0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            max_Y_0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="min_X_0_fixed_joint">
+        <body1>
+            min_X_0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            min_X_0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="min_Y_0_fixed_joint">
+        <body1>
+            min_Y_0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            min_Y_0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <joint:hinge name="oven0_fixed_joint">
+        <body1>
+            oven0
+        </body1>
+        <body2>
+            world
+        </body2>
+        <anchor>
+            oven0
+        </anchor>
+        <axis>
+            1 0 0
+        </axis>
+        <lowStop>
+            0
+        </lowStop>
+        <highStop>
+            0
+        </highStop>
+    </joint:hinge>
+    <controller:generic_actarray name="kitchen_objects_controller">
+        <interface:actarray name="kitchen_objects_controller_iface"/>
+        <alwaysOn>
+            true
+        </alwaysOn>
+        <joint force="20.0" gain="20.0" name="door0_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door1_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door2_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door3_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door4_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door5_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door6_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door7_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door8_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door10_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door12_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door21_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="door11_hinge_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="drawer0_drawer_slider_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="drawer1_drawer_slider_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="drawer2_drawer_slider_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="drawer3_drawer_slider_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="drawer4_drawer_slider_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="drawer5_drawer_slider_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="drawer6_drawer_slider_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="20.0" name="drawer7_drawer_slider_joint" tolerance="0.01"/>
+        <joint force="20.0" gain="10.0" name="door9_hinge_joint" tolerance="0.0"/>
+    </controller:generic_actarray>
+</model:physical>
+
+<model:physical name="coffee_cup_model">
+  <xyz> 2.800000 3.500000 0.365000  </xyz>
+  <rpy>   0.0    0.0    0.0</rpy>
+  <body:trimesh name="cup1_body">
+    <xyz>   0.0    0.0    0.009</xyz>
+    <rpy>  90.0    0.0   90.0</rpy>
+    <massMatrix>true</massMatrix> 
+    <mass>1.0</mass>
+    <ixx>0.01</ixx>
+    <ixy>0.00</ixy>
+    <ixz>0.00</ixz>
+    <iyy>0.01</iyy>
+    <iyz>0.00</iyz>
+    <izz>0.01</izz>
+    <cx>0.0</cx>
+    <cy>0.0</cy>
+    <cz>0.0</cz>
+    <dampingFactor>0.05</dampingFactor>
+    <geom:trimesh name="cup1_geom">
+      <laserRetro>2000.0</laserRetro>
+      <kp>100000000.0</kp>
+      <kd>1.0</kd>
+      <scale>0.1 0.1 0.1</scale>
+      <mesh>cup.mesh</mesh>
+
+      <visual>
+        <scale>0.1 0.1 0.1</scale>
+        <material>Gazebo/PioneerBody</material>
+        <mesh>cup.mesh</mesh>
+      </visual>
+    </geom:trimesh>
+  </body:trimesh>
+</model:physical>
+
+

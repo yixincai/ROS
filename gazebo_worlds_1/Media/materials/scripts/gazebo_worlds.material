@@ -1,0 +1,114 @@
+
+vertex_program GazeboWorlds/TexProjectionVP glsl
+{
+	source projector.vert
+
+  default_params
+  {
+    param_named_auto texProjMatrix texture_worldviewproj_matrix
+    param_named_auto worldMatrix world_matrix
+  }
+  
+}
+
+fragment_program GazeboWorlds/TexProjectionFP glsl
+{
+	source projector.frag
+
+  default_params
+  {
+    param_named_auto projMap worldviewproj_matrix
+  }
+  
+}
+
+material GazeboWorlds/StereoProjectionPattern
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture stereo_projection_pattern.jpg
+        tex_address_mode wrap
+      }
+    }
+  }
+}
+
+material GazeboWorlds/RGBNoise
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture rgbnoise.jpg
+      }
+    }
+  }
+}
+
+material GazeboWorlds/Face
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture face_texture.jpg
+      }
+    }
+  }
+}
+
+material GazeboWorlds/Face2
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture face2_texture.jpg
+      }
+    }
+  }
+}
+
+material Ias/Wall
+{
+  receive_shadows on
+
+	technique
+	{
+		pass
+		{
+			ambient 0.6 0.6 0.6 1.0
+            diffuse 0.625 0.625 0.625 1.0
+            specular 0.65 0.65 0.65 1
+            shading phong
+		}
+	}
+}
+
+material Ias/KitchenBoard
+{
+  receive_shadows on
+
+	technique
+	{
+		pass
+		{
+			ambient 0.65 0.65 0.65 1.0
+            diffuse 0.675 0.675 0.675 1.0
+            specular 0.7 0.7 0.7 1
+            shading phong
+		}
+	}
+}
+
+

@@ -1,0 +1,40 @@
+<robot name="object_model">
+  <link name="world"/>
+  <joint name="object_joint" type="floating" >
+    <!-- axis is in the parent link frame coordintates -->
+    <axis xyz="0 0 1" />
+    <parent link="world" />
+    <child link="object_link" />
+    <!-- initial pose of object joint/link in the parent frame coordiantes -->
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="object_link">
+    <inertial>
+      <mass value="1.0" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <!-- visual origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gazebo_worlds/Media/models/b21.mesh" />
+      </geometry>
+    </visual>
+    <collision>
+      <!-- collision origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://gazebo_worlds/Media/models/b21.mesh" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="object_link">
+    <material>b21.material</material>
+    <!--
+    <material>GazeboWorlds/StereoProjectionPattern</material>
+    -->
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+</robot>

@@ -1,0 +1,8 @@
+<launch>
+  <!-- send pipette urdf to param server -->
+  <param name="pipette_description" command="$(find xacro)/xacro.py $(find gazebo_worlds)/objects/pipette.urdf.xacro" />
+
+  <!-- push pipette_description to factory and spawn robot in gazebo -->
+  <node name="spawn_pipette" pkg="gazebo" type="spawn_model" args="-urdf -param pipette_description -z 1.0 -model pipette_model" respawn="false" output="screen" />
+</launch>
+
