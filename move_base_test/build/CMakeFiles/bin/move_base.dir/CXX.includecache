@@ -95,6 +95,8 @@ boost/thread.hpp
 -
 tf/transform_datatypes.h
 -
+nav_msgs/OccupancyGrid.h
+-
 
 /home/yixin/fuerte_workspace/sandbox/costmap_2d_1/include/costmap_2d/costmap_2d_ros.h
 XmlRpc.h
@@ -203,7 +205,7 @@ costmap_2d/cell_data.h
 -
 costmap_2d/cost_values.h
 -
-voxel_grid/voxel_grid.h
+/home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/include/voxel_grid/voxel_grid.h
 -
 costmap_2d/VoxelGrid.h
 -

@@ -1,7 +1,7 @@
 <launch>
 
   <!-- start up empty world -->
-  <include file="$(find gazebo_worlds)/launch/empty_world.launch"/>
+  <include file="$(find gazebo_worlds_1)/launch/empty_world.launch"/>
 
   <!-- start up robot -->
   <include file="$(find pr2_gazebo)/launch/pr2.launch"/>
@@ -10,7 +10,7 @@
   <node name="tuckarms" pkg="pr2_tuckarm" type="tuck_arms.py" args="b" output="screen" />
 
   <!-- load map -->
-  <node name="map_server" pkg="map_server_1" type="map_server" args="$(find pr2_2dnav_gazebo)/Media/aptbg.bmp 0.1" respawn="true" />
+  <node name="map_server" pkg="map_server_1" type="map_server" args="$(find pr2_2dnav_gazebo)/Media/mymap1.png 0.1" respawn="true" />
 
   <!-- nav-stack -->
   <include file="$(find pr2_2dnav_gazebo)/2dnav-stack-fake_localization.launch"/>
