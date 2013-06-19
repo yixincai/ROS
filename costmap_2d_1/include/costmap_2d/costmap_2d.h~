@@ -44,8 +44,6 @@
 #include <costmap_2d/cost_values.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <boost/thread.hpp>
-#include "nav_msgs/MapMetaData.h"
-#include "nav_msgs/GetMap.h"
 
 namespace costmap_2d {
   class Costmap2DConfig;
@@ -668,7 +666,6 @@ namespace costmap_2d {
       boost::recursive_mutex configuration_mutex_;
     public:
       bool is_global_map_;
-      nav_msgs::OccupancyGrid costmap_pub_1;
     protected:
       
       unsigned int size_x_;

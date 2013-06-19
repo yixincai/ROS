@@ -17,6 +17,7 @@
   <depend package="rospy" />
   <depend package="gazebo" />
   <depend package="tf" />
+  <depend package="move_base_msgs"/>
   <platform os="ubuntu" version="9.04"/>
   <platform os="ubuntu" version="9.10"/>
   <platform os="ubuntu" version="10.04"/>

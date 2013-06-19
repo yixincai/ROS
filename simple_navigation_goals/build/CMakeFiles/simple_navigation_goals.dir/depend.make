@@ -33,8 +33,16 @@ CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/f
 CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/actionlib_msgs/GoalStatusArray.h
 CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/Point.h
 CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/Pose.h
+CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/PoseArray.h
 CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/PoseStamped.h
+CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/PoseWithCovariance.h
+CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/PoseWithCovarianceStamped.h
 CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/Quaternion.h
+CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/Twist.h
+CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/TwistWithCovariance.h
+CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/geometry_msgs/Vector3.h
+CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/nav_msgs/MapMetaData.h
+CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/nav_msgs/Odometry.h
 CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/ros/advertise_options.h
 CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/ros/advertise_service_options.h
 CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.o: /opt/ros/fuerte/include/ros/assert.h

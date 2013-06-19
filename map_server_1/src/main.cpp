@@ -51,9 +51,11 @@ double origin[3];
 int negate;
 double occ_th, free_th;
 double gres;
+
 class MapServer
 {
   public:
+   
     /** Trivial constructor */
     MapServer(const std::string& fname, double res)
     {
@@ -133,6 +135,9 @@ class MapServer
         origin[0] = origin[1] = origin[2] = 0.0;
       }
 
+      
+      
+
       ROS_INFO("Loading map from image \"%s\"", mapfname.c_str());
       map_server::loadMapFromFile(&map_resp_,mapfname.c_str(),res,negate,occ_th,free_th, origin);
       map_resp_.map.info.map_load_time = ros::Time::now();
@@ -152,16 +157,36 @@ class MapServer
       metadata_pub.publish( meta_data_message_ );
       
       // Latched publisher for data
+      
+      mapsub=n.subscribe<nav_msgs::OccupancyGrid>("mymap",1,&MapServer::callback,this);
+      
       map_pub = n.advertise<nav_msgs::OccupancyGrid>("map", 1, true);
       map_pub.publish( map_resp_.map );
+      
+      
+
+   
+
+
     }
+   
+
+    
+	
+   
 
   private:
     ros::NodeHandle n;
     ros::Publisher map_pub;
     ros::Publisher metadata_pub;
     ros::ServiceServer service;
+    ros::Subscriber mapsub;
     bool deprecated;
+
+    void callback(const nav_msgs::OccupancyGridConstPtr& new_map){
+            map_resp_.map=*new_map;   
+            map_pub.publish( map_resp_.map );    
+    }
 
     /** Callback invoked when someone requests our service */
     bool mapCallback(nav_msgs::GetMap::Request  &req,
@@ -172,8 +197,7 @@ class MapServer
       // = operator is overloaded to make deep copy (tricky!)
       res = map_resp_;
       ROS_INFO("Sending map");
-      map_server::loadMapFromFile(&map_resp_,mapfname.c_str(),gres,negate,occ_th,free_th, origin);
-      map_pub.publish( map_resp_.map );
+     
       return true;
     }
 
@@ -194,6 +218,7 @@ class MapServer
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "map_server", ros::init_options::AnonymousName);
+
   if(argc != 3 && argc != 2)
   {
     ROS_ERROR("%s", USAGE);

@@ -45,6 +45,12 @@
 #include <gazebo_msgs/ModelState.h>
 #include <tf/transform_datatypes.h>
 
+#include <move_base_msgs/MoveBaseAction.h>
+#include <actionlib/client/simple_action_client.h>
+#include <geometry_msgs/PoseArray.h>
+#include <ros/time.h>
+#include "nav_msgs/MapMetaData.h"
+
 #define KEYCODE_A 0x61
 #define KEYCODE_D 0x64
 #define KEYCODE_S 0x73
@@ -62,10 +68,12 @@
 #define KEYCODE_E_CAP 0x45
 
 using namespace std;
+typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 
 double x_val = 0;
 double y_val = 0;
-double yaw_val = 0;
+double gaz_ori_x, gaz_ori_y, gaz_ori_z, gaz_ori_w;
+double rv_ori_x, rv_ori_y, rv_ori_z, rv_ori_w;
 double x_map = 0;
 double y_map = 0;
 
@@ -76,30 +84,31 @@ void model_statesCallBack(const gazebo::ModelStates::ConstPtr& msg){
 		if (strcmp(msg->name[i].c_str(),"pr2")==0)
 			break;
 	}
-	tf::Quaternion q;
-  double roll, pitch, yaw;
-  tf::quaternionMsgToTF(msg->pose[i].orientation, q);
-  tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
-	yaw_val = yaw;
-
 	x_val = msg->pose[i].position.x;
 	y_val = msg->pose[i].position.y;
-	printf("The x in the world is %d \n", (int) x_val);
-	printf("The y in the world is %d \n", (int) y_val);
+	gaz_ori_x = msg->pose[i].orientation.x;
+  gaz_ori_y = msg->pose[i].orientation.y;
+	gaz_ori_z = msg->pose[i].orientation.z;
+	gaz_ori_w = msg->pose[i].orientation.w;
+	printf("The x in the world is %f \n", x_val);
+	printf("The y in the world is %f \n\n", y_val);
 }
 
 void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg){
 	printf("Got map\n");
   x_map = msg->pose.pose.position.x;
   y_map = msg->pose.pose.position.y;
-  printf("The x in the map is %d \n", (int) x_map);
-  printf("The x in the map is %d \n", (int) y_map);
+  rv_ori_x = msg->pose.pose.orientation.x;
+  rv_ori_y = msg->pose.pose.orientation.y;
+	rv_ori_z = msg->pose.pose.orientation.z;
+	rv_ori_w = msg->pose.pose.orientation.w;
+  printf("The x in the map is %f \n", x_map);
+  printf("The y in the map is %f \n\n", y_map);
 }
 
 class TeleopPR2Keyboard
 {
   private:
-  double walk_vel, run_vel, yaw_rate, yaw_rate_run;
   geometry_msgs::PoseWithCovarianceStamped pose;
   gazebo_msgs::ModelState gazebo_pose;
   
@@ -108,6 +117,7 @@ class TeleopPR2Keyboard
   ros::Publisher amcl_pose_pub_;
   ros::Subscriber map_pose_sub_;
   ros::Subscriber sub_;
+  
   public:
   void init()
   { 
@@ -115,13 +125,9 @@ class TeleopPR2Keyboard
     amcl_pose_pub_ = n_.advertise<geometry_msgs::PoseWithCovarianceStamped>("initialpose", 1);
     sub_ = n_.subscribe("/gazebo/model_states", 1, model_statesCallBack);
     map_pose_sub_ = n_.subscribe("amcl_pose", 1, map_statesCallBack);
-    ros::NodeHandle n_private("~");
-    n_private.param("walk_vel", walk_vel, 0.5);
-    n_private.param("run_vel", run_vel, 1.0);
-    n_private.param("yaw_rate", yaw_rate, 1.0);
-    n_private.param("yaw_run_rate", yaw_rate_run, 1.5);
+    ros::NodeHandle n_private("~")
 
-  }
+  };
   
   ~TeleopPR2Keyboard()   { }
   void keyboardLoop();
@@ -154,7 +160,6 @@ int main(int argc, char** argv)
 void TeleopPR2Keyboard::keyboardLoop()
 {
   char c;
-  bool dirty=false;
 
   // get the console in raw mode
   tcgetattr(kfd, &cooked);
@@ -165,27 +170,26 @@ void TeleopPR2Keyboard::keyboardLoop()
   raw.c_cc[VEOF] = 2;
   tcsetattr(kfd, TCSANOW, &raw);
 
-	printf("tester\n");
-
   while(ros::ok())
   {
-	  ros::spinOnce();
+	  
     // get the next event from the keyboard
     if(read(kfd, &c, 1) < 0)
     {
       perror("read():");
       exit(-1);
     }
+    ros::spinOnce();
     switch (c){
       case KEYCODE_G:
         gazebo_pose.model_name = "pr2";
-        gazebo_pose.pose.position.x = 10.0;
-        gazebo_pose.pose.position.y = 10.0;
+        gazebo_pose.pose.position.x = x_map;
+        gazebo_pose.pose.position.y = y_map;
         gazebo_pose.pose.position.z = 0.0;
-        gazebo_pose.pose.orientation.x = 0.0;
-        gazebo_pose.pose.orientation.y = 0.0;
-        gazebo_pose.pose.orientation.z = 0.0;
-        gazebo_pose.pose.orientation.w = 1.0;
+        gazebo_pose.pose.orientation.x = rv_ori_x;
+        gazebo_pose.pose.orientation.y = rv_ori_y;
+        gazebo_pose.pose.orientation.z = rv_ori_z;
+        gazebo_pose.pose.orientation.w = rv_ori_w;
         gazebo_pose.twist.linear.x = 0;
         gazebo_pose.twist.linear.y = 0;
         gazebo_pose.twist.linear.z = 0;
@@ -194,14 +198,29 @@ void TeleopPR2Keyboard::keyboardLoop()
         gazebo_pose.twist.angular.z = 0;
         gazebo_pose.reference_frame = "world";
         gazebo_pose_pub_.publish(gazebo_pose);
+        
+        sleep(1);
+        
+        pose.header.frame_id = "/map";
+        pose.pose.pose.position.x = x_map;
+        pose.pose.pose.position.y = y_map;
+        pose.pose.pose.orientation.x = rv_ori_x;
+        pose.pose.pose.orientation.y = rv_ori_y;
+        pose.pose.pose.orientation.w = rv_ori_w;
+        pose.pose.pose.orientation.z = rv_ori_z;
+        pose.pose.covariance[6*0+0] = 0.5 * 0.5;
+        pose.pose.covariance[6*1+1] = 0.5 * 0.5;
+        pose.pose.covariance[6*5+5] = M_PI/12.0 * M_PI/12.0;
+        amcl_pose_pub_.publish(pose);
         break;
       case KEYCODE_R:
         pose.header.frame_id = "/map";
-        pose.pose.pose.position.x = 15;
-        pose.pose.pose.position.y = 15;
-        tf::Quaternion quat;
-        quat.setRPY(0.0, 0.0, 0);
-        tf::quaternionTFToMsg(quat, pose.pose.pose.orientation);
+        pose.pose.pose.position.x = x_val;
+        pose.pose.pose.position.y = y_val;
+        pose.pose.pose.orientation.x = gaz_ori_x;
+        pose.pose.pose.orientation.y = gaz_ori_y;
+        pose.pose.pose.orientation.w = gaz_ori_w;
+        pose.pose.pose.orientation.z = gaz_ori_z;
         pose.pose.covariance[6*0+0] = 0.5 * 0.5;
         pose.pose.covariance[6*1+1] = 0.5 * 0.5;
         pose.pose.covariance[6*5+5] = M_PI/12.0 * M_PI/12.0;

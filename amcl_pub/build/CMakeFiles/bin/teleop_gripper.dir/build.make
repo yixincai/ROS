@@ -83,6 +83,7 @@ CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/d
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/protobuf/manifest.xml
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/manifest.xml
+CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /home/yixin/fuerte_workspace/sandbox/navigation/move_base_msgs/manifest.xml
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_msgs/msg_gen/generated
@@ -93,6 +94,7 @@ CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/d
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/msg_gen/generated
 CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/srv_gen/generated
+CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o: /home/yixin/fuerte_workspace/sandbox/navigation/move_base_msgs/msg_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/amcl_pub/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -pthread -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/bin/teleop_gripper.dir/src/teleop_gripper.o -c /home/yixin/fuerte_workspace/sandbox/amcl_pub/src/teleop_gripper.cpp
