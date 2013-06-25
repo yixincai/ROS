@@ -38,7 +38,6 @@ SET(CMAKE_C_INCLUDE_PATH
   "/opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/cpp/include"
   "/opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/cpp/include"
   "/home/yixin/fuerte_workspace/sandbox/costmap_2d_1/msg_gen/cpp/include"
-  "/home/yixin/fuerte_workspace/sandbox/costmap_2d_1/cfg/cpp"
   "/usr/src/gtest/include"
   "/usr/src/gtest"
   )

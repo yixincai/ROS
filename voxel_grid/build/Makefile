@@ -355,32 +355,6 @@ voxel_grid/fast:
 	$(MAKE) -f CMakeFiles/voxel_grid.dir/build.make CMakeFiles/voxel_grid.dir/build
 .PHONY : voxel_grid/fast
 
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) -f _gtest_from_src/CMakeFiles/gtest.dir/build.make _gtest_from_src/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) -f _gtest_from_src/CMakeFiles/gtest_main.dir/build.make _gtest_from_src/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
 # target to build an object file
 src/voxel_grid.o:
 	$(MAKE) -f CMakeFiles/voxel_grid.dir/build.make CMakeFiles/voxel_grid.dir/src/voxel_grid.o
@@ -454,8 +428,6 @@ help:
 	@echo "... test_voxel_grid_tests_result"
 	@echo "... tests"
 	@echo "... voxel_grid"
-	@echo "... gtest"
-	@echo "... gtest_main"
 	@echo "... src/voxel_grid.o"
 	@echo "... src/voxel_grid.i"
 	@echo "... src/voxel_grid.s"

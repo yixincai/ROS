@@ -411,7 +411,7 @@ CMakeFiles/test.dir/all: CMakeFiles/test_test_voxel_grid_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 0
 .PHONY : CMakeFiles/test.dir/rule
@@ -526,21 +526,19 @@ clean: CMakeFiles/test-results-run.dir/clean
 # Target rules for target CMakeFiles/test/voxel_grid_tests.dir
 
 # All Build rule for target.
-CMakeFiles/test/voxel_grid_tests.dir/all: CMakeFiles/rospack_genmsg.dir/all
 CMakeFiles/test/voxel_grid_tests.dir/all: CMakeFiles/rospack_gensrv.dir/all
+CMakeFiles/test/voxel_grid_tests.dir/all: CMakeFiles/rospack_genmsg.dir/all
 CMakeFiles/test/voxel_grid_tests.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-CMakeFiles/test/voxel_grid_tests.dir/all: _gtest_from_src/CMakeFiles/gtest_main.dir/all
-CMakeFiles/test/voxel_grid_tests.dir/all: _gtest_from_src/CMakeFiles/gtest.dir/all
 CMakeFiles/test/voxel_grid_tests.dir/all: CMakeFiles/voxel_grid.dir/all
 	$(MAKE) -f CMakeFiles/test/voxel_grid_tests.dir/build.make CMakeFiles/test/voxel_grid_tests.dir/depend
 	$(MAKE) -f CMakeFiles/test/voxel_grid_tests.dir/build.make CMakeFiles/test/voxel_grid_tests.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles  2
 	@echo "Built target test/voxel_grid_tests"
 .PHONY : CMakeFiles/test/voxel_grid_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test/voxel_grid_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test/voxel_grid_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 0
 .PHONY : CMakeFiles/test/voxel_grid_tests.dir/rule
@@ -571,7 +569,7 @@ CMakeFiles/test_test_voxel_grid_tests.dir/all: CMakeFiles/tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_test_voxel_grid_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_test_voxel_grid_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_test_voxel_grid_tests.dir/rule
@@ -634,7 +632,7 @@ CMakeFiles/tests.dir/all: CMakeFiles/test/voxel_grid_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 0
 .PHONY : CMakeFiles/tests.dir/rule
@@ -659,7 +657,7 @@ clean: CMakeFiles/tests.dir/clean
 CMakeFiles/voxel_grid.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f CMakeFiles/voxel_grid.dir/build.make CMakeFiles/voxel_grid.dir/depend
 	$(MAKE) -f CMakeFiles/voxel_grid.dir/build.make CMakeFiles/voxel_grid.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles  3
 	@echo "Built target voxel_grid"
 .PHONY : CMakeFiles/voxel_grid.dir/all
 
@@ -685,93 +683,6 @@ CMakeFiles/voxel_grid.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/voxel_grid.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory _gtest_from_src
-
-# Convenience name for "all" pass in the directory.
-_gtest_from_src/all: _gtest_from_src/CMakeFiles/gtest.dir/all
-_gtest_from_src/all: _gtest_from_src/CMakeFiles/gtest_main.dir/all
-.PHONY : _gtest_from_src/all
-
-# Convenience name for "clean" pass in the directory.
-_gtest_from_src/clean: _gtest_from_src/CMakeFiles/gtest.dir/clean
-_gtest_from_src/clean: _gtest_from_src/CMakeFiles/gtest_main.dir/clean
-.PHONY : _gtest_from_src/clean
-
-# Convenience name for "preinstall" pass in the directory.
-_gtest_from_src/preinstall:
-.PHONY : _gtest_from_src/preinstall
-
-#=============================================================================
-# Target rules for target _gtest_from_src/CMakeFiles/gtest.dir
-
-# All Build rule for target.
-_gtest_from_src/CMakeFiles/gtest.dir/all:
-	$(MAKE) -f _gtest_from_src/CMakeFiles/gtest.dir/build.make _gtest_from_src/CMakeFiles/gtest.dir/depend
-	$(MAKE) -f _gtest_from_src/CMakeFiles/gtest.dir/build.make _gtest_from_src/CMakeFiles/gtest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles  2
-	@echo "Built target gtest"
-.PHONY : _gtest_from_src/CMakeFiles/gtest.dir/all
-
-# Include target in all.
-all: _gtest_from_src/CMakeFiles/gtest.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-_gtest_from_src/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 _gtest_from_src/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 0
-.PHONY : _gtest_from_src/CMakeFiles/gtest.dir/rule
-
-# Convenience name for target.
-gtest: _gtest_from_src/CMakeFiles/gtest.dir/rule
-.PHONY : gtest
-
-# clean rule for target.
-_gtest_from_src/CMakeFiles/gtest.dir/clean:
-	$(MAKE) -f _gtest_from_src/CMakeFiles/gtest.dir/build.make _gtest_from_src/CMakeFiles/gtest.dir/clean
-.PHONY : _gtest_from_src/CMakeFiles/gtest.dir/clean
-
-# clean rule for target.
-clean: _gtest_from_src/CMakeFiles/gtest.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target _gtest_from_src/CMakeFiles/gtest_main.dir
-
-# All Build rule for target.
-_gtest_from_src/CMakeFiles/gtest_main.dir/all: _gtest_from_src/CMakeFiles/gtest.dir/all
-	$(MAKE) -f _gtest_from_src/CMakeFiles/gtest_main.dir/build.make _gtest_from_src/CMakeFiles/gtest_main.dir/depend
-	$(MAKE) -f _gtest_from_src/CMakeFiles/gtest_main.dir/build.make _gtest_from_src/CMakeFiles/gtest_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles  3
-	@echo "Built target gtest_main"
-.PHONY : _gtest_from_src/CMakeFiles/gtest_main.dir/all
-
-# Include target in all.
-all: _gtest_from_src/CMakeFiles/gtest_main.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-_gtest_from_src/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 _gtest_from_src/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles 0
-.PHONY : _gtest_from_src/CMakeFiles/gtest_main.dir/rule
-
-# Convenience name for target.
-gtest_main: _gtest_from_src/CMakeFiles/gtest_main.dir/rule
-.PHONY : gtest_main
-
-# clean rule for target.
-_gtest_from_src/CMakeFiles/gtest_main.dir/clean:
-	$(MAKE) -f _gtest_from_src/CMakeFiles/gtest_main.dir/build.make _gtest_from_src/CMakeFiles/gtest_main.dir/clean
-.PHONY : _gtest_from_src/CMakeFiles/gtest_main.dir/clean
-
-# clean rule for target.
-clean: _gtest_from_src/CMakeFiles/gtest_main.dir/clean
 .PHONY : clean
 
 #=============================================================================

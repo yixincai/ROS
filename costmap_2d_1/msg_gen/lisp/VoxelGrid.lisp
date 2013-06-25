@@ -1,7 +1,7 @@
 ; Auto-generated. Do not edit!
 
 
-(cl:in-package costmap_2d-msg)
+(cl:in-package costmap_2d_1-msg)
 
 
 ;//! \htmlinclude VoxelGrid.msg.html
@@ -50,41 +50,41 @@
 (cl:defmethod cl:initialize-instance :after ((m <VoxelGrid>) cl:&rest args)
   (cl:declare (cl:ignorable args))
   (cl:unless (cl:typep m 'VoxelGrid)
-    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name costmap_2d-msg:<VoxelGrid> is deprecated: use costmap_2d-msg:VoxelGrid instead.")))
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name costmap_2d_1-msg:<VoxelGrid> is deprecated: use costmap_2d_1-msg:VoxelGrid instead.")))
 
 (cl:ensure-generic-function 'header-val :lambda-list '(m))
 (cl:defmethod header-val ((m <VoxelGrid>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d-msg:header-val is deprecated.  Use costmap_2d-msg:header instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d_1-msg:header-val is deprecated.  Use costmap_2d_1-msg:header instead.")
   (header m))
 
 (cl:ensure-generic-function 'data-val :lambda-list '(m))
 (cl:defmethod data-val ((m <VoxelGrid>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d-msg:data-val is deprecated.  Use costmap_2d-msg:data instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d_1-msg:data-val is deprecated.  Use costmap_2d_1-msg:data instead.")
   (data m))
 
 (cl:ensure-generic-function 'origin-val :lambda-list '(m))
 (cl:defmethod origin-val ((m <VoxelGrid>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d-msg:origin-val is deprecated.  Use costmap_2d-msg:origin instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d_1-msg:origin-val is deprecated.  Use costmap_2d_1-msg:origin instead.")
   (origin m))
 
 (cl:ensure-generic-function 'resolutions-val :lambda-list '(m))
 (cl:defmethod resolutions-val ((m <VoxelGrid>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d-msg:resolutions-val is deprecated.  Use costmap_2d-msg:resolutions instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d_1-msg:resolutions-val is deprecated.  Use costmap_2d_1-msg:resolutions instead.")
   (resolutions m))
 
 (cl:ensure-generic-function 'size_x-val :lambda-list '(m))
 (cl:defmethod size_x-val ((m <VoxelGrid>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d-msg:size_x-val is deprecated.  Use costmap_2d-msg:size_x instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d_1-msg:size_x-val is deprecated.  Use costmap_2d_1-msg:size_x instead.")
   (size_x m))
 
 (cl:ensure-generic-function 'size_y-val :lambda-list '(m))
 (cl:defmethod size_y-val ((m <VoxelGrid>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d-msg:size_y-val is deprecated.  Use costmap_2d-msg:size_y instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d_1-msg:size_y-val is deprecated.  Use costmap_2d_1-msg:size_y instead.")
   (size_y m))
 
 (cl:ensure-generic-function 'size_z-val :lambda-list '(m))
 (cl:defmethod size_z-val ((m <VoxelGrid>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d-msg:size_z-val is deprecated.  Use costmap_2d-msg:size_z instead.")
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader costmap_2d_1-msg:size_z-val is deprecated.  Use costmap_2d_1-msg:size_z instead.")
   (size_z m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <VoxelGrid>) ostream)
   "Serializes a message object of type '<VoxelGrid>"
@@ -147,10 +147,10 @@
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<VoxelGrid>)))
   "Returns string type for a message object of type '<VoxelGrid>"
-  "costmap_2d/VoxelGrid")
+  "costmap_2d_1/VoxelGrid")
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'VoxelGrid)))
   "Returns string type for a message object of type 'VoxelGrid"
-  "costmap_2d/VoxelGrid")
+  "costmap_2d_1/VoxelGrid")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<VoxelGrid>)))
   "Returns md5sum for a message object of type '<VoxelGrid>"
   "48a040827e1322073d78ece5a497029c")

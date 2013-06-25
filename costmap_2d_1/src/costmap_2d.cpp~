@@ -90,9 +90,11 @@ namespace costmap_2d{
             else
               *costmap_index = FREE_SPACE;
           }
-          else
+          else{
             *costmap_index=*static_data_index;
-            
+            if (*costmap_index > 200)
+            *costmap_index = LETHAL_OBSTACLE;
+          }  
           if(*costmap_index == LETHAL_OBSTACLE){
             unsigned int mx, my;
             indexToCells(index, mx, my);
@@ -187,8 +189,11 @@ namespace costmap_2d{
             else
               *costmap_index = FREE_SPACE;
           }
-          else
+          else{
             *costmap_index=*static_data_index;
+            if (*costmap_index > 200)
+            *costmap_index = LETHAL_OBSTACLE;
+          } 
 
         if(*costmap_index == LETHAL_OBSTACLE){
           unsigned int mx, my;
@@ -262,8 +267,11 @@ namespace costmap_2d{
             else
               *costmap_index = FREE_SPACE;
           }
-          else
+          else{
             *costmap_index=*static_data_index;
+            if (*costmap_index > 200)
+            *costmap_index = LETHAL_OBSTACLE;
+          } 
         ++costmap_index;
         ++static_data_index;
       }
@@ -739,6 +747,7 @@ namespace costmap_2d{
   void Costmap2D::raytraceFreespace(const Observation& clearing_observation){
     //create the functor that we'll use to clear cells from the costmap
     ClearCell clearer(costmap_);
+    KeepCell keeper(costmap_);
 
     double ox = clearing_observation.origin_.x;
     double oy = clearing_observation.origin_.y;
@@ -799,12 +808,11 @@ namespace costmap_2d{
       unsigned int cell_raytrace_range = cellDistance(clearing_observation.raytrace_range_);
 
       //and finally... we can execute our trace to clear obstacles along that line
-      raytraceLine(clearer, x0, y0, x1, y1, cell_raytrace_range);
-      if (is_global_map_)
-          for (int i=y0;i<y1;i++)
-            for (int j=x0;j<x1;j++ )
-              if (costmap_[j+i*size_y_]==FREE_SPACE)
-                costmap_[j+i*size_y_]=static_map_[i];
+      if (!is_globle_map_)
+        raytraceLine(clearer, x0, y0, x1, y1, cell_raytrace_range);
+      else
+        raytraceLine(keeper, x0, y0, x1, y1, cell_raytrace_range);
+
     }
   }
 

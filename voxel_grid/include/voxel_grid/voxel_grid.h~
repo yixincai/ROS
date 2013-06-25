@@ -182,7 +182,7 @@ namespace voxel_grid {
         return MARKED;
       }
       void clearVoxelLineInMapStatic(double x0, double y0, double z0, double x1, double y1, double z1, unsigned char *map_2d, unsigned char *static_map, 
-      unsigned int unknown_threshold, unsigned int mark_threshold, unsigned char free_cost, unsigned char unknown_cost, unsigned int max_length);
+      unsigned int unknown_threshold, unsigned int mark_threshold,           unsigned char free_cost = 0, unsigned char unknown_cost = 255, unsigned int max_length = UINT_MAX);
       void markVoxelLine(double x0, double y0, double z0, double x1, double y1, double z1, unsigned int max_length = UINT_MAX);
       void clearVoxelLine(double x0, double y0, double z0, double x1, double y1, double z1, unsigned int max_length = UINT_MAX);
       void clearVoxelLineInMap(double x0, double y0, double z0, double x1, double y1, double z1, unsigned char *map_2d,
@@ -368,7 +368,7 @@ namespace voxel_grid {
               if(bitsBelowThreshold(unknown_bits, unknown_clear_threshold_))
                 costmap_[offset] = static_map_[offset];
               else
-                costmap_[offset] = unknown_cost_;
+                costmap_[offset] = /*unknown_cost_*/static_map_[offset];
             }
           }
         private:

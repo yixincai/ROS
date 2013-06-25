@@ -533,8 +533,8 @@ clean: CMakeFiles/rostest_test_rtest.xml_result.dir/clean
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all: CMakeFiles/test_test_utest.dir/all
 CMakeFiles/test.dir/all: CMakeFiles/tests.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/test_test_utest.dir/all
 CMakeFiles/test.dir/all: CMakeFiles/rostest_test_rtest.xml.dir/all
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
@@ -787,9 +787,9 @@ clean: CMakeFiles/test_utest_result.dir/clean
 # Target rules for target CMakeFiles/tests.dir
 
 # All Build rule for target.
+CMakeFiles/tests.dir/all: CMakeFiles/test/rtest.dir/all
 CMakeFiles/tests.dir/all: CMakeFiles/clean-test-results.dir/all
 CMakeFiles/tests.dir/all: CMakeFiles/test/utest.dir/all
-CMakeFiles/tests.dir/all: CMakeFiles/test/rtest.dir/all
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/map_server_dummy/build/CMakeFiles 

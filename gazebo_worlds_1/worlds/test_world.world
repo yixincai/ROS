@@ -49,7 +49,7 @@
         <visual name='top_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
           <origin pose='0.000000 0.000000 0.010000 0.000000 -0.000000 0.000000'/>
           <geometry>
-            <mesh filename='/home/yixin/fuerte_workspace/sandbox/gazebo_worlds_1/simple_office1.dae' scale='0.0300000 0.0300000 0.0300000'/>
+            <mesh filename='/home/yixin/fuerte_workspace/sandbox/gazebo_worlds_1/aptbgall_points.dae' scale='0.02545 0.02545 0.02545'/>
           </geometry>
         </visual>
       </link>

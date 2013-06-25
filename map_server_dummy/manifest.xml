@@ -8,9 +8,20 @@
   <license>BSD</license>
   <review status="Doc reviewed" notes=""/>
   <url>http://ros.org/wiki/map_server</url>
-  <depend package="rosconsole"/>
+  <depend package="move_base_msgs"/>
+  <depend package="actionlib"/>
   <depend package="roscpp"/>
+  <depend package="std_msgs" />
+  <depend package="geometry_msgs" />
+  <depend package="sensor_msgs" />
+  <depend package="pr2_controllers_msgs" />
+
+  <depend package="topic_tools" />
   <depend package="rospy" />
+  <depend package="gazebo" />
+  <depend package="tf" />
+  <depend package="rosconsole"/>
+
   <depend package="nav_msgs"/>
   <depend package="tf"/>
   <depend package="common_rosdeps" />

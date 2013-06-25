@@ -4,8 +4,6 @@
 /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
 /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles/bin/voxel_grid.dir
 /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles/clean-test-results.dir
-/home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/_gtest_from_src/CMakeFiles/gtest.dir
-/home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/_gtest_from_src/CMakeFiles/gtest_main.dir
 /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles/rosbuild_precompile.dir
 /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles/rosbuild_premsgsrvgen.dir
 /home/yixin/fuerte_workspace/sandbox/navigation/voxel_grid/build/CMakeFiles/rospack_genmsg.dir

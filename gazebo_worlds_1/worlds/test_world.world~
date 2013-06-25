@@ -45,9 +45,9 @@
     <model name='table1' static='1'>
       <origin pose='0.000000 0.000000 0.00000 0.000000 0.000000 0'/>
       <link name='body' gravity='1' self_collide='0' kinematic='0'>
-        <origin pose='0.000000 0.000000 0.000000 0.000000 0.000000 0.000000'/>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
         <visual name='top_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
-          <origin pose='0.000000 0.000000 0.000000 0.000000 0.000000 0.000000'/>
+          <origin pose='0.000000 0.000000 0.010000 0.000000 -0.000000 0.000000'/>
           <geometry>
             <mesh filename='/home/yixin/fuerte_workspace/sandbox/gazebo_worlds_1/simple_office1.dae' scale='0.0300000 0.0300000 0.0300000'/>
           </geometry>

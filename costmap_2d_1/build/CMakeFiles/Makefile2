@@ -793,8 +793,8 @@ clean: CMakeFiles/test-results.dir/clean
 # Target rules for target CMakeFiles/test-results-run.dir
 
 # All Build rule for target.
-CMakeFiles/test-results-run.dir/all: CMakeFiles/rostest_test_simple_driving_test.xml_result.dir/all
 CMakeFiles/test-results-run.dir/all: CMakeFiles/test_module_tests_result.dir/all
+CMakeFiles/test-results-run.dir/all: CMakeFiles/rostest_test_simple_driving_test.xml_result.dir/all
 	$(MAKE) -f CMakeFiles/test-results-run.dir/build.make CMakeFiles/test-results-run.dir/depend
 	$(MAKE) -f CMakeFiles/test-results-run.dir/build.make CMakeFiles/test-results-run.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/costmap_2d_1/build/CMakeFiles 
@@ -861,10 +861,10 @@ clean: CMakeFiles/test/costmap_tester.dir/clean
 # Target rules for target CMakeFiles/test/module_tests.dir
 
 # All Build rule for target.
-CMakeFiles/test/module_tests.dir/all: CMakeFiles/rospack_gensrv.dir/all
 CMakeFiles/test/module_tests.dir/all: CMakeFiles/rospack_genmsg.dir/all
 CMakeFiles/test/module_tests.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 CMakeFiles/test/module_tests.dir/all: CMakeFiles/costmap_2d.dir/all
+CMakeFiles/test/module_tests.dir/all: CMakeFiles/rospack_gensrv.dir/all
 	$(MAKE) -f CMakeFiles/test/module_tests.dir/build.make CMakeFiles/test/module_tests.dir/depend
 	$(MAKE) -f CMakeFiles/test/module_tests.dir/build.make CMakeFiles/test/module_tests.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/costmap_2d_1/build/CMakeFiles  16
@@ -957,8 +957,8 @@ clean: CMakeFiles/test_test_module_tests.dir/clean
 # Target rules for target CMakeFiles/tests.dir
 
 # All Build rule for target.
-CMakeFiles/tests.dir/all: CMakeFiles/clean-test-results.dir/all
 CMakeFiles/tests.dir/all: CMakeFiles/download_data_test_simple_driving_test_indexed.bag.dir/all
+CMakeFiles/tests.dir/all: CMakeFiles/clean-test-results.dir/all
 CMakeFiles/tests.dir/all: CMakeFiles/download_data_test_willow-full-0.025.pgm.dir/all
 CMakeFiles/tests.dir/all: CMakeFiles/test/module_tests.dir/all
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend

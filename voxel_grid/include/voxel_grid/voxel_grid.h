@@ -183,6 +183,8 @@ namespace voxel_grid {
       }
       void clearVoxelLineInMapStatic(double x0, double y0, double z0, double x1, double y1, double z1, unsigned char *map_2d, unsigned char *static_map, 
       unsigned int unknown_threshold, unsigned int mark_threshold,           unsigned char free_cost = 0, unsigned char unknown_cost = 255, unsigned int max_length = UINT_MAX);
+      void clearVoxelLineInMapLocal(double x0, double y0, double z0, double x1, double y1, double z1, unsigned char *map_2d, unsigned char *static_map, 
+      unsigned int unknown_threshold, unsigned int mark_threshold,           unsigned char free_cost = 0, unsigned char unknown_cost = 255, unsigned int max_length = UINT_MAX);
       void markVoxelLine(double x0, double y0, double z0, double x1, double y1, double z1, unsigned int max_length = UINT_MAX);
       void clearVoxelLine(double x0, double y0, double z0, double x1, double y1, double z1, unsigned int max_length = UINT_MAX);
       void clearVoxelLineInMap(double x0, double y0, double z0, double x1, double y1, double z1, unsigned char *map_2d,
@@ -368,9 +370,50 @@ namespace voxel_grid {
               if(bitsBelowThreshold(unknown_bits, unknown_clear_threshold_))
                 costmap_[offset] = static_map_[offset];
               else
-                costmap_[offset] = unknown_cost_;
+                costmap_[offset] = /*unknown_cost_*/static_map_[offset];
             }
           }
+        private:
+          inline bool bitsBelowThreshold(unsigned int n, unsigned int bit_threshold){
+            unsigned int bit_count;
+            for(bit_count = 0; n;){
+              ++bit_count;
+              if(bit_count > bit_threshold)
+                return false;
+              n &= n - 1; //clear the least significant bit set
+            }
+            return true;
+          }
+          uint32_t* data_;
+          unsigned char *costmap_;
+          unsigned char *static_map_;
+          unsigned int unknown_clear_threshold_, marked_clear_threshold_;
+          unsigned char free_cost_, unknown_cost_;
+      };
+      
+       class ClearVoxelInMapLocal {
+        public:
+          ClearVoxelInMapLocal(uint32_t* data, unsigned char *costmap, unsigned char *static_map,
+              unsigned int unknown_clear_threshold, unsigned int marked_clear_threshold, 
+              unsigned char free_cost = 0, unsigned char unknown_cost = 255): data_(data), costmap_(costmap), static_map_(static_map),
+        unknown_clear_threshold_(unknown_clear_threshold), marked_clear_threshold_(marked_clear_threshold), 
+        free_cost_(free_cost), unknown_cost_(unknown_cost){}
+          inline void operator()(unsigned int offset, unsigned int z_mask){
+            uint32_t* col = &data_[offset];
+            *col &= ~(z_mask); //clear unknown and clear cell
+            //costmap_[offset] = static_map_[offset];
+            unsigned int unknown_bits = uint16_t(*col>>16) ^ uint16_t(*col);
+            unsigned int marked_bits = *col>>16;
+
+            //make sure the number of bits in each is below our thesholds
+            if(bitsBelowThreshold(marked_bits, marked_clear_threshold_)){
+              if(bitsBelowThreshold(unknown_bits, unknown_clear_threshold_))
+                costmap_[offset] = static_map_[offset];
+              else
+                costmap_[offset] = /*unknown_cost_*/static_map_[offset];
+            }
+          }
+          
         private:
           inline bool bitsBelowThreshold(unsigned int n, unsigned int bit_threshold){
             unsigned int bit_count;

@@ -49,33 +49,64 @@ include CMakeFiles/image_loader.dir/flags.make
 CMakeFiles/image_loader.dir/src/image_loader.o: CMakeFiles/image_loader.dir/flags.make
 CMakeFiles/image_loader.dir/src/image_loader.o: ../src/image_loader.cpp
 CMakeFiles/image_loader.dir/src/image_loader.o: ../manifest.xml
-CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/roslib/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/actionlib_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /home/yixin/fuerte_workspace/sandbox/navigation/move_base_msgs/manifest.xml
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/roslang/manifest.xml
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/roscpp/manifest.xml
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/nav_msgs/manifest.xml
-CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/rostest/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/actionlib/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/trajectory_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/topic_tools/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/common_rosdeps/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/visualization_common/ogre/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/robot_model/colladadom/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/robot_model/urdf/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/roswtf/manifest.xml
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/message_filters/manifest.xml
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/common_rosdeps/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/rosgraph_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/rosservice/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/protobuf/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/share/nav_msgs/manifest.xml
+CMakeFiles/image_loader.dir/src/image_loader.o: /home/yixin/fuerte_workspace/sandbox/navigation/move_base_msgs/msg_gen/generated
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_msgs/msg_gen/generated
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_msgs/srv_gen/generated
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/msg_gen/generated
+CMakeFiles/image_loader.dir/src/image_loader.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/map_server_dummy/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/image_loader.dir/src/image_loader.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/image_loader.dir/src/image_loader.o -c /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/image_loader.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -pthread -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/image_loader.dir/src/image_loader.o -c /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/image_loader.cpp
 
 CMakeFiles/image_loader.dir/src/image_loader.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_loader.dir/src/image_loader.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/image_loader.cpp > CMakeFiles/image_loader.dir/src/image_loader.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -pthread -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/image_loader.cpp > CMakeFiles/image_loader.dir/src/image_loader.i
 
 CMakeFiles/image_loader.dir/src/image_loader.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_loader.dir/src/image_loader.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/image_loader.cpp -o CMakeFiles/image_loader.dir/src/image_loader.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -pthread -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/image_loader.cpp -o CMakeFiles/image_loader.dir/src/image_loader.s
 
 CMakeFiles/image_loader.dir/src/image_loader.o.requires:
 .PHONY : CMakeFiles/image_loader.dir/src/image_loader.o.requires

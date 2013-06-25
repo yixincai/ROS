@@ -49,33 +49,64 @@ include CMakeFiles/bin/map_server.dir/flags.make
 CMakeFiles/bin/map_server.dir/src/main.o: CMakeFiles/bin/map_server.dir/flags.make
 CMakeFiles/bin/map_server.dir/src/main.o: ../src/main.cpp
 CMakeFiles/bin/map_server.dir/src/main.o: ../manifest.xml
-CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/roslib/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/actionlib_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /home/yixin/fuerte_workspace/sandbox/navigation/move_base_msgs/manifest.xml
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/roslang/manifest.xml
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/roscpp/manifest.xml
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/rospy/manifest.xml
-CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
-CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/nav_msgs/manifest.xml
-CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
-CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
-CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/rostest/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/actionlib/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/trajectory_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/topic_tools/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/common_rosdeps/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/visualization_common/ogre/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/robot_model/colladadom/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/robot_model/urdf_interface/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/robot_model/urdf_parser/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/robot_model/collada_parser/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/robot_model/urdf/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/std_srvs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/rosconsole/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/geometry/angles/manifest.xml
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/roswtf/manifest.xml
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/message_filters/manifest.xml
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/geometry/tf/manifest.xml
-CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/common_rosdeps/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/rosgraph_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/rosservice/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/ros/core/rosbuild/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/protobuf/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/share/nav_msgs/manifest.xml
+CMakeFiles/bin/map_server.dir/src/main.o: /home/yixin/fuerte_workspace/sandbox/navigation/move_base_msgs/msg_gen/generated
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/msg_gen/generated
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/pr2_controllers/pr2_controllers_msgs/srv_gen/generated
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_msgs/msg_gen/generated
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_msgs/srv_gen/generated
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/msg_gen/generated
+CMakeFiles/bin/map_server.dir/src/main.o: /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/yixin/fuerte_workspace/sandbox/map_server_dummy/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/bin/map_server.dir/src/main.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/bin/map_server.dir/src/main.o -c /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -pthread -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/bin/map_server.dir/src/main.o -c /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/main.cpp
 
 CMakeFiles/bin/map_server.dir/src/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bin/map_server.dir/src/main.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/main.cpp > CMakeFiles/bin/map_server.dir/src/main.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -pthread -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/main.cpp > CMakeFiles/bin/map_server.dir/src/main.i
 
 CMakeFiles/bin/map_server.dir/src/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bin/map_server.dir/src/main.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/main.cpp -o CMakeFiles/bin/map_server.dir/src/main.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -pthread -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/yixin/fuerte_workspace/sandbox/map_server_dummy/src/main.cpp -o CMakeFiles/bin/map_server.dir/src/main.s
 
 CMakeFiles/bin/map_server.dir/src/main.o.requires:
 .PHONY : CMakeFiles/bin/map_server.dir/src/main.o.requires
