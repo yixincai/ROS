@@ -408,9 +408,9 @@ namespace voxel_grid {
             //make sure the number of bits in each is below our thesholds
             if(bitsBelowThreshold(marked_bits, marked_clear_threshold_)){
               if(bitsBelowThreshold(unknown_bits, unknown_clear_threshold_))
-                costmap_[offset] = static_map_[offset];
+                costmap_[offset] = free_cost_;
               else
-                costmap_[offset] = /*unknown_cost_*/static_map_[offset];
+                costmap_[offset] = unknown_cost_;
             }
           }
           
