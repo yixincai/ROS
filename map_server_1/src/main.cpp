@@ -135,9 +135,6 @@ class MapServer
         origin[0] = origin[1] = origin[2] = 0.0;
       }
 
-      
-      
-
       ROS_INFO("Loading map from image \"%s\"", mapfname.c_str());
       map_server::loadMapFromFile(&map_resp_,mapfname.c_str(),res,negate,occ_th,free_th, origin);
       map_resp_.map.info.map_load_time = ros::Time::now();
@@ -149,9 +146,18 @@ class MapServer
                map_resp_.map.info.resolution);
       meta_data_message_ = map_resp_.map.info;
 
+      map_server::loadMapFromFileamcl(&map_resp_amcl,mapfname.c_str(),res,negate,occ_th,free_th, origin);
+      map_resp_amcl.map.info.map_load_time = ros::Time::now();
+      map_resp_amcl.map.header.frame_id = frame_id;
+      map_resp_amcl.map.header.stamp = ros::Time::now();
+      ROS_INFO("Read a %d X %d map @ %.3lf m/cell",
+               map_resp_amcl.map.info.width,
+               map_resp_amcl.map.info.height,
+               map_resp_amcl.map.info.resolution);
+      
       service = n.advertiseService("static_map", &MapServer::mapCallback, this);
       //pub = n.advertise<nav_msgs::MapMetaData>("map_metadata", 1,
-
+      service = n.advertiseService("static_mapamcl", &MapServer::mapCallbackamcl, this);
       // Latched publisher for metadata
       metadata_pub= n.advertise<nav_msgs::MapMetaData>("map_metadata", 1, true);
       metadata_pub.publish( meta_data_message_ );
@@ -159,27 +165,16 @@ class MapServer
       // Latched publisher for data
       
       mapsub=n.subscribe<nav_msgs::OccupancyGrid>("mymap",1,&MapServer::callback,this);
-      
+
       map_pub = n.advertise<nav_msgs::OccupancyGrid>("map", 1, true);
       map_pub.publish( map_resp_.map );
-      
-      
-
-   
-
-
     }
-   
-
-    
-	
-   
 
   private:
     ros::NodeHandle n;
     ros::Publisher map_pub;
     ros::Publisher metadata_pub;
-    ros::ServiceServer service;
+    ros::ServiceServer service, serviceamcl;
     ros::Subscriber mapsub;
     bool deprecated;
 
@@ -200,12 +195,23 @@ class MapServer
      
       return true;
     }
+    bool mapCallbackamcl(nav_msgs::GetMap::Request  &req,
+                     nav_msgs::GetMap::Response &res )
+    {
+      // request is empty; we ignore it
+
+      // = operator is overloaded to make deep copy (tricky!)
+      res = map_resp_amcl;
+      ROS_INFO("Sending map");
+     
+      return true;
+    }
 
     /** The map data is cached here, to be sent out to service callers
      */
     nav_msgs::MapMetaData meta_data_message_;
     nav_msgs::GetMap::Response map_resp_;
-
+    nav_msgs::GetMap::Response map_resp_amcl;
     /*
     void metadataSubscriptionCallback(const ros::SingleSubscriberPublisher& pub)
     {

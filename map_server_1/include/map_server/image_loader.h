@@ -55,6 +55,10 @@ namespace map_server
 void loadMapFromFile(nav_msgs::GetMap::Response* resp,
                      const char* fname, double res, bool negate,
                      double occ_th, double free_th, double* origin);
+                     
+void loadMapFromFileamcl(nav_msgs::GetMap::Response* resp,
+                     const char* fname, double res, bool negate,
+                     double occ_th, double free_th, double* origin);
 }
 
 #endif

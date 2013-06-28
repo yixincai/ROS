@@ -1,7 +1,7 @@
 <launch>
 
   <!-- load map -->
-  <node name="map_server" pkg="map_server_1" type="map_server" args="$(find map_server_dummy)/aptemptyhousemap_1.pgm 0.057083" respawn="true" />
+  <node name="map_server" pkg="map_server_1" type="map_server" args="$(find map_server_dummy)/apthousemap_1.pgm 0.044875" respawn="true" />
 
   <!-- nav-stack -->
   <include file="$(find pr2_2dnav_gazebo)/2dnav-stack-fake_localization.launch"/>

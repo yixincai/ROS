@@ -109,7 +109,7 @@ loadMapFromFile(nav_msgs::GetMap::Response* resp,
       for(k=0;k<n_channels;k++)
         color_sum += *(p + (k));
       color_avg = color_sum / (double)n_channels;
-      resp->map.data[MAP_IDX(resp->map.info.width,i,resp->map.info.height - j - 1)] = (unsigned int) (255-color_avg);
+      resp->map.data[MAP_IDX(resp->map.info.width,i,resp->map.info.height - j - 1)] = (unsigned int) color_avg;
       // If negate is true, we consider blacker pixels free, and whiter
       // pixels free.  Otherwise, it's vice versa.
 /*      if(negate)

@@ -401,13 +401,13 @@ namespace voxel_grid {
           inline void operator()(unsigned int offset, unsigned int z_mask){
             uint32_t* col = &data_[offset];
             *col &= ~(z_mask); //clear unknown and clear cell
-            //costmap_[offset] = static_map_[offset];
+            
             unsigned int unknown_bits = uint16_t(*col>>16) ^ uint16_t(*col);
             unsigned int marked_bits = *col>>16;
 
             //make sure the number of bits in each is below our thesholds
             if(bitsBelowThreshold(marked_bits, marked_clear_threshold_)){
-              if(bitsBelowThreshold(unknown_bits, unknown_clear_threshold_))
+              if(bitsBelowThreshold(unknown_bits, unknown_clear_threshold_) && static_map_[offset] < 128)
                 costmap_[offset] = free_cost_;
               else
                 costmap_[offset] = unknown_cost_;
