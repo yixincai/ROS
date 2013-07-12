@@ -24,13 +24,17 @@
 #include <cmath>
 #define stage_1 1
 #define stage_2 2
+#define stage_3 3
+#define ROTATE 0
+#define MOVING 1 
 using namespace std;
+bool start=false;
 
 int x[8] = {49, 98, 202, 312, 96, 160, 232, 314};
 int y[8] = {90, 74, 62, 74, 227, 259, 189, 222};
 int goal_number;
 double goal_x, goal_y;
-int stage_number;
+int stage_number, state_;
 
 double x_val;
 double y_val;
@@ -41,60 +45,85 @@ double y_map;
 double res = 0.044875;
 int image_height = 300;
 bool is_map_1_;
-gazebo_msgs::ModelState gazebo_pose;
+
+actionlib_msgs::GoalID goal_id_;
+move_base_msgs::MoveBaseGoal goal_;
+geometry_msgs::Twist cmd;
+
 geometry_msgs::PoseWithCovarianceStamped map_pose;
 nav_msgs::MapMetaData meta_data_message_;
 nav_msgs::GetMap::Response map_resp_;
 ros::Publisher map_pose_pub_;
 ros::Publisher map_pub_;
 ros::Publisher metadata_pub_;
+ros::Publisher cancel_goal_;
+ros::Publisher vel_pub_;
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg);
 void sendGoal1();
 void sendGoal2();
 void sendMap();
-void synRviz();
+void cancelGoal();
 
-void model_statesCallBack(const gazebo::ModelStates::ConstPtr& msg){
-	unsigned int i=0;
-	for (;i<msg->name.size();i++){
-		if (strcmp(msg->name[i].c_str(),"pr2")==0)
-			break;
-	}
-	x_val = msg->pose[i].position.x;
-	y_val = msg->pose[i].position.y;
-	gaz_ori_x = msg->pose[i].orientation.x;
-  gaz_ori_y = msg->pose[i].orientation.y;
-	gaz_ori_z = msg->pose[i].orientation.z;
-	gaz_ori_w = msg->pose[i].orientation.w;
+void goalCallBack(const move_base_msgs::MoveBaseActionGoal::ConstPtr& msg){
+  goal_id_ = msg->goal_id;
+  goal_ = msg->goal;
+  start = true;
+  state_ = ROTATE;
 }
 
 void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg){
+  if (!start) return;
   x_map = msg->pose.pose.position.x;
   y_map = msg->pose.pose.position.y;
   rv_ori_x = msg->pose.pose.orientation.x;
   rv_ori_y = msg->pose.pose.orientation.y;
 	rv_ori_z = msg->pose.pose.orientation.z;
 	rv_ori_w = msg->pose.pose.orientation.w;
+	double destination_yaw = atan2((goal_.target_pose.pose.position.y-y_map),(goal_.target_pose.pose.position.x-x_map));
+  tf::Quaternion q;
+  double roll, pitch, yaw;
+  tf::quaternionMsgToTF(goal_.target_pose.pose.orientation, q);
+  tf::Matrix3x3(q).getRPY(roll, pitch, yaw);
+	double yaw_val = yaw;
 	if (stage_number == stage_1){
-	  if (pow((x_map - x[goal_number] * res), 2) + pow((y_map - (image_height - y[goal_number]) * res), 2) < pow (1, 2) ){
-	    stage_number = stage_2;
-      sendGoal1();
+	  if (pow((x_map - goal_.target_pose.pose.position.x), 2) + pow((y_map - goal_.target_pose.pose.position.y), 2) < pow (1, 2) ){
+      cancelGoal();
+      stage_number = stage_2;
     }
 	}
 	else if (stage_number == stage_2){
-    if (pow((x_map - x[goal_number] * res), 2) + pow((y_map - (image_height - y[goal_number]) * res), 2) < pow (0.4, 2) ){
-      stage_number = stage_1;
-      goal_number++;
-      if (goal_number == 8)
-        goal_number = 0;
-      is_map_1_ = !is_map_1_;
-      goal_x = x[goal_number] * res;
-      goal_y = (image_height-y[goal_number]) * res;
-      sendMap();
-      sendGoal2();
-    }
+	  switch(state_){
+		  case ROTATE:
+			
+			  if (destination_yaw - yaw_val < 0.05 && destination_yaw - yaw_val > -0.05)
+				  state_ = MOVING;
+			  else
+				  if (destination_yaw > yaw_val){
+					  cmd.angular.z = 0.5;
+				  }
+				  else {
+					  cmd.angular.z = -0.5;
+				  }
+			  break;
+		  case MOVING:
+			  if (goal_.target_pose.pose.position.x - x_val < 5 && goal_.target_pose.pose.position.x - x_val > -5 && goal_.target_pose.pose.position.y - y_val < 5 && goal_.target_pose.pose.position.y - y_val > -5 ){
+				  stage_number = stage_3;
+        }
+			  else{
+					  cmd.linear.x = 0.5;
+					  if (destination_yaw > yaw_val + 0.05){
+						  cmd.angular.z = 0.5;
+					  }
+					  else if (destination_yaw - yaw_val < -0.05){
+						  cmd.angular.z = -0.5;
+					  }
+			  }
+			  vel_pub_.publish(cmd);
+			  break;
+
+	  }
   }
 }
 
@@ -105,21 +134,17 @@ int main(int argc, char** argv)
   ros::Subscriber map_pose_sub_;
   ros::Subscriber world_pose_sub_;
   
-  world_pose_sub_ = n.subscribe("/gazebo/model_states", 1, model_statesCallBack);
+  world_pose_sub_ = n.subscribe("/move_base/goal", 1, goalCallBack);
   map_pose_sub_ = n.subscribe("amcl_pose", 1, map_statesCallBack);
   map_pose_pub_ = n.advertise<geometry_msgs::PoseWithCovarianceStamped>("initialpose", 1);
   metadata_pub_ = n.advertise<nav_msgs::MapMetaData>("mymap_metadata", 1, true);
   map_pub_ = n.advertise<nav_msgs::OccupancyGrid>("mymap", 1, true);
-  
+  cancel_goal_ = n.advertise<actionlib_msgs::GoalID>("/move_base/cancel", 1, true);
+  vel_pub_ = n.advertise<geometry_msgs::Twist>("cmd_vel", 1);
   stage_number = stage_1;
-  goal_number = 0;
+  start = false;
   is_map_1_ = true;
-  goal_x = x[goal_number] * res;
-  goal_y = (image_height-y[goal_number]) * res;
-  ros::spinOnce();
-  synRviz();
-  sendMap();  
-  sendGoal2();
+
   ros::spin();
   return 0;
 }
@@ -200,18 +225,6 @@ void sendMap(){
   map_pub_.publish( map_resp_.map );
 }
 
-void synRviz(){
-  ros::spinOnce();
-  map_pose.header.frame_id = "/map";
-  map_pose.pose.pose.position.x = x_val;
-  map_pose.pose.pose.position.y = y_val;
-  map_pose.pose.pose.orientation.x = gaz_ori_x;
-  map_pose.pose.pose.orientation.y = gaz_ori_y;
-  map_pose.pose.pose.orientation.w = gaz_ori_w;
-  map_pose.pose.pose.orientation.z = gaz_ori_z;
-  map_pose.pose.covariance[6*0+0] = 0.5 * 0.5;
-  map_pose.pose.covariance[6*1+1] = 0.5 * 0.5;
-  map_pose.pose.covariance[6*5+5] = M_PI/12.0 * M_PI/12.0;
-  map_pose_pub_.publish(map_pose);
-  return;
+void cancelGoal(){
+  cancel_goal_.publish(goal_id_);
 }

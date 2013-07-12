@@ -1,4 +1,4 @@
-(cl:in-package costmap_2d-msg)
+(cl:in-package costmap_2d_1-msg)
 (cl:export '(HEADER-VAL
           HEADER
           DATA-VAL
