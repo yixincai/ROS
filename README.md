@@ -1,4 +1,1 @@
-ROS
-===
-
-ROS packages
+ROS packages for navigation and manipulation
