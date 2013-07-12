@@ -1,9 +1,0 @@
-FILE(REMOVE_RECURSE
-  "CMakeFiles/download_data_test_rosie_localization_stage.bag"
-  "../test/rosie_localization_stage.bag"
-)
-
-# Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/download_data_test_rosie_localization_stage.bag.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
