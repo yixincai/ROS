@@ -1,0 +1,108 @@
+<?xml version ='1.0'?>
+<gazebo version ='1.0'>
+<world name='default'>
+  <scene>
+    <ambient rgba='0.500000 0.500000 0.500000 1.000000'/>
+    <background rgba='0.500000 0.500000 0.500000 1.000000'/>
+    <shadows enabled='0'/>
+  </scene>
+  <physics type='ode' update_rate='0.000000'>
+    <gravity xyz='0.000000 0.000000 -9.800000'/>
+    <ode>
+      <solver type='quick' dt='0.001000' iters='10' precon_iters='0' sor='1.300000'/>
+      <constraints cfm='0.000000' erp='0.200000' contact_max_correcting_vel='100.000000' contact_surface_layer='0.001000'/>
+    </ode>
+  </physics>
+  <model name='plane1_model' static='1'>
+    <link name='body' gravity='1' self_collide='0' kinematic='0'>
+      <collision name='geom_1' laser_retro='0.000000'>
+        <geometry>
+          <plane normal='0.000000 0.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='10.000000' mu2='10.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='1000000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='10000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.000100'/>
+          </contact>
+        </surface>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      </collision>
+      <visual name='visual_1' cast_shadows='0' laser_retro='0.000000' transparency='0.000000'>
+        <geometry>
+          <plane normal='0.000000 0.000000 1.000000'/>
+        </geometry>
+        <material script='Gazebo/Grey'/>
+      </visual>
+      <damping>
+        <linear>0.000000</linear>
+        <angular>0.000000</angular>
+      </damping>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+    </link>
+    <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+  </model>
+  <model name='wall' static='1'>
+    <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+    <link name='body' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.000000 0.000000 -0.000000 0.000000 -0.000000 0.000000'/>
+      <collision name='top' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 -0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/vincent/fuerte_workspace/sandbox/gazebo_worlds_test/worlds/newapartmentnodoor.dae' scale='0.025450 0.025450 0.025450'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='top_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.010000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/vincent/fuerte_workspace/sandbox/gazebo_worlds_test/worlds/newapartmentnodoor.dae' scale='0.025450 0.025450 0.025450'/>
+        </geometry>
+      </visual>
+      <damping>
+        <linear>0.000000</linear>
+        <angular>0.000000</angular>
+      </damping>
+    </link>
+  </model>
+
+  <light name='my_light' type='directional' cast_shadows='0'>
+    <origin pose='0.000000 0.000000 30.000000 0.000000 -0.000000 0.000000'/>
+    <diffuse rgba='0.900000 0.900000 0.900000 1.000000'/>
+    <specular rgba='0.100000 0.100000 0.100000 1.000000'/>
+    <attenuation range='20.000000' linear='1.000000' constant='1.000000' quadratic='0.000000'/>
+    <direction xyz='0.000000 0.000000 -1.000000'/>
+  </light>
+
+<light name='my_light1' type='point' cast_shadows='0'>
+    <origin pose='5.000000 5.000000 3.000000 0.000000 -0.000000 0.000000'/>
+    <diffuse rgba='0.900000 0.900000 0.900000 1.000000'/>
+    <specular rgba='0.100000 0.100000 0.100000 1.000000'/>
+  
+  </light>
+
+<light name='my_light2' type='point' cast_shadows='0'>
+    <origin pose='10.000000 10.000000 3.000000 0.000000 -0.000000 0.000000'/>
+    <diffuse rgba='0.900000 0.900000 0.900000 1.000000'/>
+    <specular rgba='0.100000 0.100000 0.100000 1.000000'/>
+    
+  </light>
+
+
+  <plugin name='joint_trajectory_plugin' filename='libgazebo_ros_joint_trajectory.so'/>
+
+   
+  
+ 
+</world>
+</gazebo>

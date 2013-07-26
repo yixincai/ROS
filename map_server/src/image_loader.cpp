@@ -192,7 +192,7 @@ loadMapFromFileamcl(nav_msgs::GetMap::Response* resp,
      // If negate is true, we consider blacker pixels free, and whiter
       // pixels free.  Otherwise, it's vice versa.
      
-        occ = color_avg / 255.0;
+      occ = (255 - color_avg) / 255.0;
      
       // Apply thresholds to RGB means to determine occupancy values for
       // map.  Note that we invert the graphics-ordering of the pixels to

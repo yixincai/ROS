@@ -15,7 +15,9 @@
 #include <gazebo_msgs/ModelState.h>
 #include <tf/transform_datatypes.h>
 #include <SDL/SDL_image.h>
+#include "std_msgs/String.h"
 
+#include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <libgen.h>
@@ -85,7 +87,8 @@ class TeleopPR2Keyboard
   ros::Publisher map_pose_pub_;
   ros::Publisher map_pub_;
   ros::Publisher metadata_pub_;
-
+  ros::Publisher pick_place_pub_;
+  
   ros::Subscriber res_sub_;
   ros::Subscriber map_pose_sub_;
   ros::Subscriber world_pose_sub_;
@@ -103,7 +106,7 @@ class TeleopPR2Keyboard
     gazebo_pose_pub_ = n_.advertise<gazebo_msgs::ModelState>("/gazebo/set_model_state", 1);
     metadata_pub_ = n.advertise<nav_msgs::MapMetaData>("mymap_metadata", 1, true);
     map_pub_ = n.advertise<nav_msgs::OccupancyGrid>("mymap", 1, true);
-
+    pick_place_pub_ = n.advertise<std_msgs::String>("pick_place", 1);
     ros::NodeHandle n_private("~");
   }
 
@@ -115,6 +118,8 @@ class TeleopPR2Keyboard
   void sendMap();
   void sendPose();
   void sendGoal();
+  void pick();
+  void drop();
 };
 
 int main(int argc, char** argv)
@@ -305,6 +310,7 @@ void TeleopPR2Keyboard::loop(){
     ros::spinOnce();
     cout<<"Enter i to set initial pose, g to send goal, "<<endl;
     cout<<"r to synchronize rviz, w to synchronize world, "<<endl;
+    cout<<"p to pick up, d to drop, w to synchronize world, "<<endl;
     cout<<"m to send new map, or q to quit: "<<endl;
     cin>>option;
     cin.ignore(10,'\n');    
@@ -326,6 +332,12 @@ void TeleopPR2Keyboard::loop(){
         break;
       case 'q':
         return;
+      case 'p':
+        pick();
+        break;
+      case 'd':
+        drop();
+        break;
       default:
         break;
     }
@@ -334,4 +346,14 @@ void TeleopPR2Keyboard::loop(){
 
 TeleopPR2Keyboard::~TeleopPR2Keyboard(){}
 
+void TeleopPR2Keyboard::pick(){
+  std_msgs::String msg;
+  msg.data = "pick";
+  pick_place_pub_.publish(msg);
+}
 
+void TeleopPR2Keyboard::drop(){
+  std_msgs::String msg;
+  msg.data = "drop";
+  pick_place_pub_.publish(msg);
+}

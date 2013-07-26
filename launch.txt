@@ -1,14 +1,23 @@
-roslaunch manipulation_worlds pr2_table_object.launch
 roslaunch pr2_tabletop_manipulation_launch pr2_tabletop_manipulation.launch
-
 export ROBOT=sim
 roslaunch pr2_interactive_manipulation pr2_interactive_manipulation_robot.launch sim:=true nav:=true
 roslaunch pr2_interactive_manipulation pr2_interactive_manipulation_desktop.launch sim:=true
 
-roslaunch pr2_2dnav_gazebo pr2_table_object.launch
-roslaunch pr2_2dnav_gazebo pr2_interactive_manipulation_robot.launch sim:=true nav:=true nav_local:=false nav_slam:=false
-rosrun pr2_pick_and_place_demos pick_and_place_demo.py (pick and place helper node)
-rosrun map_server_dummy2 map_server_1 (navigation helper node)
-rosrun map_server_dummy2 map_server_2 (dummy node - converting map, goal, pick and place instructions)
 
-rosrun map_server_dummy1 map_server (keyboard interface)
+roslaunch pr2_2dnav_gazebo pr2_table_apartment.launch
+export ROBOT=sim
+-roslaunch pr2_2dnav_gazebo pr2_interactive_manipulation_robot.launch sim:=true nav:=true nav_local:=false nav_slam:=false
+roslaunch pr2_2dnav_gazebo pr2_tabletop_manipulation.launch
+roslaunch pr2_2dnav_gazebo helper.launch
+rosrun snlp_parser nlp_parser_server
+roscd robot_sim_nlp
+rosrun robot_sim_nlp simgl_ros groundings6.txt
+
+
+roslaunch pr2_2dnav_gazebo pr2_table_apartment_slam.launch
+export ROBOT=sim
+roslaunch pr2_2dnav_gazebo pr2_tabletop_manipulation_slam.launch
+roslaunch pr2_2dnav_gazebo helper_slam.launch
+rosrun snlp_parser nlp_parser_server
+roscd robot_sim_nlp
+rosrun robot_sim_nlp simgl_ros groundings_slam2.txt

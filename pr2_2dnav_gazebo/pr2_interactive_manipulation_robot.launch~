@@ -191,7 +191,7 @@
       <include if="$(arg nav_slam)" file="$(find pr2_2dnav_slam)/pr2_2dnav.launch"/>
 
       <!-- just navigation on a known map -->
-      <include unless="$(arg nav_slam)" file="$(find pr2_2dnav_gazebo)/2dnav-stack-amcl.launch"/>
+      <include unless="$(arg nav_slam)" file="$(find pr2_2dnav_gazebo)/nav.launch"/>
     </group>
 
     <!-- navigation without a map (using local sensor-based costmaps only)-->
@@ -220,7 +220,7 @@
       <param name="max_vel" value="2.5" />
     </node>
 
-    <node pkg="pr2_tuck_arms_action" type="tuck_arms.py" name="tuck_arms_action" output="screen">
+    <node pkg="pr2_tuck_arms_action" type="tuck_arms.py" name="tuck_arms" output="screen">
       <param name="r_joint_trajectory_action" value="r_arm_controller/joint_trajectory_generator" />
       <param name="l_joint_trajectory_action" value="l_arm_controller/joint_trajectory_generator" />
       <param name="move_duration" value="0.0" />

@@ -14,6 +14,9 @@ target_link_libraries(bin/map_server_2 image_loader SDL SDL_image yaml-cpp)
 rosbuild_add_executable(bin/map_server_1 src/main_1.cpp)
 target_link_libraries(bin/map_server_1 image_loader SDL SDL_image yaml-cpp)
 
+rosbuild_add_executable(bin/map_server_3 src/main_3.cpp)
+target_link_libraries(bin/map_server_3 image_loader SDL SDL_image yaml-cpp)
+
 rosbuild_add_gtest(test/utest test/utest.cpp test/test_constants.cpp)
 target_link_libraries(test/utest image_loader SDL SDL_image)
 

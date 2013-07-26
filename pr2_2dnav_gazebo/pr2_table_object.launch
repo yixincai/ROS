@@ -24,14 +24,14 @@
   <!-- spawn table and tabletop object-->
   <param name="table_description" 
    command="$(find xacro)/xacro.py '$(find manipulation_worlds)/urdf/table.urdf.xacro'" />
-  <node name="spawn_table" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -model table_1 -x 5" 
+  <node name="spawn_table" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -model table_1" 
    respawn="false" output="screen" />
 
-  <node name="spawn_table_2" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -model table_2 -x 5 -y -5" 
+  <node name="spawn_table_2" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -model table_2 -y -5" 
    respawn="false" output="screen" />
 
   <node name="spawn_object" pkg="gazebo" type="spawn_model" 
-   args="-urdf -file $(find manipulation_worlds)/urdf/coke_can.urdf -model object_1 -wait 'table_1' -x 5.7 -z 0.55" 
+   args="-urdf -file $(find manipulation_worlds)/urdf/coke_can.urdf -model object_1 -wait 'table_1' -x 0.7 -z 0.55" 
    respawn="false" output="screen" />
 
   <!-- parameters that give you reasonable physics as well as good speed -->

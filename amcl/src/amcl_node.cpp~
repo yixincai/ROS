@@ -550,7 +550,7 @@ AmclNode::requestMap()
   nav_msgs::GetMap::Request  req;
   nav_msgs::GetMap::Response resp;
   ROS_INFO("Requesting the map...");
-  while(!ros::service::call("static_map", req, resp))
+  while(!ros::service::call("static_mapamcl", req, resp))
   {
     ROS_WARN("Request for map failed; trying again...");
     ros::Duration d(0.5);
@@ -870,7 +870,7 @@ AmclNode::laserReceived(const sensor_msgs::LaserScanConstPtr& laser_scan)
         lasers_update_[i] = true;
   }
 
-  bool force_publication = false;
+  bool force_publication = true;
   if(!pf_init_)
   {
     // Pose at last filter update

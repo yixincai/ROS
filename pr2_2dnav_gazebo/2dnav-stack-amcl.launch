@@ -7,5 +7,5 @@
   <!--include file="$(find 2dnav_pr2)/config/map_server.launch" /-->
   <include file="$(find pr2_navigation_perception)/ground_plane.xml" />
   <!-- The naviagtion stack and associated parameters -->
-  <include file="$(find move_base_test)/move_base.xml" />
+  <include file="$(find pr2_navigation_global)/move_base.xml" />
 </launch>

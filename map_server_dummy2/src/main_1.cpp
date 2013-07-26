@@ -100,7 +100,6 @@ void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr
     }
   }
   else if (stage_number == stage_2){
-    ROS_INFO("Got stage 2");
     switch(state_){
 	    case ROTATE:
 		    ROS_INFO("rotating");
@@ -110,26 +109,26 @@ void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr
 			  }
 		    else
 			    if (destination_yaw > yaw_val){
-				    cmd.angular.z = 0.5;
+				    cmd.angular.z = 0.2 + 0.5 * (destination_yaw - yaw_val);
 			    }
 			    else {
-				    cmd.angular.z = -0.5;
+				    cmd.angular.z = -0.2 + 0.5 * (destination_yaw - yaw_val);
 			    }
 		    break;
 	    case MOVING:
 	      ROS_INFO("moving");
 	      distance = sqrt(pow(goal_.target_pose.pose.position.x - x_map, 2)+ pow(goal_.target_pose.pose.position.y - y_map, 2));
 		    if (distance < 0.1){
-			    state_ = RE_ROTATE;
-			    ROS_INFO("Go to re_rotating");
+		      state_ = RE_ROTATE;
+			    ROS_INFO("Go to rerotate");
         }
 		    else{
-				    cmd.linear.x = 0.2;
+				    cmd.linear.x = 0.1 + 0.4 * distance;
 				    if (destination_yaw > yaw_val + 0.01){
-					    cmd.angular.z = 0.2;
+					    cmd.angular.z = destination_yaw - yaw_val;
 				    }
 				    else if (destination_yaw - yaw_val < -0.01){
-					    cmd.angular.z = -0.2;
+					    cmd.angular.z = destination_yaw - yaw_val;
 				    }
 		    }
 		    break;
@@ -144,16 +143,16 @@ void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr
 			    ROS_INFO("finfished");
 			    std_msgs::String str;
           std::stringstream ss;
-          ss << "new_goal";
+          ss << "goal_reached";
           str.data = ss.str();
           end_pub_.publish(std_msgs::String(str));
         }
 		    else{
 				    if (end_yaw > yaw_val + 0.01){
-					    cmd.angular.z = 0.2;
+					    cmd.angular.z = 0.15 + 0.5 * (end_yaw - yaw_val);
 				    }
 				    else if (end_yaw - yaw_val < -0.01){
-					    cmd.angular.z = -0.2;
+					    cmd.angular.z = -0.15 + 0.5 * (end_yaw - yaw_val);
 				    }
 		    }
 		    break;
@@ -164,7 +163,7 @@ void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "constant_goal_publisher");
+  ros::init(argc, argv, "move_base_modifier");
   ros::NodeHandle n;
   ros::Subscriber map_pose_sub_;
   ros::Subscriber world_pose_sub_;

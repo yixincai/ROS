@@ -1660,7 +1660,7 @@ class PickAndPlaceManager():
             if whicharm == 1:
                 start_angles = [2.135, 0.803, 1.732, -1.905, 2.369, -1.680, 1.398]
             else:
-                start_angles = [-2.135, 0.803, -1.732, -1.905, -2.369, -1.680, 1.398]
+                start_angles = [2.135, 0.803, -1.732, -1.905, -2.369, -1.680, 1.398]
                      
             #default location is arm-to-the-side
             if whicharm == 1:

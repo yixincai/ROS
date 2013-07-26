@@ -15,6 +15,8 @@
 #include <gazebo_msgs/ModelState.h>
 #include <tf/transform_datatypes.h>
 #include <SDL/SDL_image.h>
+#include <robot_sim_nlp/JPArray.h>
+#include <std_msgs/String.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,52 +24,108 @@
 #include <fstream>
 #include <iostream>
 #include <cmath>
-#define stage_1 1
-#define stage_2 2
+#define stage_1 1 //waiting for move base
+#define stage_2 2 //command the robot to move
+#define stage_3 3 //waiting
+#define stage_4 4 //back off
+#define ROTATE 0
+#define MOVING 1 
+#define RE_ROTATE 2
 using namespace std;
 
-int x[8] = {49, 98, 202, 312, 96, 160, 232, 314};
-int y[8] = {90, 74, 62, 74, 227, 259, 189, 222};
+bool start = false;
+bool care_for_ori = false;
 int goal_number;
 double goal_x, goal_y;
-int stage_number;
+int stage_number, state_;
 
-double x_val;
-double y_val;
-double gaz_ori_x, gaz_ori_y, gaz_ori_z, gaz_ori_w;
 double rv_ori_x, rv_ori_y, rv_ori_z, rv_ori_w;
 double x_map;
 double y_map;
-double res = 0.044875;
+double yaw_val;
+double res = 0.05;
 int image_height = 300;
-bool is_map_1_;
-gazebo_msgs::ModelState gazebo_pose;
+bool is_map_1_ = true;
+double end_yaw;
+
+actionlib_msgs::GoalID goal_id_;
+move_base_msgs::MoveBaseGoal goal;
+geometry_msgs::Twist cmd;
+
 geometry_msgs::PoseWithCovarianceStamped map_pose;
 nav_msgs::MapMetaData meta_data_message_;
 nav_msgs::GetMap::Response map_resp_;
 ros::Publisher map_pose_pub_;
 ros::Publisher map_pub_;
 ros::Publisher metadata_pub_;
+ros::Publisher cancel_goal_;
+ros::Publisher vel_pub_;
+ros::Publisher end_pub_;
+
+void sendMap();
+void cancelGoal();
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
-void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg);
-void sendGoal1();
-void sendGoal2();
-void sendMap();
-void synRviz();
 
-void model_statesCallBack(const gazebo::ModelStates::ConstPtr& msg){
-	unsigned int i=0;
-	for (;i<msg->name.size();i++){
-		if (strcmp(msg->name[i].c_str(),"pr2")==0)
-			break;
-	}
-	x_val = msg->pose[i].position.x;
-	y_val = msg->pose[i].position.y;
-	gaz_ori_x = msg->pose[i].orientation.x;
-  gaz_ori_y = msg->pose[i].orientation.y;
-	gaz_ori_z = msg->pose[i].orientation.z;
-	gaz_ori_w = msg->pose[i].orientation.w;
+void mapCallBack(const robot_sim_nlp::JPArray::ConstPtr& msg){
+  int index = 0;
+
+  for(unsigned int y=0; y<map_resp_.map.info.height; y++){
+	for(unsigned int x=0; x<map_resp_.map.info.width; x++){
+		map_resp_.map.data[index] = msg->data[index];
+		index++;					
+	}				
+  }
+  map_resp_.map.info.map_load_time = ros::Time::now();
+  map_resp_.map.header.stamp = ros::Time::now();
+  ROS_INFO("Read a %d X %d map @ %.3lf m/cell",
+           map_resp_.map.info.width,
+           map_resp_.map.info.height,
+           map_resp_.map.info.resolution);
+
+  // Latched publisher for data
+  map_pub_.publish( map_resp_.map );
+
+}
+
+void goalCallBack(const geometry_msgs::Point::ConstPtr& msg){
+  MoveBaseClient ac("move_base", true);
+  //wait for the action server to come up
+  while(!ac.waitForServer(ros::Duration(5.0))){
+    ROS_INFO("Waiting for the move_base action server to come up");
+  }
+  //we'll send a goal to the robot to move 1 meter forward
+  goal.target_pose.header.frame_id = "map";
+  goal.target_pose.header.stamp = ros::Time::now();
+  goal.target_pose.pose.position.x = msg->x*res;
+  goal.target_pose.pose.position.y = (image_height-msg->y) * res;
+  if (msg->z > -4){
+    end_yaw = msg->z;
+    goal.target_pose.pose.orientation = tf::createQuaternionMsgFromYaw(msg->z);
+    care_for_ori = true;
+    stage_number = stage_2;
+    start = true;
+  }
+  else{
+    goal.target_pose.pose.orientation.w = 1;
+    care_for_ori = false;
+    ROS_INFO("Sending goal");
+    ac.sendGoal(goal);
+  }
+  return;
+
+}
+
+void goalCallBack1(const move_base_msgs::MoveBaseActionGoal::ConstPtr& msg){
+  ROS_INFO("Got goal");
+  goal_id_ = msg->goal_id;
+  stage_number = stage_1;
+  start = true;
+}
+
+void backCallBack(const std_msgs::String::ConstPtr& msg){
+  stage_number = stage_4;
+  start = true;
 }
 
 void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg){
@@ -77,23 +135,106 @@ void map_statesCallBack(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr
   rv_ori_y = msg->pose.pose.orientation.y;
 	rv_ori_z = msg->pose.pose.orientation.z;
 	rv_ori_w = msg->pose.pose.orientation.w;
-	if (stage_number == stage_1){
-	  if (pow((x_map - x[goal_number] * res), 2) + pow((y_map - (image_height - y[goal_number]) * res), 2) < pow (1, 2) ){
-	    stage_number = stage_2;
-      sendGoal1();
+	tf::Quaternion q;
+  double roll, pitch;
+  tf::quaternionMsgToTF(msg->pose.pose.orientation, q);
+  tf::Matrix3x3(q).getRPY(roll, pitch, yaw_val);
+  if (!start)
+    return;
+  double distance;
+  double destination_yaw = atan2((goal.target_pose.pose.position.y-y_map),(goal.target_pose.pose.position.x-x_map));
+  cmd.linear.x = cmd.linear.y = cmd.angular.z = 0;
+  if (stage_number == stage_1){
+    if (pow((x_map - goal.target_pose.pose.position.x), 2) + pow((y_map - goal.target_pose.pose.position.y), 2) < pow (0.3, 2) ){
+      cancelGoal();
+      stage_number = stage_2;
     }
-	}
-	else if (stage_number == stage_2){
-    if (pow((x_map - x[goal_number] * res), 2) + pow((y_map - (image_height - y[goal_number]) * res), 2) < pow (0.4, 2) ){
-      stage_number = stage_1;
-      goal_number++;
-      if (goal_number == 8)
-        goal_number = 0;
-      is_map_1_ = !is_map_1_;
-      goal_x = x[goal_number] * res;
-      goal_y = (image_height-y[goal_number]) * res;
-      sendMap();
-      sendGoal2();
+  }
+  else if (stage_number == stage_2){
+    switch(state_){
+	    case ROTATE:
+		    ROS_INFO("rotating");
+		    if (destination_yaw - yaw_val < 0.01 && destination_yaw - yaw_val > -0.01){
+			    state_ = MOVING;
+			    ROS_INFO("Go to moving");
+			  }
+		    else
+			    if (destination_yaw > yaw_val){
+				    cmd.angular.z = 0.2 + 0.5 * (destination_yaw - yaw_val);
+			    }
+			    else {
+				    cmd.angular.z = -0.2 + 0.5 * (destination_yaw - yaw_val);
+			    }
+		    break;
+	    case MOVING:
+	      ROS_INFO("moving");
+	      distance = sqrt(pow(goal.target_pose.pose.position.x - x_map, 2)+ pow(goal.target_pose.pose.position.y - y_map, 2));
+		    if (distance < 0.1){
+		      if (care_for_ori){
+		        state_ = RE_ROTATE;
+			      ROS_INFO("Go to rerotate");
+			    }
+			    else{
+			      state_ = ROTATE;
+			      stage_number = stage_3;
+			      start = false;
+			      ROS_INFO("finfished");
+			      std_msgs::String str;
+            std::stringstream ss;
+            ss << "goal_reached";
+            str.data = ss.str();
+            end_pub_.publish(std_msgs::String(str));
+			    }
+        }
+		    else{
+				    cmd.linear.x = 0.1 + 0.4 * distance;
+				    if (destination_yaw > yaw_val + 0.01){
+					    cmd.angular.z = destination_yaw - yaw_val;
+				    }
+				    else if (destination_yaw - yaw_val < -0.01){
+					    cmd.angular.z = destination_yaw - yaw_val;
+				    }
+		    }
+		    break;
+		  case RE_ROTATE:
+	      ROS_INFO("re_rotating");
+		    if ( end_yaw - yaw_val < 0.01 && end_yaw - yaw_val > -0.01){
+		      state_ = ROTATE;
+			    stage_number = stage_3;
+			    start = false;
+			    ROS_INFO("finfished");
+			    std_msgs::String str;
+          std::stringstream ss;
+          ss << "goal_reached";
+          str.data = ss.str();
+          end_pub_.publish(std_msgs::String(str));
+        }
+		    else{
+				    if (end_yaw > yaw_val + 0.01){
+					    cmd.angular.z = 0.15 + 0.5 * (end_yaw - yaw_val);
+				    }
+				    else if (end_yaw - yaw_val < -0.01){
+					    cmd.angular.z = -0.15 + 0.5 * (end_yaw - yaw_val);
+				    }
+		    }
+		    break;
+    }
+    vel_pub_.publish(cmd);
+  }
+  else if (stage_number == stage_4){
+    distance = sqrt(pow(goal.target_pose.pose.position.x - x_map, 2)+ pow(goal.target_pose.pose.position.y - y_map, 2));
+    if (distance > 0.3){
+      stage_number = stage_3;
+      start = false;
+      ROS_INFO("finfished");
+      std_msgs::String str;
+      std::stringstream ss;
+      ss << "goal_reached";
+      str.data = ss.str();
+      end_pub_.publish(std_msgs::String(str));
+    }
+    else{
+	    cmd.linear.x = -0.1 - 0.4 * distance;
     }
   }
 }
@@ -102,66 +243,32 @@ int main(int argc, char** argv)
 {
   ros::init(argc, argv, "constant_goal_publisher");
   ros::NodeHandle n;
+  ros::Subscriber goal_sub_;
+  ros::Subscriber map_sub_;
   ros::Subscriber map_pose_sub_;
   ros::Subscriber world_pose_sub_;
-  
-  world_pose_sub_ = n.subscribe("/gazebo/model_states", 1, model_statesCallBack);
+  ros::Subscriber back_sub_;
+  map_sub_ = n.subscribe("sim_costmap", 1, mapCallBack);
+  goal_sub_ = n.subscribe("sim_goal", 1, goalCallBack);
+  world_pose_sub_ = n.subscribe("/move_base/goal", 1, goalCallBack1);
   map_pose_sub_ = n.subscribe("amcl_pose", 1, map_statesCallBack);
+  back_sub_ = n.subscribe("back_request", 1, backCallBack);
+    
   map_pose_pub_ = n.advertise<geometry_msgs::PoseWithCovarianceStamped>("initialpose", 1);
   metadata_pub_ = n.advertise<nav_msgs::MapMetaData>("mymap_metadata", 1, true);
   map_pub_ = n.advertise<nav_msgs::OccupancyGrid>("mymap", 1, true);
-  
+  cancel_goal_ = n.advertise<actionlib_msgs::GoalID>("/move_base/cancel", 1, true);
+  vel_pub_ = n.advertise<geometry_msgs::Twist>("base_controller/command", 1);
+  end_pub_ = n.advertise<std_msgs::String>("goal_request", 1, true);
+
   stage_number = stage_1;
-  goal_number = 0;
+  start = false;
   is_map_1_ = true;
-  goal_x = x[goal_number] * res;
-  goal_y = (image_height-y[goal_number]) * res;
-//  ros::spinOnce();
-//  synRviz();
-  sendMap();  
-  sendGoal2();
+  state_ = ROTATE;
+  sendMap();
+  
   ros::spin();
   return 0;
-}
-
-
-void sendGoal1(){
-  MoveBaseClient ac("move_base", true);
-  //wait for the action server to come up
-  while(!ac.waitForServer(ros::Duration(5.0))){
-    ROS_INFO("Waiting for the move_base action server to come up");
-  }
-  move_base_msgs::MoveBaseGoal goal;
-  //we'll send a goal to the robot to move 1 meter forward
-  goal.target_pose.header.frame_id = "map";
-  goal.target_pose.header.stamp = ros::Time::now();
-  goal.target_pose.pose.position.x = goal_x;
-  goal.target_pose.pose.position.y = goal_y;
-  goal.target_pose.pose.orientation.x = rv_ori_x;
-  goal.target_pose.pose.orientation.y = rv_ori_y;
-  goal.target_pose.pose.orientation.z = rv_ori_z;
-  goal.target_pose.pose.orientation.w = rv_ori_w;
-  ROS_INFO("Sending goal");
-  ac.sendGoal(goal);
-  return;
-}
-
-void sendGoal2(){
-  MoveBaseClient ac("move_base", true);
-  //wait for the action server to come up
-  while(!ac.waitForServer(ros::Duration(5.0))){
-    ROS_INFO("Waiting for the move_base action server to come up");
-  }
-  move_base_msgs::MoveBaseGoal goal;
-  //we'll send a goal to the robot to move 1 meter forward
-  goal.target_pose.header.frame_id = "map";
-  goal.target_pose.header.stamp = ros::Time::now();
-  goal.target_pose.pose.position.x = goal_x;
-  goal.target_pose.pose.position.y = goal_y;
-  goal.target_pose.pose.orientation.w = 1;
-  ROS_INFO("Sending goal");
-  ac.sendGoal(goal);
-  return;
 }
 
 void sendMap(){
@@ -170,10 +277,7 @@ void sendMap(){
   int negate;
   double occ_th, free_th;
   
-  if (is_map_1_)
-    mapfname = "aptemptyhousemap_1.pgm";
-  else
-    mapfname = "apthousemap_1.pgm";
+  mapfname = "/home/jfasola/fuerte_workspace/sandbox/map_server_dummy2/slammap_rotated2.bmp";
   std::string frame_id;
   ros::NodeHandle private_nh("~");
   private_nh.param("frame_id", frame_id, std::string("map"));
@@ -191,27 +295,13 @@ void sendMap(){
            map_resp_.map.info.width,
            map_resp_.map.info.height,
            map_resp_.map.info.resolution);
-  meta_data_message_ = map_resp_.map.info;
-
-  // Latched publisher for metadata
-  metadata_pub_.publish( meta_data_message_ );
   
   // Latched publisher for data
   map_pub_.publish( map_resp_.map );
 }
 
-void synRviz(){
-  ros::spinOnce();
-  map_pose.header.frame_id = "/map";
-  map_pose.pose.pose.position.x = x_val;
-  map_pose.pose.pose.position.y = y_val;
-  map_pose.pose.pose.orientation.x = gaz_ori_x;
-  map_pose.pose.pose.orientation.y = gaz_ori_y;
-  map_pose.pose.pose.orientation.w = gaz_ori_w;
-  map_pose.pose.pose.orientation.z = gaz_ori_z;
-  map_pose.pose.covariance[6*0+0] = 0.5 * 0.5;
-  map_pose.pose.covariance[6*1+1] = 0.5 * 0.5;
-  map_pose.pose.covariance[6*5+5] = M_PI/12.0 * M_PI/12.0;
-  map_pose_pub_.publish(map_pose);
-  return;
+void cancelGoal(){
+  ROS_INFO("cancel goal");
+  cancel_goal_.publish(goal_id_);
 }
+

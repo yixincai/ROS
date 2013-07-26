@@ -43,6 +43,12 @@ roslib.load_manifest('pr2_pick_and_place_demos')
 import rospy
 from pr2_pick_and_place_demos.pick_and_place_manager import *
 from std_msgs.msg import String
+from trajectory_msgs.msg import *
+from actionlib_msgs.msg import *
+from pr2_controllers_msgs.msg import *
+from pr2_common_action_msgs.msg import *
+import getopt
+import actionlib
 
 ##class for running the pick and place demo, inherits from PickAndPlaceManager
 class PickAndPlaceDemo(PickAndPlaceManager):
@@ -53,6 +59,11 @@ class PickAndPlaceDemo(PickAndPlaceManager):
         #run the standard init
         PickAndPlaceManager.__init__(self, use_slip_controller, use_slip_detection)
         
+        self.pub = rospy.Publisher('goal_request', String)
+        self.pub_back = rospy.Publisher('back_request', String)
+        self.goal = TuckArmsGoal()
+        self.tuck_arm_client = actionlib.SimpleActionClient('tuck_arms', TuckArmsAction)
+
         #which side we're getting objects from (right = 0, left = 1, placing is on the other side)
         self.pick_up_side = 0
         self.put_down_side = 1
@@ -140,10 +151,15 @@ class PickAndPlaceDemo(PickAndPlaceManager):
             head_point[0] += scipy.rand()*.05
             head_point[1] += scipy.rand()*.05
 
-            
-            arms_to_try = [1]
+            if self.pick_up_side == 0 and self.arms_to_use == "both":
+                arms_to_try = [0,1]
+            elif self.pick_up_side == 1 and self.arms_to_use == "both":
+                arms_to_try = [1,0]
+            elif self.arms_to_use == "left":
+                arms_to_try = [1]
+            elif self.arms_to_use == "right":
+                arms_to_try = [0]
            
-
             #detect and pick up an object
             (result, arm_used) = self.detect_and_pick_up_object(head_point, arms_to_try = arms_to_try, constrained = self.constrained)
 
@@ -156,6 +172,8 @@ class PickAndPlaceDemo(PickAndPlaceManager):
                 object_tries += 1
                 continue
 
+            if result == 'succeeded':
+                self.arm_used = arm_used
             #self.check_preempted()
 
 #             #if the object is the bowl, try to transfer it to the other arm before putting it down
@@ -228,11 +246,11 @@ class PickAndPlaceDemo(PickAndPlaceManager):
         object_counts = [0]*2
         for i in range(2):
 
-            self.check_preempted()
+            #self.check_preempted()
 
             self.point_head(self.head_point_locs[i], 'base_link')
 
-            self.check_preempted()
+            #self.check_preempted()
 
             self.call_tabletop_detection(update_table = 0, clear_attached_objects = 0)
             object_counts[i] = self.count_objects(i)
@@ -445,16 +463,55 @@ class PickAndPlaceDemo(PickAndPlaceManager):
     def callback(self, data):
         rospy.loginfo("got message")
         if data.data == 'pick':
-            for arm in self.arms_to_use_list:
-                self.move_arm_to_side(arm)
-
             self.find_table()        
             self.pick_sides()
-             
             result = self.move_objects_to_other_side()
+            str = "pick_back_off"
+            self.pub_2.publish(String(str))
         elif data.data == 'drop':
-            self.put_down_object(1, use_place_override = 1, constrained = self.constrained)
-              
+            self.put_down_object(self.arm_used, use_place_override = 1, constrained = self.constrained)
+            self.close_gripper(self.arm_used)
+            str = "drop_back_off"
+            self.pub_2.publish(String(str))
+        elif data.data == 'open_pick':
+            self.goal.tuck_left = False
+            self.goal.tuck_right = False
+            rospy.logdebug('Waiting for action server to start')
+            self.tuck_arm_client.wait_for_server(rospy.Duration(10.0))
+            rospy.logdebug('Sending goal to action server')
+            self.tuck_arm_client.send_goal_and_wait(self.goal, rospy.Duration(30.0), rospy.Duration(5.0))
+            for arm in self.arms_to_use_list:
+                self.move_arm_to_side(arm)
+            str = "open_pick_finished"
+            self.pub.publish(String(str))
+        elif data.data == 'open_drop':
+            if self.arm_used == 1:
+                self.move_arm_to_side(1)
+                self.move_arm_to_side(0)
+            if self.arm_used == 0:
+                self.move_arm_to_side(0)
+                self.move_arm_to_side(1)
+            str = "open_drop_finished"
+            self.pub.publish(String(str))
+        elif data.data == 'close_pick':
+            if self.arm_used == 1:
+                result = self.try_hard_to_move_joint(0, [[-0.968, 0.729, -0.554, -1.891, -1.786, -1.127, 0.501], [-0.05, 1.25, -1.6, -1.65, -1.5, -0.15, 1.398]], use_open_loop = 1)
+                result = self.try_hard_to_move_joint(1, [[0.968, 0.729, 0.554, -1.891, 1.786, -1.127, 0.501], [0.1, 0.9, 1.65, -1.6, 2.369, -0.1, 1.398]], use_open_loop = 1)
+            elif self.arm_used == 0:
+                result = self.try_hard_to_move_joint(1, [[0.968, 0.729, 0.554, -1.891, 1.786, -1.127, 0.501], [0.05, 1.25, 1.6, -1.65, 1.5, -0.15, 1.398]], use_open_loop = 1)
+                result = self.try_hard_to_move_joint(0, [[-0.968, 0.729, -0.554, -1.891, -1.786, -1.127, 0.501], [-0.1, 0.9, -1.65, -1.6, -2.369, -0.1, 1.398]], use_open_loop = 1)
+            str = "pick_up_finished"
+            self.pub.publish(String(str))
+        elif data.data == 'close_drop':
+            self.goal.tuck_left = True
+            self.goal.tuck_right = True
+            rospy.logdebug('Waiting for action server to start')
+            self.tuck_arm_client.wait_for_server(rospy.Duration(10.0))
+            rospy.logdebug('Sending goal to action server')
+            self.tuck_arm_client.send_goal_and_wait(self.goal, rospy.Duration(30.0), rospy.Duration(5.0))
+            str = "drop_down_finished"
+            self.pub.publish(String(str))
+
     def start(self):
         rospy.Subscriber("pick_place", String, self.callback)
         rospy.spin()
@@ -465,7 +522,9 @@ if __name__ == '__main__':
     use_slip_detection = rospy.get_param('/reactive_grasp_node_right/use_slip_detection', False)
 
     rospy.init_node('pick_and_place_demo', anonymous=True)
+    
     pick_and_place_demo = PickAndPlaceDemo(use_slip_controller = use_slip_controller, 
                                            use_slip_detection = use_slip_detection)
-    pick_and_place_demo.start();
- 
+    pick_and_place_demo.start()
+
+    rospy.spin()
