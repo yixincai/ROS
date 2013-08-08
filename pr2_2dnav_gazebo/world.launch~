@@ -1,6 +1,0 @@
-<launch>
-
-  <!-- start up empty world -->
-  <include file="$(find gazebo_worlds_1)/launch/my.launch"/>
-  
-</launch>
