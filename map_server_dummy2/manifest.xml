@@ -15,7 +15,7 @@
   <depend package="geometry_msgs" />
   <depend package="sensor_msgs" />
   <depend package="pr2_controllers_msgs" />
-  <depend package="robot_sim_nlp"/>
+  <depend package="robot_spatial_nlp"/>
   <depend package="topic_tools" />
   <depend package="rospy" />
   <depend package="gazebo" />

@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="pr2_pick_and_place_demos" type="pick_and_place_demo_korean.py" name="pick_and_place_demo" output="screen" />
+
+  <node pkg="map_server_dummy2" type="map_server_korean" name="constant_goal_publisher" output="screen" />
+</launch>

@@ -3,9 +3,11 @@
 #include <ros/time.h>
 #include <move_base_msgs/MoveBaseAction.h>
 #include <actionlib/client/simple_action_client.h>
+#include <sensor_msgs/PointCloud.h>
 #include <nav_msgs/Odometry.h>
 #include "nav_msgs/GetMap.h"
 #include "nav_msgs/MapMetaData.h"
+#include <geometry_msgs/Point32.h> 
 #include <geometry_msgs/PoseArray.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
 #include <geometry_msgs/Twist.h>
@@ -36,9 +38,17 @@ double rv_ori_x, rv_ori_y, rv_ori_z, rv_ori_w;
 double x_map = 0;
 double y_map = 0;
 double res;
-
+geometry_msgs::Point32 Person0, Person1;
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
+
+void peoplePositionCallBack(const sensor_msgs::PointCloud::ConstPtr& msg){
+  printf("Received people positions\n");
+  Person0 = msg->points[0];
+  printf("X: %f, Y: %f", Person0.x, Person0.y);
+  Person1 = msg->points[1];
+  printf("X: %f, Y: %f", Person1.x, Person1.y);
+}
 
 void model_statesCallBack(const gazebo::ModelStates::ConstPtr& msg){
 	printf("Got world\n");
@@ -92,6 +102,7 @@ class TeleopPR2Keyboard
   ros::Subscriber res_sub_;
   ros::Subscriber map_pose_sub_;
   ros::Subscriber world_pose_sub_;
+  ros::Subscriber people_pose_sub_;
   ros::NodeHandle n_;
 
   public:
@@ -101,6 +112,7 @@ class TeleopPR2Keyboard
     res_sub_=n.subscribe<nav_msgs::MapMetaData>("map_metadata", 1, resCallBack);
     world_pose_sub_ = n_.subscribe("/gazebo/model_states", 1, model_statesCallBack);
     map_pose_sub_ = n_.subscribe("amcl_pose", 1, map_statesCallBack);
+    people_pose_sub_ = n_.subscribe("PeoplePositions", 1, peoplePositionCallBack);
 
     map_pose_pub_ = n.advertise<geometry_msgs::PoseWithCovarianceStamped>("initialpose", 1);
     gazebo_pose_pub_ = n_.advertise<gazebo_msgs::ModelState>("/gazebo/set_model_state", 1);

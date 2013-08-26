@@ -31,8 +31,14 @@
    respawn="false" output="screen" />
 
   <node name="spawn_object" pkg="gazebo" type="spawn_model" 
-   args="-urdf -file $(find manipulation_worlds)/urdf/coke_can.urdf -model object_1 -wait 'table_1' -x 0.7 -z 0.55" 
+   args="-urdf -file $(find manipulation_worlds)/urdf/coke_can.urdf -model object_1 -wait 'table_1' -x 0.7 -y 0.2 -z 0.55" 
    respawn="false" output="screen" />
+   
+   <node name="spawn_object1" pkg="gazebo" type="spawn_model" 
+   args="-urdf -file $(find manipulation_worlds)/urdf/coke_can.urdf -model object_2 -wait 'table_1' -x 0.7 -y -0.2 -z 0.55" 
+   respawn="false" output="screen" />
+
+
 
   <!-- parameters that give you reasonable physics as well as good speed -->
   <!-- needed so that gripper joint stops on objects instead of oscillating forever -->

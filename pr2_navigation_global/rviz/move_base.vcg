@@ -25,7 +25,7 @@ AMCL\ Cloud.Topic=/particlecloud
 Background\ ColorB=0
 Background\ ColorG=0
 Background\ ColorR=0
-Camera\ Config=1.2598 0.535175 14.0303 23.2527 24.1981 1.62491
+Camera\ Config=1.5698 0.0451755 26.0616 9.9303 7.86533 6.7024
 Camera\ Type=rviz::OrbitViewController
 Current\ Goal.Alpha=1
 Current\ Goal.ColorB=0
@@ -52,11 +52,11 @@ Floor\ Scan..IntensityChannel\ Name=intensity
 Floor\ Scan..IntensityMax\ ColorB=1
 Floor\ Scan..IntensityMax\ ColorG=1
 Floor\ Scan..IntensityMax\ ColorR=1
-Floor\ Scan..IntensityMax\ Intensity=4096
+Floor\ Scan..IntensityMax\ Intensity=101
 Floor\ Scan..IntensityMin\ ColorB=0
 Floor\ Scan..IntensityMin\ ColorG=0
 Floor\ Scan..IntensityMin\ ColorR=0
-Floor\ Scan..IntensityMin\ Intensity=0
+Floor\ Scan..IntensityMin\ Intensity=101
 Floor\ Scan..IntensityUse\ full\ RGB\ spectrum=0
 Floor\ Scan.Alpha=1
 Floor\ Scan.Billboard\ Size=0.05
@@ -64,6 +64,7 @@ Floor\ Scan.Color\ Transformer=Intensity
 Floor\ Scan.Decay\ Time=0
 Floor\ Scan.Enabled=1
 Floor\ Scan.Position\ Transformer=XYZ
+Floor\ Scan.Queue\ Size=10
 Floor\ Scan.Selectable=1
 Floor\ Scan.Style=1
 Floor\ Scan.Topic=/base_scan_throttled
@@ -142,6 +143,7 @@ Head\ Scan.Color\ Transformer=Intensity
 Head\ Scan.Decay\ Time=2
 Head\ Scan.Enabled=0
 Head\ Scan.Position\ Transformer=XYZ
+Head\ Scan.Queue\ Size=10
 Head\ Scan.Selectable=1
 Head\ Scan.Style=1
 Head\ Scan.Topic=/tilt_scan
@@ -177,8 +179,9 @@ Planner\ Plan.ColorG=1
 Planner\ Plan.ColorR=0
 Planner\ Plan.Enabled=1
 Planner\ Plan.Topic=/move_base_node/NavfnROS/plan
-Property\ Grid\ Splitter=1239,84
+Property\ Grid\ Splitter=567,84
 Property\ Grid\ State=expanded=.Global Options,Visualization Markers.Enabled,Visualization Markers.Namespaces;splitterratio=0.501873
+QMainWindow=000000ff00000000fd00000003000000000000011d000002ddfc0200000001fb000000100044006900730070006c006100790073010000001d000002dd000000ee00ffffff0000000100000131000002ddfc0200000003fb0000001e0054006f006f006c002000500072006f0070006500720074006900650073010000001d000000d40000006700fffffffb0000000a0056006900650077007301000000f700000129000000bb00fffffffb0000001200530065006c0065006300740069006f006e0100000226000000d40000006700ffffff00000003000004810000003efc0100000001fb0000000800540069006d0065010000000000000481000002bf00ffffff00000227000002dd00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
 Robot\ Footprint.Alpha=1
 Robot\ Footprint.ColorB=0
 Robot\ Footprint.ColorG=0
@@ -256,6 +259,22 @@ Robot\:\ Robot\ Model\ Link\ fr_caster_rotation_linkAlpha=1
 Robot\:\ Robot\ Model\ Link\ fr_caster_rotation_linkEnabled=1
 Robot\:\ Robot\ Model\ Link\ fr_caster_rotation_linkShow\ Axes=0
 Robot\:\ Robot\ Model\ Link\ fr_caster_rotation_linkShow\ Trail=0
+Robot\:\ Robot\ Model\ Link\ head_mount_kinect_ir_linkAlpha=1
+Robot\:\ Robot\ Model\ Link\ head_mount_kinect_ir_linkEnabled=1
+Robot\:\ Robot\ Model\ Link\ head_mount_kinect_ir_linkShow\ Axes=0
+Robot\:\ Robot\ Model\ Link\ head_mount_kinect_ir_linkShow\ Trail=0
+Robot\:\ Robot\ Model\ Link\ head_mount_kinect_rgb_linkAlpha=1
+Robot\:\ Robot\ Model\ Link\ head_mount_kinect_rgb_linkEnabled=1
+Robot\:\ Robot\ Model\ Link\ head_mount_kinect_rgb_linkShow\ Axes=0
+Robot\:\ Robot\ Model\ Link\ head_mount_kinect_rgb_linkShow\ Trail=0
+Robot\:\ Robot\ Model\ Link\ head_mount_linkAlpha=1
+Robot\:\ Robot\ Model\ Link\ head_mount_linkEnabled=1
+Robot\:\ Robot\ Model\ Link\ head_mount_linkShow\ Axes=0
+Robot\:\ Robot\ Model\ Link\ head_mount_linkShow\ Trail=0
+Robot\:\ Robot\ Model\ Link\ head_mount_prosilica_linkAlpha=1
+Robot\:\ Robot\ Model\ Link\ head_mount_prosilica_linkEnabled=1
+Robot\:\ Robot\ Model\ Link\ head_mount_prosilica_linkShow\ Axes=0
+Robot\:\ Robot\ Model\ Link\ head_mount_prosilica_linkShow\ Trail=0
 Robot\:\ Robot\ Model\ Link\ head_pan_linkAlpha=1
 Robot\:\ Robot\ Model\ Link\ head_pan_linkEnabled=1
 Robot\:\ Robot\ Model\ Link\ head_pan_linkShow\ Axes=0
@@ -268,14 +287,6 @@ Robot\:\ Robot\ Model\ Link\ head_tilt_linkAlpha=1
 Robot\:\ Robot\ Model\ Link\ head_tilt_linkEnabled=1
 Robot\:\ Robot\ Model\ Link\ head_tilt_linkShow\ Axes=0
 Robot\:\ Robot\ Model\ Link\ head_tilt_linkShow\ Trail=0
-Robot\:\ Robot\ Model\ Link\ high_def_frameAlpha=1
-Robot\:\ Robot\ Model\ Link\ high_def_frameEnabled=1
-Robot\:\ Robot\ Model\ Link\ high_def_frameShow\ Axes=0
-Robot\:\ Robot\ Model\ Link\ high_def_frameShow\ Trail=0
-Robot\:\ Robot\ Model\ Link\ high_def_optical_frameAlpha=1
-Robot\:\ Robot\ Model\ Link\ high_def_optical_frameEnabled=1
-Robot\:\ Robot\ Model\ Link\ high_def_optical_frameShow\ Axes=0
-Robot\:\ Robot\ Model\ Link\ high_def_optical_frameShow\ Trail=0
 Robot\:\ Robot\ Model\ Link\ l_elbow_flex_linkAlpha=1
 Robot\:\ Robot\ Model\ Link\ l_elbow_flex_linkEnabled=1
 Robot\:\ Robot\ Model\ Link\ l_elbow_flex_linkShow\ Axes=0
@@ -340,14 +351,6 @@ Robot\:\ Robot\ Model\ Link\ laser_tilt_mount_linkAlpha=1
 Robot\:\ Robot\ Model\ Link\ laser_tilt_mount_linkEnabled=1
 Robot\:\ Robot\ Model\ Link\ laser_tilt_mount_linkShow\ Axes=0
 Robot\:\ Robot\ Model\ Link\ laser_tilt_mount_linkShow\ Trail=0
-Robot\:\ Robot\ Model\ Link\ projector_wg6802418_child_frameAlpha=1
-Robot\:\ Robot\ Model\ Link\ projector_wg6802418_child_frameEnabled=1
-Robot\:\ Robot\ Model\ Link\ projector_wg6802418_child_frameShow\ Axes=0
-Robot\:\ Robot\ Model\ Link\ projector_wg6802418_child_frameShow\ Trail=0
-Robot\:\ Robot\ Model\ Link\ projector_wg6802418_frameAlpha=1
-Robot\:\ Robot\ Model\ Link\ projector_wg6802418_frameEnabled=1
-Robot\:\ Robot\ Model\ Link\ projector_wg6802418_frameShow\ Axes=0
-Robot\:\ Robot\ Model\ Link\ projector_wg6802418_frameShow\ Trail=0
 Robot\:\ Robot\ Model\ Link\ r_elbow_flex_linkAlpha=1
 Robot\:\ Robot\ Model\ Link\ r_elbow_flex_linkEnabled=1
 Robot\:\ Robot\ Model\ Link\ r_elbow_flex_linkShow\ Axes=0
@@ -441,6 +444,7 @@ Stereo\ Cloud.Color\ Transformer=
 Stereo\ Cloud.Decay\ Time=0
 Stereo\ Cloud.Enabled=0
 Stereo\ Cloud.Position\ Transformer=
+Stereo\ Cloud.Queue\ Size=10
 Stereo\ Cloud.Selectable=1
 Stereo\ Cloud.Style=1
 Stereo\ Cloud.Topic=/dcam/cloud
@@ -486,97 +490,76 @@ Transforms.Show\ Names=1
 Transforms.Update\ Interval=1
 Visualization\ Markers.Enabled=1
 Visualization\ Markers.Marker\ Topic=/visualization_marker
-QMainWindow=000000ff00000000fd00000003000000000000011d0000057dfc0200000001fb000000100044006900730070006c00610079007301000000340000057d000000fa00ffffff000000010000012f0000057dfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000034000001990000006d00fffffffb0000000a0056006900650077007301000001d30000023f000000c500fffffffb0000001200530065006c0065006300740069006f006e0100000418000001990000006d00ffffff0000000300000a000000003efc0100000001fb0000000800540069006d0065010000000000000a000000024500ffffff000007a80000057d00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+Visualization\ Markers.Queue\ Size=100
 [Display0]
 ClassName=rviz::GridDisplay
 Name=Grid
-Package=rviz
 [Display1]
 ClassName=rviz::AxesDisplay
 Name=Origin Axes
-Package=rviz
 [Display10]
 ClassName=rviz::PointCloudDisplay
 Name=Stereo Cloud
-Package=rviz
 [Display11]
 ClassName=rviz::PoseArrayDisplay
 Name=AMCL Cloud
-Package=rviz
 [Display12]
 ClassName=rviz::GridCellsDisplay
 Name=Obstacles
-Package=rviz
 [Display13]
 ClassName=rviz::GridCellsDisplay
 Name=Inflated Obstacles
-Package=rviz
 [Display14]
 ClassName=rviz::PolygonDisplay
 Name=Robot Footprint
-Package=rviz
 [Display15]
 ClassName=rviz::PathDisplay
 Name=Global Plan
-Package=rviz
 [Display16]
 ClassName=rviz::PathDisplay
 Name=Local Plan
-Package=rviz
 [Display17]
 ClassName=rviz::PathDisplay
 Name=Planner Plan
-Package=rviz
 [Display18]
 ClassName=rviz::PoseDisplay
 Name=Current Goal
-Package=rviz
 [Display19]
 ClassName=rviz::PointCloud2Display
 Name=Tilt Scan Shadow Filtered
-Package=rviz
 [Display2]
 ClassName=rviz::MarkerDisplay
 Name=Visualization Markers
-Package=rviz
 [Display20]
 ClassName=rviz::PointCloud2Display
 Name=Ground Filtered Tilt Scan
-Package=rviz
 [Display3]
 ClassName=rviz::RobotModelDisplay
 Name=Robot Model
-Package=rviz
 [Display4]
 ClassName=rviz::OdometryDisplay
 Name=2D Pose: Odom
-Package=rviz
 [Display5]
 ClassName=rviz::OdometryDisplay
 Name=2D Pose: Localized
-Package=rviz
 [Display6]
 ClassName=rviz::MapDisplay
 Name=Map
-Package=rviz
 [Display7]
 ClassName=rviz::LaserScanDisplay
 Name=Head Scan
-Package=rviz
 [Display8]
 ClassName=rviz::LaserScanDisplay
 Name=Floor Scan
-Package=rviz
 [Display9]
 ClassName=rviz::TFDisplay
 Name=Transforms
-Package=rviz
 [Visualization Markers.]
 [Visualization Markers./move_base_node]
 [Visualization Markers./move_base_node/local_costmap]
 voxel_grid_throttled=1
 [Window]
-Height=1552
-Width=2560
-X=1
-Y=0
+Height=866
+Width=1169
+X=533
+Y=167

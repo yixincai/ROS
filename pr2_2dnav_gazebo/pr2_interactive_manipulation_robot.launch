@@ -191,7 +191,7 @@
       <include if="$(arg nav_slam)" file="$(find pr2_2dnav_slam)/pr2_2dnav.launch"/>
 
       <!-- just navigation on a known map -->
-      <include unless="$(arg nav_slam)" file="$(find pr2_2dnav_gazebo)/nav.launch"/>
+      <include unless="$(arg nav_slam)" file="$(find pr2_2dnav_gazebo)/nav_robot.launch"/>
     </group>
 
     <!-- navigation without a map (using local sensor-based costmaps only)-->

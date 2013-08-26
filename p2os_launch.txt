@@ -1,0 +1,19 @@
+roscore
+
+sudo chmod 777 -R /dev/ttyUSB0
+rosrun p2os_driver p2os
+
+rosrun map_server map_server slam_pen2.pgm 0.05
+
+sudo chmod a+rw /dev/ttyACM0
+roslaunch p2os_launch navigation_tf_lrf_p2os_teleop_joy.launch
+
+rosrun rviz rviz
+
+rosrun map_server_dummy map_server
+m
+slam_pen2.pgm
+0.05
+
+rostopic pub /gripper_control p2os_driver/GripperState -r 1000 '[2, -1, 0, 0, 0, 0]' '[6, 0, 0]'
+rostopic pub /gripper_control p2os_driver/GripperState -r 1000 '[2, 1, 0, 0, 0, 0]' '[1, 0, 0]'

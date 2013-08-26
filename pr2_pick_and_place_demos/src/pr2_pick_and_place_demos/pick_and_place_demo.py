@@ -58,11 +58,8 @@ class PickAndPlaceDemo(PickAndPlaceManager):
 
         #run the standard init
         PickAndPlaceManager.__init__(self, use_slip_controller, use_slip_detection)
-        
+        self.arm_used = 1
         self.pub = rospy.Publisher('goal_request', String)
-        self.pub_back = rospy.Publisher('back_request', String)
-        self.goal = TuckArmsGoal()
-        self.tuck_arm_client = actionlib.SimpleActionClient('tuck_arms', TuckArmsAction)
 
         #which side we're getting objects from (right = 0, left = 1, placing is on the other side)
         self.pick_up_side = 0
@@ -261,11 +258,11 @@ class PickAndPlaceDemo(PickAndPlaceManager):
         if object_counts[0] > object_counts[1]:
             rospy.loginfo("setting pick_up_side to the right side, put_down_side to the left")
             self.pick_up_side = 0
-            self.put_down_side = 1
+            self.put_down_side = 0
         else:
             rospy.loginfo("setting pick_up_side to the left side, put_down_side to the right")
             self.pick_up_side = 1
-            self.put_down_side = 0
+            self.put_down_side = 1
 
         #set the place rectangle to the put-down side
         self.set_table_place_rectangle(self.put_down_side)
@@ -466,52 +463,37 @@ class PickAndPlaceDemo(PickAndPlaceManager):
             self.find_table()        
             self.pick_sides()
             result = self.move_objects_to_other_side()
+            if self.arm_used == 1:
+	   	          result = pick_and_place_demo.try_hard_to_move_joint(1, [[0.968, 0.729, 0.554, -1.891, 1.786, -1.127, 0.501], [2.0, 1.27, 2.0, -2.0, 2.84, -1.7, 1.398]], use_open_loop = 1)
+   		          result = pick_and_place_demo.try_hard_to_move_joint(0, [[-0.968, 0.729, -0.554, -1.891, -1.786, -1.127, 0.501], [-2.0, 1.27, -2.0, -2.0, -2.84, -1.7, 1.398]], use_open_loop = 1)
+            elif self.arm_used == 0:
+	   	          result = pick_and_place_demo.try_hard_to_move_joint(1, [[0.968, 0.729, 0.554, -1.891, 1.786, -1.127, 0.501], [2.0, 1.27, 2.0, -2.0, 2.84, -1.7, 1.398]], use_open_loop = 1)
+   		          result = pick_and_place_demo.try_hard_to_move_joint(0, [[-0.968, 0.729, -0.554, -1.891, -1.786, -1.127, 0.501], [-2.0, 1.27, -2.0, -2.0, -2.84, -1.7, 1.398]], use_open_loop = 1)
             str = "pick_back_off"
-            self.pub_back.publish(String(str))
+            self.pub.publish(String(str))
         elif data.data == 'drop':
+            self.move_arm_to_side(self.arm_used)
             self.put_down_object(self.arm_used, use_place_override = 1, constrained = self.constrained)
             self.close_gripper(self.arm_used)
+            if self.arm_used == 1:
+                 result = pick_and_place_demo.try_hard_to_move_joint(1, [[0.968, 0.729, 0.554, -1.891, 1.786, -1.127, 0.501], [2.0, 1.27, 2.0, -2.0, 2.84, -1.7, 1.398]], use_open_loop = 1)
+            elif self.arm_used == 0:
+                 result = pick_and_place_demo.try_hard_to_move_joint(0, [[-0.968, 0.729, -0.554, -1.891, -1.786, -1.127, 0.501], [-2.0, 1.27, -2.0, -2.0, -2.84, -1.7, 1.398]], use_open_loop = 1)
             str = "drop_back_off"
-            self.pub_back.publish(String(str))
-        elif data.data == 'open_pick':
-            self.goal.tuck_left = False
-            self.goal.tuck_right = False
-            rospy.logdebug('Waiting for action server to start')
-            self.tuck_arm_client.wait_for_server(rospy.Duration(10.0))
-            rospy.logdebug('Sending goal to action server')
-            self.tuck_arm_client.send_goal_and_wait(self.goal, rospy.Duration(30.0), rospy.Duration(5.0))
-            for arm in self.arms_to_use_list:
-                self.move_arm_to_side(arm)
+            self.pub.publish(String(str))
+        elif data.data == 'pick open':
             str = "open_pick_finished"
             self.pub.publish(String(str))
-        elif data.data == 'open_drop':
-            if self.arm_used == 1:
-                self.move_arm_to_side(1)
-                self.move_arm_to_side(0)
-            if self.arm_used == 0:
-                self.move_arm_to_side(0)
-                self.move_arm_to_side(1)
+        elif data.data == 'drop open':
             str = "open_drop_finished"
             self.pub.publish(String(str))
-        elif data.data == 'close_pick':
-            if self.arm_used == 1:
-                result = self.try_hard_to_move_joint(0, [[-0.968, 0.729, -0.554, -1.891, -1.786, -1.127, 0.501], [-0.05, 1.25, -1.6, -1.65, -1.5, -0.15, 1.398]], use_open_loop = 1)
-                result = self.try_hard_to_move_joint(1, [[0.968, 0.729, 0.554, -1.891, 1.786, -1.127, 0.501], [0.1, 0.9, 1.65, -1.6, 2.369, -0.1, 1.398]], use_open_loop = 1)
-            elif self.arm_used == 0:
-                result = self.try_hard_to_move_joint(1, [[0.968, 0.729, 0.554, -1.891, 1.786, -1.127, 0.501], [0.05, 1.25, 1.6, -1.65, 1.5, -0.15, 1.398]], use_open_loop = 1)
-                result = self.try_hard_to_move_joint(0, [[-0.968, 0.729, -0.554, -1.891, -1.786, -1.127, 0.501], [-0.1, 0.9, -1.65, -1.6, -2.369, -0.1, 1.398]], use_open_loop = 1)
+        elif data.data == 'pick close':
             str = "pick_up_finished"
             self.pub.publish(String(str))
-        elif data.data == 'close_drop':
-            self.goal.tuck_left = True
-            self.goal.tuck_right = True
-            rospy.logdebug('Waiting for action server to start')
-            self.tuck_arm_client.wait_for_server(rospy.Duration(10.0))
-            rospy.logdebug('Sending goal to action server')
-            self.tuck_arm_client.send_goal_and_wait(self.goal, rospy.Duration(30.0), rospy.Duration(5.0))
+        elif data.data == 'drop close':
             str = "drop_down_finished"
             self.pub.publish(String(str))
-
+            
     def start(self):
         rospy.Subscriber("pick_place", String, self.callback)
         rospy.spin()
@@ -525,6 +507,8 @@ if __name__ == '__main__':
     
     pick_and_place_demo = PickAndPlaceDemo(use_slip_controller = use_slip_controller, 
                                            use_slip_detection = use_slip_detection)
+    result = pick_and_place_demo.try_hard_to_move_joint(0, [[-0.968, 0.729, -0.554, -1.891, -1.786, -1.127, 0.501], [-2.0, 1.27, -2.0, -2.0, -2.84, -1.7, 1.398]], use_open_loop = 1)                                           
+    result = pick_and_place_demo.try_hard_to_move_joint(1, [[0.968, 0.729, 0.554, -1.891, 1.786, -1.127, 0.501], [2.0, 1.27, 2.0, -2.0, 2.84, -1.7, 1.398]], use_open_loop = 1)
     pick_and_place_demo.start()
 
     rospy.spin()

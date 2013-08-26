@@ -1,0 +1,46 @@
+simulation:
+1. roslaunch pr2_2dnav_gazebo pr2_table_apartment_slam.launch
+2. export ROBOT=sim
+   roslaunch pr2_2dnav_gazebo pr2_tabletop_manipulation_slam.launch
+3. roslaunch pr2_2dnav_gazebo helper_slam.launch
+4. rosrun snlp_parser nlp_parser_server
+5. roscd robot_spatial_nlp
+   rosrun robot_spatial_nlp simgl_ros groundings_slam2.txt
+
+korean demo
+//pr2
+1. ssh pr1009
+   robot claim
+   robot start
+   (start deshboard on monolith)
+   roslaunch pr2_2dnav_gazebo pr2_manipulation_navigation_korean.launch (uses nav_robot_korean.launch) (export ROBOT=pr2 is already in .bashrc)
+//monolith or any other computers
+2. rosrun pr2_dashboard pr2_dashboard
+3. roslaunch pr2_2dnav_gazebo helper_korean.launch (uses map_server_korean in main_1_korean.cpp and pick_and_place_demo_korean.py)
+4. rosrun rviz rviz
+5. rosrun snlp_parser nlp_parser_server
+6. roscd robot_spatial_nlp
+   rosrun robot_spatial_nlp simgl_ros groundings_pen.txt
+   
+actual robot:
+//pr2
+1. ssh pr1009
+   robot claim
+   robot start
+   roslaunch pr2_2dnav_gazebo pr2_manipulation_robot.launch (change map in nav_robot.launch) (export ROBOT=pr2 is already in .bashrc)
+//monolith or any other computers
+2. rosrun pr2_dashboard pr2_dashboard
+3. roslaunch pr2_2dnav_gazebo helper_robot.launch (change map in main_1_revised.cpp)
+4. rosrun rviz rviz
+5. rosrun snlp_parser nlp_parser_server
+6. roscd robot_spatial_nlp
+   rosrun robot_spatial_nlp simgl_ros groundings_pen.txt (pen2 for the demo to those Korean kids)
+
+people tracking on crushinator:
+roslaunch collab_launch collab_sim_yixin.launch (change agent_config/person_yixin.yaml)
+roslaunch collab_launch run_tracking_pen.launch
+rosrun rviz rviz
+roslaunch multimaster master.launch master:=pr1009
+
+rostopic echo PeoplePositions
+rosrun tf tf_echo map person0 (or change to person1)

@@ -604,7 +604,7 @@ class PickAndPlaceManager():
 
         #re-stamp the pose
         msg_pose.header.stamp = rospy.Time.now()
-
+        msg_pose.pose.position.x = msg_pose.pose.position.x - 0.15
         goal = PlaceGoal()
         if whicharm == 0:  
             goal.arm_name = "right_arm"
@@ -615,6 +615,7 @@ class PickAndPlaceManager():
             rospy.loginfo("asking the left arm to place")
 
         goal.place_locations = [msg_pose]
+
         goal.grasp = self.held_objects[whicharm].grasp
         goal.desired_retreat_distance = 0.1
         goal.min_retreat_distance = 0.05
@@ -1293,7 +1294,7 @@ class PickAndPlaceManager():
 
         if not self.check_arms_to_use(whicharm):
             return("error", None)
-
+        self.move_arm_to_side(whicharm)
         #try picking it up
         (grasp_result, arm_used, executed_grasp) = self.grasp_object(object, whicharm, 1, \
                                                       use_slip_detection = self.use_slip_detection)

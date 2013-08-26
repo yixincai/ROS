@@ -1,0 +1,7 @@
+<launch>
+<!--  <include file="$(find openni_launch)/launch/openni.launch"/> -->
+  <node name="exec" pkg="re_kinect_object_detector" type="re_kinect"  />
+ <!-- <node name="my_tf_makelink" pkg="re_kinect_object_detector" type="makelink" />  -->
+  <node name="select_item"    pkg="re_kinect_object_detector" type="select"  />
+  <node name="detect" pkg="re_object_detector_gui" type="detect"  />
+</launch>
