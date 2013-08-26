@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/wg-ros-pkg/!svn/ver/54301/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo
+END
+doc.dox
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/wg-ros-pkg/!svn/ver/54301/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/doc.dox
+END
+pr2-simple-fake_localization.launch
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/wg-ros-pkg/!svn/ver/54301/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/pr2-simple-fake_localization.launch
+END
+2dnav-stack-amcl.launch
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/2dnav-stack-amcl.launch
+END
+pr2-armless-simple-amcl.launch
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/pr2-armless-simple-amcl.launch
+END
+pr2-wg-amcl.launch
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/wg-ros-pkg/!svn/ver/54301/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/pr2-wg-amcl.launch
+END
+2dnav-stack-fake_localization.launch
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/2dnav-stack-fake_localization.launch
+END
+pr2-empty-amcl.launch
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/wg-ros-pkg/!svn/ver/54301/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/pr2-empty-amcl.launch
+END
+pr2-empty-fake_localization.launch
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/wg-ros-pkg/!svn/ver/54301/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/pr2-empty-fake_localization.launch
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/wg-ros-pkg/!svn/ver/48929/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/manifest.xml
+END
+pr2-armless-wg-fake_localization.launch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/pr2-armless-wg-fake_localization.launch
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/trex
+END
+pr2.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/trex/pr2.cfg
+END
+run_milestone_1_gazebo_empty.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/trex/run_milestone_1_gazebo_empty.xml
+END
+run_milestone_1_gazebo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/wg-ros-pkg/!svn/ver/47311/stacks/wg_robots_gazebo/trunk/pr2_2dnav_gazebo/trex/run_milestone_1_gazebo.xml
+END

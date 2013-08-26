@@ -1,0 +1,12 @@
+<launch>
+  <!-- machine tags for sim, be sure to set environment variable ROBOT to sim -->
+  <include file="$(find pr2_machine)/sim.machine" />
+  <include file="$(find pr2_navigation_global)/amcl_node.xml" />
+  <include file="$(find pr2_navigation_teleop)/teleop.xml" />
+  <include file="$(find pr2_navigation_perception)/lasers_and_filters.xml" />
+  <!--include file="$(find 2dnav_pr2)/config/map_server.launch" /-->
+  <include file="$(find pr2_navigation_perception)/ground_plane.xml" />
+  <!-- The navigation stack and associated parameters -->
+  <include file="$(find pr2_navigation_global)/move_base.xml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find gazebo_worlds)/Media/materials/textures/map_blank.png 0.1" respawn="true" />
+</launch>

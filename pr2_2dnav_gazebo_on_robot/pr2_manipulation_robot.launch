@@ -1,0 +1,4 @@
+<launch>
+      <include file="$(find pr2_2dnav_gazebo)/pr2_tabletop_manipulation.launch" />
+      <include file="$(find pr2_2dnav_gazebo)/nav_robot.launch" /> 
+</launch>

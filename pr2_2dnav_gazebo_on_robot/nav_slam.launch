@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- load map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find map_server_dummy2)/slammap_rotated2.bmp 0.05" respawn="true" />
+
+  <!-- nav-stack -->
+  <include file="$(find pr2_2dnav_gazebo)/2dnav-stack-amcl.launch"/>
+
+</launch>

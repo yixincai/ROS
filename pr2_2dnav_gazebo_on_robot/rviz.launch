@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- for visualization -->
+  <include file="$(find pr2_2dnav_gazebo)/rviz_move_base.launch"/>
+
+</launch>

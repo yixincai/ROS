@@ -17,8 +17,8 @@ min_rot_vel: 0.4
 sim_time: 1.7
 sim_granularity: 0.025
 
-goal_distance_bias: 1.0
-path_distance_bias: 32.0
+goal_distance_bias: 10.0
+path_distance_bias: 30.0
 occdist_scale: 0.01
 
 stop_time_buffer: 0.2

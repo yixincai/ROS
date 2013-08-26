@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- start up wg world -->
+  <include file="$(find gazebo_worlds)/launch/wg_world.launch"/>
+
+  <!-- start up robot -->
+  <include file="$(find pr2_gazebo)/pr2_no_arms.launch"/>
+
+  <!-- load a custom map designed for simulation -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find gazebo_worlds)/Media/materials/textures/willowMap.png 0.1" respawn="true" />
+
+  <!-- start up the navigation-stack -->
+  <include file="$(find pr2_2dnav_gazebo)/2dnav-stack-fake_localization.launch"/>
+
+</launch>
+

@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- load map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find map_server_dummy2)/aptemptyhousemap_1.pgm 0.044875" respawn="true" />
+
+  <!-- nav-stack -->
+  <include file="$(find pr2_2dnav_gazebo)/2dnav-stack-amcl.launch"/>
+
+
+</launch>
